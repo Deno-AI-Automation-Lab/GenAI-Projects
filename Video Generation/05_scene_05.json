@@ -1,0 +1,85 @@
+{
+  "scene_id": "scene_04",
+  "scene_number": 4,
+  "title": "மக்களின் அன்பும் உதவியும்",
+  "duration_seconds": 10,
+  "generation_mode": "STANDALONE_NEW_VIDEO",
+  "independence_rules": {
+    "generate_as_new_clip": true,
+    "do_not_extend_previous_video": true,
+    "do_not_continue_previous_video": true,
+    "do_not_edit_previous_video": true,
+    "do_not_remix_previous_video": true,
+    "do_not_use_previous_scene_as_input": true,
+    "do_not_attach_previous_scene": true,
+    "preserve_full_10_second_duration": true,
+    "do_not_remove_frames": true,
+    "do_not_skip_frames": true
+  },
+  "scale_framework": {
+    "subject": "Kanyakumari people helping one another in everyday community life.",
+    "composition": "Intimate documentary framing showing several generations interacting naturally.",
+    "action": "Neighbors greet one another, help with everyday tasks and share a warm community moment.",
+    "location": "A culturally authentic Kanyakumari village or neighborhood.",
+    "aesthetic": "Warm, human-centered photorealistic documentary, natural expressions, understated emotion."
+  },
+  "video_prompt": "Create ONLY a completely new, standalone 10-second photorealistic documentary video for Scene 04. Do not continue, extend, edit, remix, or reinterpret any previous generated video. Do not use any previous video as input. Generate the complete 10 seconds independently. Keep the visual action coherent for the entire duration. Use culturally authentic Kanyakumari, Tamil Nadu details. No subtitles, captions, logos, watermarks, UI elements, or unwanted written English text. Subject: Kanyakumari people helping one another in everyday community life. Composition: Intimate documentary framing showing several generations interacting naturally. Action: Neighbors greet one another, help with everyday tasks and share a warm community moment. Location: A culturally authentic Kanyakumari village or neighborhood. Aesthetic: Warm, human-centered photorealistic documentary, natural expressions, understated emotion.",
+  "audio": {
+    "spoken_language": "Tamil only",
+    "narrator": "one consistent documentary narrator",
+    "narration_text": "இங்கு ஒருவருக்கொருவர் செய்யும் உதவியும் அன்பும், குமரி மக்களின் சமூக வலிமையாகத் திகழ்கின்றன.",
+    "timeline": [
+      {
+        "start": 0.0,
+        "end": 1.0,
+        "audio": "natural ambience and subtle documentary music; no speech"
+      },
+      {
+        "start": 1.0,
+        "end": 8.5,
+        "audio": "single Tamil narrator speaks the narration once"
+      },
+      {
+        "start": 8.5,
+        "end": 10.0,
+        "audio": "no speech; ambience/music only"
+      }
+    ],
+    "constraints": [
+      "Tamil speech only",
+      "No English spoken words",
+      "No bilingual narration",
+      "No background dialogue",
+      "No second narrator",
+      "No overlapping voices",
+      "Do not repeat narration",
+      "Do not truncate the final word"
+    ]
+  },
+  "negative_prompt": [
+    "previous-video continuation",
+    "video extension",
+    "video-to-video editing",
+    "scene extension",
+    "remix of earlier scene",
+    "repeated narration",
+    "voice overlap",
+    "multiple speakers",
+    "English speech",
+    "subtitles",
+    "captions",
+    "logos",
+    "watermarks",
+    "frame skipping",
+    "frame removal",
+    "premature ending",
+    "truncated narration"
+  ],
+  "output_requirement": {
+    "format": "video",
+    "target_duration_seconds": 10,
+    "single_clip": true,
+    "independent_file": true,
+    "filename_suggestion": "Kanyakumari_Scene_04.mp4"
+  }
+}

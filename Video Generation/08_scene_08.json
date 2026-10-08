@@ -1,0 +1,104 @@
+{
+  "scene_id": "scene_07_christmas_kanyakumari",
+  "title": "கன்னியாகுமரியின் கிறிஸ்துமஸ் கொண்டாட்டம்",
+
+  "generation_mode": "STANDALONE_NEW_VIDEO",
+
+  "duration_seconds": 10,
+
+  "generation_rules": {
+    "generate_as_new_clip": true,
+    "do_not_extend_previous_video": true,
+    "do_not_continue_previous_video": true,
+    "do_not_edit_previous_video": true,
+    "do_not_remix_previous_video": true,
+    "do_not_use_previous_scene_as_input": true,
+    "do_not_attach_previous_scene": true,
+    "preserve_full_10_second_duration": true,
+    "do_not_remove_frames": true,
+    "do_not_skip_frames": true,
+    "generate_exactly_one_10_second_video": true
+  },
+
+  "scale_framework": {
+    "subject": "Christmas celebration among the local Christian community of Kanyakumari, showing families, children and community members celebrating together respectfully.",
+    
+    "composition": "Begin with a cinematic wide establishing shot of a beautifully decorated historic church and its surroundings, then move gently toward families and children participating in the celebration. Include warm decorative lights, a Christmas star, a traditional nativity display and people gathered peacefully. Keep the focus on community celebration rather than any individual person.",
+    
+    "action": "Families and children gather around a beautifully decorated church, people greet one another warmly, children admire the Christmas star and nativity display, and the community celebrates Christmas together with happiness and mutual respect.",
+    
+    "location": "Kanyakumari district, Tamil Nadu, a culturally authentic South Indian Christian neighbourhood near a historic church, with architecture and surroundings appropriate to Kanyakumari.",
+    
+    "aesthetic": "Photorealistic cinematic documentary style, authentic Kanyakumari atmosphere, natural human expressions, realistic South Indian clothing, warm evening lighting, subtle Christmas decorations, realistic church architecture, respectful cultural representation, gentle camera movement, visually rich but documentary-like."
+  },
+
+  "video_prompt": "Create exactly one standalone 10-second photorealistic documentary video about Christmas celebrations in Kanyakumari district, Tamil Nadu. Start with a wide cinematic view of a beautifully decorated historic church during a peaceful Christmas evening. Show a traditional illuminated Christmas star, tasteful decorations and a nativity display. Then gently move toward local families and children celebrating together, greeting one another and enjoying the festive atmosphere. Show authentic South Indian Christian community life and the warm, welcoming nature of Kanyakumari people. The scene should communicate community bonding, joy, harmony and cultural diversity. Keep all people generic and non-identifiable. Do not depict any celebrity, politician, public figure or identifiable real person. Do not imitate any real person's face or likeness. Maintain photorealistic documentary quality throughout. Use smooth cinematic camera movement and natural transitions within the 10-second shot. Do not create multiple separate clips. Generate one continuous 10-second video only.",
+
+  "audio": {
+    "language": "Tamil only",
+    "narrator": "same consistent documentary narrator voice used in all other scenes",
+    "timeline": {
+      "0.0-1.0": "Natural Christmas evening ambience and very soft background music only. No speech.",
+      "1.0-8.5": "One Tamil narrator speaks the complete narration sentence once, clearly and naturally.",
+      "8.5-10.0": "No speech. Only gentle ambient sound and soft background music."
+    },
+    "narration": "கிறிஸ்துமஸ் கொண்டாட்டமும் அன்பும் குமரி மக்களின் ஒற்றுமையையும் மனிதநேயத்தையும் அழகாக வெளிப்படுத்துகின்றன.",
+    "audio_rules": [
+      "Tamil speech only.",
+      "No English speech.",
+      "No Malayalam speech.",
+      "No bilingual narration.",
+      "Only one narrator.",
+      "Do not repeat the narration.",
+      "Do not overlap narration with another voice.",
+      "Narration must finish naturally before 8.5 seconds.",
+      "Do not truncate or fade out the final spoken word.",
+      "No background conversations or intelligible dialogue.",
+      "Use the same narrator voice and documentary tone as the other scenes."
+    ]
+  },
+
+  "transition": {
+    "style": "smooth documentary transition",
+    "from_previous_scene": "The previous religious harmony scene should naturally lead into the Christmas celebration without requiring the previous video as an input.",
+    "within_scene": "Use a gentle cinematic camera movement from the church exterior toward the celebrating community.",
+    "to_next_scene": "End with warm festive lights and people together, providing a natural visual bridge into the following Tamil-Malayalam cultural bonding and Onam scene.",
+    "no_hard_cut_effect": true
+  },
+
+  "negative_prompt": [
+    "English text",
+    "English speech",
+    "Malayalam speech",
+    "bilingual speech",
+    "incorrect Tamil pronunciation",
+    "duplicate narration",
+    "overlapping voices",
+    "background dialogue",
+    "identifiable real person",
+    "celebrity face",
+    "politician",
+    "public figure",
+    "real person's likeness",
+    "face recreation",
+    "modern western Christmas setting",
+    "non-Indian architecture",
+    "inaccurate South Indian clothing",
+    "stereotypical representation",
+    "excessive commercial decorations",
+    "Christmas party nightclub atmosphere",
+    "cartoon style",
+    "animation",
+    "artificial-looking faces",
+    "distorted hands",
+    "extra fingers",
+    "frame skipping",
+    "removed frames",
+    "shortened video",
+    "multiple clips",
+    "scene extension",
+    "video continuation",
+    "video remix",
+    "video-to-video transformation"
+  ]
+}

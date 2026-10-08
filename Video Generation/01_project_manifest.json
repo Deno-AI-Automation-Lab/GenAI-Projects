@@ -1,0 +1,41 @@
+{
+  "project": {
+    "project_title": "Kanyakumari – 2 Minute Tamil Documentary",
+    "version": "4.0",
+    "total_scenes": 12,
+    "duration_per_scene_seconds": 10,
+    "total_duration_seconds": 120,
+    "generation_method": "Generate every scene as a completely independent 10-second video.",
+    "critical_workflow_rule": [
+      "Start a NEW Gemini chat for every scene.",
+      "Do NOT attach the previous scene video when generating the next scene.",
+      "Do NOT use Extend, Continue, Edit, Remix, or video-to-video generation.",
+      "Generate one independent 10-second MP4 per JSON file.",
+      "Combine the 12 MP4 files only after all scenes are generated."
+    ],
+    "audio_rule": {
+      "language": "Tamil only",
+      "one_narrator": true,
+      "no_voice_overlap": true,
+      "speech_window": "1.0–8.5 seconds",
+      "speech_free_buffer": "8.5–10.0 seconds"
+    }
+  },
+  "scene_files": [
+    "01_scene_01.json",
+    "02_scene_02.json",
+    "03_scene_03.json",
+    "04_scene_04.json",
+    "05_scene_05.json",
+    "06_scene_06.json",
+    "07_scene_07.json",
+    "08_scene_08.json",
+    "09_scene_09.json",
+    "10_scene_10.json",
+    "11_scene_11.json",
+    "12_scene_12.json"
+  ],
+  "recommended_generation_order": "01 → 02 → 03 → 04 → 05 → 06 → 07 → 08 → 09 → 10 → 11 → 12",
+  "critical_instruction": "Use a NEW Gemini chat for every scene. Never attach or extend the previous generated video.",
+  "final_assembly": "Combine the 12 downloaded MP4 files in a conventional video editor after generation."
+}
