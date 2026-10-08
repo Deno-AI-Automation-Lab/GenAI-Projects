@@ -1,0 +1,33 @@
+# LangChain (RAG building blocks) dependencies
+# Install with:  pip install -r requirements.txt
+
+# Core LangChain framework (text splitter, chains, prompts, parsers)
+langchain
+langchain-core
+
+# Document loaders (TextLoader) and vector stores (FAISS)
+langchain-community
+
+# Free, local embedding model (HuggingFace all-MiniLM-L6-v2)
+langchain-huggingface
+sentence-transformers
+
+# Free, local vector store
+faiss-cpu
+
+# Used to compare embedding vectors (cosine similarity example)
+numpy
+
+# OpenAI: chat model for Chains + OpenAI embeddings option
+# Needs an API key. Windows PowerShell:
+#   $env:OPENAI_API_KEY = "your-key-here"
+langchain-openai
+
+# Tracking / tracing your app (07_LangSmith notebook)
+# Needs a LangSmith key + LANGSMITH_TRACING=true. Get a free key at smith.langchain.com
+langsmith
+
+# ----------------------------------------------------------------------
+# OPTIONAL: extra document loaders (uncomment if you need them)
+# pypdf        # load PDF files with PyPDFLoader
+# ----------------------------------------------------------------------

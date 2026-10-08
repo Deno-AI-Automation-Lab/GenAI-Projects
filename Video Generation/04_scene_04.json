@@ -1,0 +1,119 @@
+{
+  "scene_id": "scene_04_fishing_and_business",
+  "title": "குமரியின் மீன்பிடித் தொழிலும் வணிக வளர்ச்சியும்",
+
+  "generation_mode": "STANDALONE_NEW_VIDEO",
+
+  "duration_seconds": 10,
+
+  "generation_rules": {
+    "generate_as_new_clip": true,
+    "do_not_extend_previous_video": true,
+    "do_not_continue_previous_video": true,
+    "do_not_edit_previous_video": true,
+    "do_not_remix_previous_video": true,
+    "do_not_use_previous_scene_as_input": true,
+    "do_not_attach_previous_scene": true,
+    "preserve_full_10_second_duration": true,
+    "do_not_remove_frames": true,
+    "do_not_skip_frames": true,
+    "generate_exactly_one_10_second_video": true
+  },
+
+  "scale_framework": {
+    "subject": "Traditional fishing communities of Kanyakumari, fishermen and fishing boats, fresh seafood being handled for trade, and the district's active commercial and business activity.",
+
+    "composition": "Begin with a cinematic wide aerial-style view of the Kanyakumari coastline at early morning with fishing boats returning from the sea. Transition smoothly to fishermen bringing in their catch at a busy coastal landing centre. Then show seafood being carefully sorted, packed and prepared for transport, followed by a brief visual indication of trucks and commercial activity. Keep the focus on authentic livelihoods, trade and economic activity rather than specific companies.",
+
+    "action": "Fishermen return from the sea with their catch, workers carefully sort and pack fresh seafood, and commercial vehicles transport the products toward wider markets. The scene should communicate that fishing supports local livelihoods and contributes to Kanyakumari's wider trade and business economy.",
+
+    "location": "Kanyakumari district coastline, Tamil Nadu, showing an authentic South Indian fishing harbour or coastal landing centre and nearby commercial activity.",
+
+    "aesthetic": "Photorealistic cinematic documentary style, authentic Kanyakumari coastal atmosphere, realistic traditional fishing boats, natural fishermen's clothing, early morning sunlight, realistic seafood handling, genuine South Indian coastal architecture, documentary camera movement, natural colors and textures, visually rich but historically and culturally authentic."
+  },
+
+  "video_prompt": "Create exactly one standalone 10-second photorealistic documentary video about fishing, seafood trade and business activity in Kanyakumari district, Tamil Nadu. Begin with a cinematic wide view of the Kanyakumari coastline at early morning, showing traditional fishing boats returning toward the shore. Smoothly move to a realistic fishing landing centre where local fishermen bring in their fresh catch. Show workers carefully sorting and hygienically packing seafood for transport, followed by a brief realistic view of commercial vehicles carrying the products toward wider markets. Include subtle visual cues of an active local business environment, showing how fishing and trade support livelihoods and contribute to Kanyakumari's economy. The scene should feel authentic to Kanyakumari and South India, not like a generic international fishing port. Do not show any specific company, brand, logo or identifiable business. Do not depict any celebrity, politician, public figure or identifiable real person. Do not imitate any real person's face or likeness. Maintain photorealistic documentary quality throughout. Use smooth cinematic camera movement and continuous visual storytelling. Generate one continuous 10-second video only.",
+
+  "audio": {
+    "language": "Tamil only",
+    "narrator": "same consistent documentary narrator voice used in all other scenes",
+
+    "timeline": {
+      "0.0-1.0": "Natural sea ambience, gentle waves, fishing harbour sounds and very soft background music only. No speech.",
+      "1.0-8.5": "One Tamil narrator speaks the complete narration sentence once, clearly and naturally.",
+      "8.5-10.0": "No speech. Only natural coastal ambience and soft background music."
+    },
+
+    "narration": "கடல் வளத்தை நம்பிய மீன்பிடித் தொழிலும், கடல் உணவின் வணிகமும் குமரியின் பொருளாதார வளர்ச்சிக்கு துணை நிற்கின்றன.",
+
+    "audio_rules": [
+      "Tamil speech only.",
+      "No English speech.",
+      "No Malayalam speech.",
+      "No bilingual narration.",
+      "Only one narrator.",
+      "Use the same narrator voice as all other documentary scenes.",
+      "Do not repeat the narration.",
+      "Do not overlap narration with another voice.",
+      "Narration must finish naturally before 8.5 seconds.",
+      "Do not truncate or fade out the final spoken word.",
+      "No intelligible background conversations.",
+      "No commercial advertisement voice.",
+      "No English announcements."
+    ]
+  },
+
+  "transition": {
+    "style": "smooth documentary transition",
+
+    "from_previous_scene": "Naturally connect the agricultural and livelihood theme of the previous scene with the coastal livelihood of fishing. The transition should feel like a continuation of Kanyakumari's natural resources supporting people's lives, but this video must remain completely standalone.",
+
+    "within_scene": "Use a smooth cinematic movement from the sea and returning fishing boats to the fishing landing centre, seafood handling and commercial transport.",
+
+    "to_next_scene": "End with fishermen, workers and local people working together around the coastal marketplace, creating a natural thematic bridge toward the following scene about the kindness, cooperation and community bonding of Kanyakumari people.",
+
+    "no_hard_cut_effect": true
+  },
+
+  "negative_prompt": [
+    "English text",
+    "English speech",
+    "Malayalam speech",
+    "bilingual speech",
+    "incorrect Tamil pronunciation",
+    "duplicate narration",
+    "overlapping voices",
+    "background dialogue",
+    "commercial advertisement",
+    "specific company logo",
+    "brand logo",
+    "fake export company",
+    "foreign fishing port",
+    "generic international harbour",
+    "modern European fishing boats",
+    "inaccurate Indian fishing boats",
+    "identifiable real person",
+    "celebrity face",
+    "politician",
+    "public figure",
+    "real person's likeness",
+    "face recreation",
+    "unrealistic seafood",
+    "excessive blood",
+    "graphic fish processing",
+    "unsafe food handling",
+    "cartoon style",
+    "animation",
+    "artificial-looking faces",
+    "distorted hands",
+    "extra fingers",
+    "frame skipping",
+    "removed frames",
+    "shortened video",
+    "multiple clips",
+    "scene extension",
+    "video continuation",
+    "video remix",
+    "video-to-video transformation"
+  ]
+}
