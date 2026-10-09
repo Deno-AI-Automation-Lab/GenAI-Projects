@@ -1,33 +1,24 @@
-# LangChain (RAG building blocks) dependencies
+# RAG demo dependencies
 # Install with:  pip install -r requirements.txt
 
-# Core LangChain framework (text splitter, chains, prompts, parsers)
+# Core RAG building blocks (Load -> Split -> Embed -> Store -> Retrieve)
 langchain
-langchain-core
-
-# Document loaders (TextLoader) and vector stores (FAISS)
 langchain-community
-
-# Free, local embedding model (HuggingFace all-MiniLM-L6-v2)
 langchain-huggingface
+
+# Free, local embedding model backend
 sentence-transformers
 
 # Free, local vector store
 faiss-cpu
 
-# Used to compare embedding vectors (cosine similarity example)
-numpy
+# Keyword search (used in the BM25 & Rerank notebook)
+rank-bm25
 
-# OpenAI: chat model for Chains + OpenAI embeddings option
-# Needs an API key. Windows PowerShell:
-#   $env:OPENAI_API_KEY = "your-key-here"
-langchain-openai
+# Optional: only needed for the GPT answer step in rag_demo.py
+# (the demo runs without it - it just skips generation if no API key is set)
+openai
 
-# Tracking / tracing your app (07_LangSmith notebook)
-# Needs a LangSmith key + LANGSMITH_TRACING=true. Get a free key at smith.langchain.com
+# Optional: tracking/tracing for rag_demo_langsmith.py
+# (needs a LangSmith key + LANGSMITH_TRACING=true; get a free key at smith.langchain.com)
 langsmith
-
-# ----------------------------------------------------------------------
-# OPTIONAL: extra document loaders (uncomment if you need them)
-# pypdf        # load PDF files with PyPDFLoader
-# ----------------------------------------------------------------------
