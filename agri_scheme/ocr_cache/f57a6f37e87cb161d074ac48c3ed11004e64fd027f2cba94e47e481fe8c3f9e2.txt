@@ -1,0 +1,56 @@
+```
+ENGLISH TEXT:
+
+ANNEXURE-I
+
+G.O.(MS) No.207, Agriculture (WD2) Department, dated 04.09.2020
+
+TNIAMP PHASE-II SECOND YEAR 2020-2021 - TENTATIVE TARGET
+
+| S. No. | Sub Basin | District | Micro Irrigation | Total Interventions | Total |
+|--------|-----------|----------|------------------|---------------------|-------|
+|        |           |          | Phy | Fin         | Phy | Fin           | Fin   |
+| 1      | Lower Pennaiyar | Villupuram | 126.1 | 154.315 | 126.1 | 154.315 | 154.315 |
+|        | Sub Basin Total |            |       |         |       |         |        |
+| 2      | Nandhiyar | Kallakurichi | 60.0 | 94.500 | 60.0 | 94.500 | 94.500 |
+|        | Sub Basin Total |            |       |         |       |         |        |
+| 3      | Vellar | Cuddalore | 14.9 | 9.000 | 14.9 | 9.000 | 134.400 |
+| 4      | Pambar | Tiruvallur | 8 | 4.000 | 8 | 4.000 | 9.000 |
+| 5      | Varahanadhi | Ranipet | 7 | 3.000 | 7 | 3.000 | 15.000 |
+|        | Sub Basin Total |            |       |         |       |         |        |
+| 6      | Ponnaiyar | Krishnagiri / Tirupathur | 15 | 9.000 | 15 | 9.000 | 18.000 |
+|        | Sub Basin Total |            |       |         |       |         |        |
+| 7      | Vaniyar | Dharmapuri | 8 | 5.000 | 8 | 5.000 | 12.000 |
+|        | Sub Basin Total |            |       |         |       |         |        |
+| 8      | Aliyar | Vellore / Tiruvannamalai | 31 | 18.000 | 31 | 18.000 | 10.000 |
+|        | Sub Basin Total |            |       |         |       |         |        |
+| 9      | Lower Coleroon | Cuddalore | 18 | 10.000 | 18 | 10.000 | 50.000 |
+|        | Sub Basin Total |            |       |         |       |         |        |
+| 10     | Mettur-Noyyal Confluence | Ariyalur | 78 | 50.000 | 78 | 50.000 | 107.000 |
+|        | Sub Basin Total |            |       |         |       |         |        |
+| 11     | Thirumanimuthar | Salem | 106 | 121.350 | 106 | 121.350 | 25.000 |
+|        | Sub Basin Total |            |       |         |       |         |        |
+| 12     | Salem | Salem | 33 | 259.380 | 33 | 259.380 | 107.000 |
+|        | Sub Basin Total |            |       |         |       |         |        |
+| 13     | Enathikkal | Namakkal | 44 | 58.275 | 44 | 58.275 | 25.000 |
+|        | Sub Basin Total |            |       |         |       |         |        |
+| 14     | Dharmapuri | Dharmapuri | 110 | 134.435 | 110 | 134.435 | 63.400 |
+|        | Sub Basin Total |            |       |         |       |         |        |
+| 15     | Salem | Salem | 11 | 10.400 | 11 | 10.400 | 6.000 |
+|        | Sub Basin Total |            |       |         |       |         |        |
+|        | Total |          | 126.1 | 154.315 | 126.1 | 154.315 | 154.315 |
+|        | Total |          | 60.0 | 94.500 | 60.0 | 94.500 | 94.500 |
+|        | Total |          | 14.9 | 9.000 | 14.9 | 9.000 | 134.400 |
+|        | Total |          | 8 | 4.000 | 8 | 4.000 | 9.000 |
+|        | Total |          | 7 | 3.000 | 7 | 3.000 | 15.000 |
+|        | Total |          | 15 | 9.000 | 15 | 9.000 | 18.000 |
+|        | Total |          | 8 | 5.000 | 8 | 5.000 | 12.000 |
+|        | Total |          | 31 | 18.000 | 31 | 18.000 | 10.000 |
+|        | Total |          | 18 | 10.000 | 18 | 10.000 | 50.000 |
+|        | Total |          | 78 | 50.000 | 78 | 50.000 | 107.000 |
+|        | Total |          | 106 | 121.350 | 106 | 121.350 | 25.000 |
+|        | Total |          | 33 | 259.380 | 33 | 259.380 | 107.000 |
+|        | Total |          | 44 | 58.275 | 44 | 58.275 | 25.000 |
+|        | Total |          | 110 | 134.435 | 110 | 134.435 | 63.400 |
+|        | Total |          | 11 | 10.400 | 11 | 10.400 | 6.000 |
+```

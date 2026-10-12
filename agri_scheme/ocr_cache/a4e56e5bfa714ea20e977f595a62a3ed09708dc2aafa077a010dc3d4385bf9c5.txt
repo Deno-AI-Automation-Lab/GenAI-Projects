@@ -1,0 +1,15 @@
+ENGLISH TEXT
+
+Component-wise / category-wise fund allotted for the released amount of Rs.2415 lakh
+
+(Rs in lakh)
+
+| S. No | Name of the Project | Total physical | Total financial | 1st instalment | General | SC | ST |
+|-------|---------------------|----------------|----------------|----------------|---------|----|----|
+| 1 | Promotion of Crop diversification programme to increase the profitability of the Paddy farmers by cultivating remunerative Horticultural crops | 5942 Ha | 1200.000 | 400.000 | 322.000 | 74.000 | 4.000 |
+| 2 | Promotion of specific Horticulture crops of demand like Moringa, Onion, Garlic, Avocado, Mangosteen to raise the income of farmers | 4250 Ha | 850.000 | 400.000 | 322.000 | 74.000 | 4.000 |
+| 3 | Assistance for supporting and special structures to increase the profitability of Horticultural produce | 2400 Ha, 4 lakh sq.m | 1034.000 | 200.000 | 161.000 | 37.000 | 2.000 |
+| 4 | Revival of traditional vegetable crops in Crop specific zones of Tamil Nadu | 1000 Ha | 200.000 | 100.000 | 80.500 | 18.500 | 1.000 |
+| 5 | Promotion of Organic cultivation of Horticultural crops in Tamil Nadu | 41,000 Ha | 2050.000 | 500.000 | 402.500 | 92.500 | 5.000 |
+| 6 | Popularization of IIHR and TNAU varieties of Horticultural crops in Tamil Nadu | 760 Ha | 150.000 | 100.000 | 80.500 | 18.500 | 1.000 |
+| 7 | Establishment of infrastructure facilities at Horticultural Training and Research Centre, Thally, Krishnagiri District | 1 No | 350.000 | 0 | 0 | 0 | 0 |

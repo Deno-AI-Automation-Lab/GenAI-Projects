@@ -1,0 +1,17 @@
+TAMIL TEXT:
+
+வ. எண் | பணியின் விவரம் | ஒரு அலகு தொகை ரூபாய் | ஒரு தொகுப்பிற்கு அளவு | பொருள் அளவு கண் | நிதி (ரூ.கோடி)
+--- | --- | --- | --- | --- | ---
+4 | நீர்நில தொற்றுப்புகழை புதுவிசெய்தல் | ஒரு தொகுப்பிற்கு ரூ.5100/- மற்றும்-ஆணங்களுக்கான செலவு ரூ.1900/- மொத்தம் ரூ.7,000/- | எண்கள் | 900 | 0.6300
+5 | தகவல், கல்வி, தகவல் பரிமாற்றம் (IEC) | ஒரு கிராமத்திற்கு ரூ.2000/- (3204 கிராமங்கள்) | எண்கள் | 3,204 | 0.6408
+6 | திட்ட செயலாக்கம், விளம்பரம் மற்றும் ஆய்வாணுடுத்து தலமட்டம் | ஒரு மாவட்டத்திற்கு ரூ.25,000/- 1. தண்டு பிரசாரங்கள், கையேடு தயாரித்தல், விளம்பரம் போன்றவை ரூ.5,000 2. விளைவான திட்ட-அறிக்கை தயாரித்தல்- ரூ.5,000/- 3.ஆவணப்படுத்துதல்- ரூ.5,000/- 4. சிற்றலை செலவினம்- LS ரூ.10,000/- | எண்கள் | 37 | 0.0925
+7 | விளைவான திட்ட அறிக்கை மற்றும் திட்ட கையேடு தயாரித்தல் | கிராம அளவிலான விளைவான திட்ட-அறிக்கை தயாரித்தல், தண்டு பிரசாரங்கள், விளம்பரம், கையேடு தயாரித்தல் போன்றவை @ ரூ.500X3204 = ரூ.16.02 லட்சம் மாவட்ட அளவில் திட்ட கையேடு தயாரித்தல் ரூ.0.98 லட்சம் | | | 0.1700
+
+ENGLISH TRANSLATION:
+
+Sl. No. | Description of Work | Amount per Unit in Rupees | Quantity per Unit | Quantity of Material | Fund (Rs. Crore)
+--- | --- | --- | --- | --- | ---
+4 | Water Body Restoration | Per Unit Rs.5100/- and for men Rs.1900/- Total Rs.7,000/- | Numbers | 900 | 0.6300
+5 | Information, Education, Communication (IEC) | Per Village Rs.2000/- (3204 villages) | Numbers | 3,204 | 0.6408
+6 | Scheme Implementation, Advertising and Research Level | Per District Rs.25,000/- 1. Trunk Campaigns, Pamphlet Preparation, Advertising etc. Rs.5,000 2. Effective Scheme-Report Preparation- Rs.5,000/- 3. Documentation- Rs.5,000/- 4. Miscellaneous Expenses- LS Rs.10,000/- | Numbers | 37 | 0.0925
+7 | Effective Scheme Report and Pamphlet Preparation | Village Level Effective Scheme-Report Preparation, Trunk Campaigns, Advertising, Pamphlet Preparation etc. @ Rs.500X3204 = Rs.16.02 Lakh District Level Pamphlet Preparation Rs.0.98 Lakh | | | 0.1700

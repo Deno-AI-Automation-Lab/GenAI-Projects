@@ -1,0 +1,90 @@
+TAMIL TEXT:
+
+விளம்பரம்,  
+ஆவணப்படுத்து  
+தல், கூட்டல்  
+நடவடிக்கைக்  
+காண  
+செலவினங்கள்  
+மற்றும் சில்லறை  
+செலவினங்கள்-  
+மாநிலம்  
+
+8 மாநில அளவில் - LS எண் மாநிலம் 0.010  
+
+மொத்தம் 15433  
+
+ஆக மொத்தம் 24.2167  
+
+'நீலகிரி மாவட்ட 7 கிராமப் பஞ்சாயத்துக்கள் மற்றும் திண்டுக்கல் மாவட்டம்  
+கொடைக்கானல் வட்டம் 3 கிராமப் பஞ்சாயத்துக்கள் நீங்கலாக  
+
+அட்டவணை-ஆ,  
+தோட்டக்கலை மற்றும் மலைப்பயிர்கள் துறை  
+
+வ. எ | திட்ட இனம் | ஒரு அலகு முழு | அளவு | நிதி  
+| | | விலை மற்றும் | பொருள் | (ரூ. கோடி)  
+| | | மாநிலப் தொகை | |  
+1 | சந்தைகளில் | எக்டர் ஒன்றிற்கு | எக்டர் | 8,180.48 | 6.13536  
+| காய்கறிகள் | மொத்த தொகை | |  
+| வர்த்தனை | ரூ. 10,000/- தில் 75 | சதவீத மானியமாக |  
+| அதிகரிக்க | ரூ. 7,500 |  
+| காய்கறி | மநிலமொன காய்கறி |  
+| சாகுபடி | விலைகள் மற்றும் |  
+| ஊக்குவிப்பு | இப்பொருட்கள் |  
+| | வழங்கப்படும். |  
+2 | ஊட்டச்சத்து | ரூ. 160/- மநிலமொன | எண்கள் | 2,25,500 | 2.7060  
+| தன்னிறைவை | பசளைகள் |  
+| மேம்படுத்த | அங்கீக |  
+| புழு/சிடி | தொகுப்பிற்கு 75 | சதவீத மானியமாக |  
+| தொகுப்புகள் | ரூ. 120 / தொகுப்பு |  
+| ஊக்குவிப்பு | என்ற விலையில் |  
+| (போக்குவரத்து | வழங்கப்படும் |  
+| செலவு உட்பட) | |  
+
+23  
+
+ENGLISH TRANSLATION:
+
+Advertisement,  
+Documentation  
+Head, Total  
+Operational  
+See  
+Expenses  
+And petty  
+Expenses -  
+State  
+
+8 State Level - LS Number State 0.010  
+
+Total 15433  
+
+Grand Total 24.2167  
+
+'Excluding 7 village panchayats in Nilgiri district and 3 village panchayats in Kodaikanal taluk of Dindigul district  
+
+Table-A,  
+Department of Horticulture and Hill Crops  
+
+Sl. No. | Scheme Type | One Unit Full | Quantity | Fund  
+| | | Price and | Material | (Rs. Crore)  
+| | | State Fund | |  
+1 | In Markets | Per hectare | Hectare | 8,180.48 | 6.13536  
+| Vegetables | Total Fund | |  
+| Trade | Rs. 10,000/- at 75 | Percent Subsidy |  
+| Increase | Rs. 7,500 |  
+| Vegetable | State Vegetable |  
+| Cultivation | Prices and |  
+| Promotion | These Items |  
+| | Will be provided. |  
+2 | Nutritional | Rs. 160/- State | Numbers | 2,25,500 | 2.7060  
+| Self-sufficiency | Fertilizers |  
+| Improvement | Approved |  
+| Vermi/Compost | Package at 75 | Percent Subsidy |  
+| Packages | Rs. 120 / Package |  
+| Promotion | At this price |  
+| (Including | Will be provided |  
+| Transport Cost) | |  
+
+23

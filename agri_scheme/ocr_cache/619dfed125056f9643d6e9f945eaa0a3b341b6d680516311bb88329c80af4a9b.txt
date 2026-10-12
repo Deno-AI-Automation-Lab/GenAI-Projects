@@ -1,0 +1,61 @@
+**Tamil Text:**
+
+iv. Track Type Paddy Combine Harvester-ஏ  
+எண்ணிக்கை | 7 | 2.24  
+  
+v. Multi Axle Carrier for Bull Dozer-  
+எண்ணிக்கை | 3 | 1.35  
+  
+vi. Geo physical Surveying Instruments-  
+எண்ணிக்கை | 15 | 0.75  
+
+மொத்தம் | 166.235  
+
+6. அயனாருட்பதிவு, சின்மயம்,  
+எண்ணிக்கை | 0.01  
+
+அக மொத்தம் | 166.245  
+
+**English Translation:**
+
+iv. Track Type Paddy Combine Harvester-  
+Count | 7 | 2.24  
+
+v. Multi Axle Carrier for Bull Dozer-  
+Count | 3 | 1.35  
+
+vi. Geo physical Surveying Instruments-  
+Count | 15 | 0.75  
+
+Total | 166.235  
+
+6. Ayanaar Registration, Sinmayam,  
+Count | 0.01  
+
+Total | 166.245  
+
+---
+
+**Tamil Text:**
+
+அட்டவணை-  
+வெளியீட்டின் விவரங்களை மற்றும் வெளியான வினாக்களை  
+
+வ.  
+எண்ணிக்கை | பசுமின் விவரம் | மானியவிவரம் | மொத்தம் | திங்கள் (ரூ.கோ.) | (எண்ணிக்கை) | (மி.)  
+1 | பல்நோக்கக் உ-அறக்கண்கள் (Multipurpose Drying Yard) | 100 சதங்கள் மானியம், | 135 | 14.175  
+| 10.50 |  | (10.50 X 135 = 14.75)  
+
+மொத்தம் | 14.175  
+
+**English Translation:**
+
+Table-  
+Details of the publication and the questions raised  
+
+No.  
+Count | Description of the item | Amount | Total | Rate (Rs.) | (Count) | (m.)  
+1 | Multipurpose Drying Yard | 100 units of amount, | 135 | 14.175  
+| 10.50 |  | (10.50 X 135 = 14.75)  
+
+Total | 14.175

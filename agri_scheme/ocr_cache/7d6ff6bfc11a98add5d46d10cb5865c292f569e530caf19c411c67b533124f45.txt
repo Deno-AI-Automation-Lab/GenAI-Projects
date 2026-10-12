@@ -1,0 +1,47 @@
+TAMIL TEXT:
+
+iv. டிராக் வகை நெல் அறுவடை இயந்திரம் (Track Type Paddy Combine Harvester) - ஒரு இயந்திரத்திற்கு ரூ.32.00 இலட்சம் | எண்கள் 7 | 2.24
+
+v. மண்டலும் இயந்திரத்தை சுமந்து செல்லும் காளக வாகனமும் (Multi Axle Carrier for Bull Dozer) - ஒரு இயந்திரத்திற்கு ரூ.45.00 இலட்சம் | எண்கள் 3 | 1.35
+
+vi. நிலத்தின் ஆய்வுக் கருவி தொகுப்பு (Geo physical Surveying Instruments) - ஒரு இயந்திரத்திற்கு ரூ.5.00 இலட்சம் | எண்கள் 15 | 0.75
+
+மொத்தம் | 166.235
+
+6. ஆணைப்படுத்துதல், விளம்பரம், நிர்வாக செலவுகள் மற்றும் கெடா செலவினங்கள் | 0.01
+
+ஆக மொத்தம் | 166.245
+
+அட்டவணை-ஏ
+
+வேளாண்மை விருப்பனை மற்றும் வேளாண் வணிகத்துறை
+
+வ. எண் | பணியின் விவரம் | மானியவிகிதம் | மொத்த அளவுகள் (எண்கள்) | நிதி (ரூ.கோ. ல.) 
+
+1 | பல்நோக்கு உலர்க்களங்கள் (Multipurpose Drying Yard) | 100 சதவீத மானியம், ஒரு உலர்க்களத்திற்கு ரூ.10.50 இலட்சம். (10.50 X 135 = 14.175) | 135 | 14.175
+
+மொத்தம் | 14.175
+
+ENGLISH TRANSLATION:
+
+iv. Track Type Paddy Combine Harvester - For one machine Rs.32.00 lakhs | Numbers 7 | 2.24
+
+v. Multi Axle Carrier for Bull Dozer - For one machine Rs.45.00 lakhs | Numbers 3 | 1.35
+
+vi. Geo physical Surveying Instruments - For one machine Rs.5.00 lakhs | Numbers 15 | 0.75
+
+Total | 166.235
+
+6. Implementation, Advertisement, Administrative Expenses and Other Expenses | 0.01
+
+Total | 166.245
+
+Table-A
+
+Agriculture Marketing and Agribusiness Department
+
+Sl. No. | Description of Work | Subsidy Rate | Total Units (Numbers) | Fund (Rs. Cr. L.)
+
+1 | Multipurpose Drying Yard | 100% Subsidy, For one yard Rs.10.50 lakhs. (10.50 X 135 = 14.175) | 135 | 14.175
+
+Total | 14.175

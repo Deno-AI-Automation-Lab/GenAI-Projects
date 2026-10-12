@@ -1,0 +1,77 @@
+**Tamil Text:**
+
+```
+19
+இணையம்- VIII
+(ஆசானை (நிலை) எண்.205, கோவில்மலை – 2 முறை நெல் (நோட்.1(2)) துறை, 
+நாள். 01.09.2022)
+
+பணமோசை யாருக்குத் தெரியாது
+
+i. இதிகிட்டம், தமிழ்நாடு மான பொறியியல் வானியல் துறை மூலம் 
+செலவிடப்படும்.
+ii. இதிகிட்டத்தில் 100 மகளிருக்கு ரூ.11.01 இளவிற் செலவில் 
+பணியிற்று.
+iii. இதிகிட்டத்தில் யான்மையிலும் 100 மகளிர், 25 மகளிர் கொண்ட 
+குழுக்களாக பிரிக்கப்பட்டு, ஒவ்வொரு குழுவிற்கும் 25 நா.கள் 
+பணியிற்று.
+iv. ஐயப்பிரிசிக்களுக்கும் இனையரியாண செலவின விபரம் பின்வருமாறு:-
+```
+
+**Table:**
+
+```
+வகை | எண் | விவரம் (ஒரு குழுவிற்கு) | தொகை (ரூ.)
+1 | பணியாளர்களுக்கான உத்தியோகத்தைக் | நாயர் ஒருவருக்கு நான்கு | 1,56,250/-
+  |  | 25 நா.க்களுக்கு | 
+  |  | (25X250 X 25 நா.க்கள்)
+2 | பயிற்றுநர் கட்டணம் | ஒரு பயிற்றுநருக்கு நான்கு | 12,000/-
+  |  | 25 நா.க்களுக்கு | 
+  |  | (25X480 X 25 நா.க்கள்)
+3 | மூலப்பொருட்களுக்கான செலவினம் | மசாலா, சாம்பு, எளியபொருள் | 62,500/-
+  |  | மஞ்சள், நாயர் ஒருவருக்கு நான்கு | 
+  |  | 25 நா.க்களுக்கு | 
+  |  | (25X100 X 25 நா.க்கள்)
+4 | அத்தியாயம் மன்றம் உ.த. | Chief lecturer with Assistant Fees for last Day of | 7,000/-
+  |  | Training | 
+5 | மற்று பொறியாளர் | மண்டலப் பிள்ளை, பணியாளர்கள் | 2,500/-
+  |  | சான்றிதழ் அச்சுத்தல், செலவினம் | 
+  |  | மன்றம் இதர பொறியாளர்கள். |
+```
+
+**English Translation:**
+
+```
+19
+Internet- VIII
+(Asan (Status) No. 205, Kovilmalai – 2 times paddy (Note.1(2)) Department, 
+Date. 01.09.2022)
+
+No one knows about the financial fraud.
+
+i. This is funded through the Tamil Nadu Engineering Department.
+ii. In this, 100 women are provided with Rs. 11.01 as the cost of service.
+iii. In this, 100 women are divided into 25 groups, and each group has 25 members.
+iv. The details of the expenses for the Ayappirichikals are as follows:-
+```
+
+**Table:**
+
+```
+Type | No | Description (For one group) | Amount (Rs.)
+1 | For employees | For one dog, four | 1,56,250/-
+  |  | 25 members | 
+  |  | (25X250 X 25 members)
+2 | Trainer fee | For one trainer, four | 12,000/-
+  |  | 25 members | 
+  |  | (25X480 X 25 members)
+3 | Cost for raw materials | Spices, soap, simple items | 62,500/-
+  |  | For one dog, four | 
+  |  | 25 members | 
+  |  | (25X100 X 25 members)
+4 | Chapter meeting | Chief lecturer with Assistant Fees for last Day of | 7,000/-
+  |  | Training | 
+5 | Other engineer | Local child, employees | 2,500/-
+  |  | Certificate printing, expenses | 
+  |  | Other engineers. |
+```

@@ -1,0 +1,27 @@
+```
+ENGLISH TEXT:
+
+-6-
+
+| Sub Basin Total | 10 | 11 | 12 | 13 | 14 | 15 | 16 |
+|-----------------|----|----|----|----|----|----|----|
+| Namakkal | Karipottanar | Trichy | Nandhiyar - Kullaiyar | Ariyalur | Chittar (Tamiraparani) | Uppar |
+| Sub Basin Total | Sub Basin Total | Sub Basin Total | Sub Basin Total | Sub Basin Total | Sub Basin Total | Sub Basin Total |
+| 59.760 | 56.000 | 60.514 | 75.156 | 75.156 | 111.400 | 145.000 |
+| 29.000 | 3.000 | 3.000 | 40.000 | 40.000 | 56.000 | 70.000 |
+| 22.880 | 16.000 | 33.000 | 3.000 | 3.000 | 56.000 | 75.000 |
+| 48.320 | 48.000 | 48.000 | 75.156 | 75.156 | 111.400 | 145.000 |
+| 70.000 | 700.000 | 700.000 | 700.000 | 700.000 | 700.000 | 700.000 |
+| 131.000 | 131.000 | 131.000 | 131.000 | 131.000 | 131.000 | 131.000 |
+| 2 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 1189.000 | 1377.264 | 2633.350 | 1377.264 | 2633.350 | 1377.264 | 2633.350 |
+| TN-IAMP Collaborative: Cornell Project | TOTAL MMF | TOTAL | GRAND TOTAL |
+
+//TRUE COPY//
+
+GAGANDEEP SINGH BEDI,
+AGRICULTURAL PRODUCTION COMMISSIONER
+AND PRINCIPAL SECRETARY TO GOVERNMENT
+
+SECTION OFFICER
+```

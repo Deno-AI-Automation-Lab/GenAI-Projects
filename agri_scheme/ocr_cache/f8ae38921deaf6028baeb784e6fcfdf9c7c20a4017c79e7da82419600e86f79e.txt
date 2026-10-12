@@ -1,0 +1,23 @@
+ENGLISH TEXT:
+
+6. The Managing Director, Tamil Nadu Horticulture Development Agency, Chennai has requested that the amount of State share Rs.112.850 lakh may be sanctioned in the following heads of account to incur the expenditure towards the implementation of National Mission on Edible Oil-Oil Palm during the year 2022-23.
+
+| S. No | Category | Amount (Rs. in lakhs) | Head of Account |
+|-------|----------|-----------------------|----------------|
+| 1     | General  | 89.005                | 2401 00 114 UL 31101 |
+| 2     | SC       | 22.615                | 2401 00 793 WC 31101 |
+| 3     | ST       | 1.230                 | 2401 00 794 WW 31101 |
+| Total |          | 112.850               | (Rupees One Crore Twelve Lakh and Eighty Five Thousand only) |
+
+7. The Managing Director, Tamil Nadu Horticulture Development Agency has also stated that this being a new scheme, the request for fund allocation under Budget Estimate 2022-23 has not been made so far and request for fund allocation is being made now for implementing the scheme National Mission on Edible Oil-Oil Palm during the year 2022-23.
+
+8. The Managing Director, Tamil Nadu Horticulture Development Agency, Chennai has therefore requested that necessary provisions may be made under Revised Estimate 2022-23 as detailed below :-
+
+| S. No | Head of account | BE 2022-23 | RE to be proposed 2022-23 | Funds already sanctioned FY 2022-23 | Funds proposed for sanction 2022-23 | Total | Balance Available |
+|-------|-----------------|------------|---------------------------|------------------------------------|------------------------------------|-------|------------------|
+| 1     | 2401 00 114 UL 31101 | 0.000 | 178.303 | - | 89.005 | 89.005 | - |
+| 2     | 2401 00 793 WC 31101 | 0.000 | 45.140 | - | 22.615 | 22.615 | - |
+| 3     | 2401 00 794 VW 31101 | 0.000 | 2.257 | - | 1.230 | 1.230 | - |
+| Total |                     | 0.000 | 225.700 | - | 112.850 | 112.850 | - |
+
+9. The Managing Director, Tamil Nadu Horticulture Development Agency, Chennai has therefore requested the Government to issue orders on the following:

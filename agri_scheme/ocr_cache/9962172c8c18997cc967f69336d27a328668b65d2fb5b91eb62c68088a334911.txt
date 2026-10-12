@@ -1,0 +1,140 @@
+**Tamil Text:**
+
+```
+வ. 
+எண்
+திட்டங்கள்
+மாணவிணம்
+2022-23
+பொறுத்து
+திட்டம்
+எழுத்து
+4
+முதலீட்டு கல்லூரிகள் தர்மிகக்
+உபகரணங்கள் வழங்குதல் (-அது)
+50 %
+510
+20.400
+5
+பணனை எண் விவசாயத்திற்கு
+உபகரணங்கள்
+வழங்குதல் (-அது)
+75 %
+1000
+45.000
+6
+ஆதாயநிதியம்
+-
+-
+0.400
+மொத்தம்
+158.800
+
+(ii) தமிழ்நாடு பணவெளியுறு வான்சரி வரிய
+செய்யும்பதிவானால்
+செயல்படுத்தும்
+திட்டக்கூறுகளின் விவரம்
+
+விரிவாக
+எண்.
+1.
+அ.250 பணனை விவசாயங்களுக்கு தர்மான
+பணனை செலவிலும் மன்றமும் கான்கத்துக்கு
+தமிழ்நாடு யூனியன் திட்டம்.
+9,95,000
+ஆ.பணனை செலவிலும் மன்றமும் பணத்துக்கான
+தமிழ்நாடு யூனியன் திட்டம் 250 பணனை
+விவசாயங்களுக்கு உபகரணங்கள் வழங்கும்
+திட்டம் (50% மாணவிணம்)
+22,35,625
+2.
+100 வெள்ளிக்கரங்களுக்கு பணனை ஒளவை
+பொறுத்து
+தமிழ்நாடு யூனியன் திட்டம்.
+11,01,000
+மொத்தம்
+43,31,625
+
+(iii) நிதி ஒப்பனிப்பு விவரங்கள்
+
+i.
+கோட்டுக்கழலை மன்றம்
+மலையுப்பிரிவுகள்
+துறை
+இயக்கங்களுக்கு ஒப்பனிக்கப்படும்
+தொகை
+ii.
+தமிழ்நாடு பணவெளியுறு வான்சரி
+செய்யும்பதிவான்கள்
+ஒப்பனிக்கப்படும்
+தொகை
+மொத்தம்
+2,02,11,625
+```
+
+**English Translation:**
+
+```
+No. 
+Item
+Scheme
+2022-23
+Regarding
+Plan
+Write
+4
+Investment colleges providing
+equipment (-that)
+50 %
+510
+20.400
+5
+Providing equipment for
+agriculture (-that)
+75 %
+1000
+45.000
+6
+Income fund
+-
+-
+0.400
+Total
+158.800
+
+(ii) Tamil Nadu financial assistance scheme details
+
+Details
+No.
+1.
+For 250 agricultural beneficiaries
+the amount for expenses and
+the Tamil Nadu Union scheme.
+9,95,000
+For the amount for expenses and
+the Tamil Nadu Union scheme for 250
+agricultural beneficiaries providing
+equipment (50% scheme)
+22,35,625
+2.
+For 100 silver coins providing
+the Tamil Nadu Union scheme.
+11,01,000
+Total
+43,31,625
+
+(iii) Financial approval details
+
+i.
+For the district council
+the amount for
+the departments
+to be approved
+Total
+ii.
+Tamil Nadu financial assistance
+scheme
+to be approved
+Total
+2,02,11,625
+```

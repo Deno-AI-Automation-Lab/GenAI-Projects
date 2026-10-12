@@ -1,0 +1,14 @@
+```
+Sl. No | Category | Detailed head | Amount sanctioned (Rs. in lakh)
+1 | General (GOI share) | 2401-00-Crop Husbandry-119 –Horticulture and Vegetable Crops – Schemes shared between State and Centre – UE – National Agriculture Development Programme (NADP-RKVY) – Horticulture Department- 311 Subsidies- 01- Individual based subsidy (IFHRMS DPC 2401-00-119-UE-31101) | 1166.445
+2 | General (State share) | 2401-00-Crop Husbandry-119 –Horticulture and Vegetable Crops – Schemes shared between State and Centre – UK – National Agriculture Development Programme (NADP-RKVY) – Horticulture Department – State Share - 311 Subsidies- 01- Individual based subsidy (IFHRMS DPC 2401-00-119-UK-31101) | 777.630
+Sub-total | | | 1944.075
+3 | SCSP (GOI share) | 2401-00-Crop Husbandry-793–Special central assistance for Scheduled Caste component plan–Schemes shared between State and Centre – UO – National Agriculture Development Programme (NADP-RKVY) under Special component plan - Horticulture Department- 311 Subsidies- 01 Individual Based Subsidy (IFHRMS DPC 2401-00-793-UO-31101) | 268.065
+4 | SCSP (State share) | 2401-00-Crop Husbandry – 793 – Special central assistance for Scheduled Caste component plan – Schemes shared between State and Centre – VI – National Agriculture Development Programme (NADP-RKVY) under Special component plan - Horticulture Department – State Share - 311 Subsidies - 01 Individual Based Subsidy (IFHRMS DPC 2401-00-793-VI-31101) | 178.710
+Sub-total | | | 446.775
+5 | TSP (GOI share) | 2401-00-Crop Husbandry–794 – Special central assistance for Tribal Sub plan - Schemes shared between State and Centre - UO- National Agriculture Development Programme (NADP-RKVY)–Horticulture Department - 311 Subsidies- 01 Individual Based Subsidy (IFHRMS DPC 2401-00-794-UO-31101) | 14.490
+6 | TSP (State share) | 2401-00-Crop Husbandry–794 – Special central assistance for Tribal Sub plan - Schemes shared between State and Centre - VG - National Agriculture Development Programme (NADP-RKVY) – Horticulture Department – State Share - 311 Subsidies - 01 Individual Based Subsidy (IFHRMS DPC 2401-00-794-VG- 31101) | 9.660
+Sub-total | | | 24.150
+Total | | | 2415.000
+(Rupees Twenty Four Crore and Fifteen Lakh only)
+```
