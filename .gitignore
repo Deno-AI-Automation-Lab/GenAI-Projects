@@ -53,3 +53,6 @@ coverage.xml
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# Password files
+Neo4j-*.txt
