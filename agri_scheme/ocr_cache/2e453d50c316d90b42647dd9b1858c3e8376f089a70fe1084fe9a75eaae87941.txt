@@ -1,0 +1,25 @@
+F | Promotion of INM / IPM |  |  |  |  |  
+37 | Promotion of INM / IPM | 5000 | 60.000 | - | - | -  
+Sub-total | 5000 | 60.000 | 0.000 | 0.000 | 0.000 | 0.000  
+
+G | Organic Farming |  |  |  |  |  
+38 | Adoption of organic farming. - III year | 12500 | 375.000 | 375.000 | 300.000 | 71.250 | 3.750  
+39 | Adoption of organic farming. - II year | 5200 | 156.000 | 156.000 | 124.800 | 29.640 | 1.560  
+40 | Adoption of organic farming. - I year | 2600 | 104.000 | - | - | - | -  
+41 | Permanent Vermi compost unit | 350 | 175.000 | - | - | - | -  
+42 | HDPE Vermibed | 700 | 56.000 | - | - | - | -  
+Sub-total | 21350 | 866.000 | 531.000 | 424.800 | 100.890 | 5.310  
+
+H | Pollination support through beekeeping |  |  |  |  |  
+43 | Honey bee colony | 20000 | 160.000 | 40.000 | 32.000 | 7.600 | 0.400  
+44 | Bee Hives | 20000 | 160.000 | 40.000 | 32.000 | 7.600 | 0.400  
+45 | Honey extractor | 2000 | 160.000 | 40.000 | 32.000 | 7.600 | 0.400  
+Sub-total | 42000 | 480.000 | 120.000 | 96.000 | 22.800 | 1.200  
+
+I | Horticulture Mechanization |  |  |  |  |  
+46 | Land development, tillage and seed bed preparation equipments | 5 | 0.600 | - | - | - | -  
+47 | Tractor (upto 20 PTO HP) | 50 | 37.500 | - | - | - | -  
+48 | Power Tiller (above 8 BHP) | 300 | 180.000 | - | - | - | -  
+49 | Power Tiller (Below 8 BHP) | 250 | 100.000 | - | - | - | -  
+50 | Plastic mulch laying machine | 2 | 0.560 | - | - | - | -  
+[P.T.O]

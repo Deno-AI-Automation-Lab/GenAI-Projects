@@ -1,0 +1,23 @@
+51 | Powered knapsack sprayer (8-12 lts) | 500 | 12.500 | - | - | -  
+52 | Powered knapsack sprayer (12-16 lts) | 1000 | 30.000 | - | - | -  
+53 | Tractor operated sprayer (above 35BHP) | 5 | 2.500 | - | - | -  
+Sub-total | 2112 | 363.660 | 0.000 | 0.000 | 0.000 | 0.000  
+
+J | Integrated Post Harvest Management  
+54 | Pack House | 1100 | 2200.000 | 200.000 | 160.000 | 38.000 | 2.000  
+55 | Integrated Pack House | 3 | 52.500 | - | - | -  
+56 | Pre Cooling unit | 10 | 87.500 | 43.750 | 43.750 | -  
+57 | Low cost onion storage | 2000 | 1750.000 | - | - | -  
+58 | Minimal Processing Unit | 5 | 50.000 | - | - | -  
+59 | Refrigerated Transport Vehicle | 1 | 9.100 | - | - | -  
+60 | Ripening chamber | 250 | 87.500 | - | - | -  
+61 | Cold storage unit- 2500 MT/ unit - Type II | 2500 | 70.000 | - | - | -  
+62 | Cold storage unit- 23000 MT/ unit - Type II | 23000 | 805.000 | - | - | -  
+Sub-total | 28869 | 5111.600 | 243.750 | 203.750 | 38.000 | 2.000  
+
+K | Establishment of Marketing infrastructure  
+63 | Static/Mobile Vending cart/ Platform with cool chamber | 1500 | 225.000 | - | - | -  
+64 | Quality control/ Analysis lab - Public | 1 | 200.000 | - | - | -  
+Sub-total | 1501 | 425.000 | 0.000 | 0.000 | 0.000 | 0.000  
+
+[P.T.O]

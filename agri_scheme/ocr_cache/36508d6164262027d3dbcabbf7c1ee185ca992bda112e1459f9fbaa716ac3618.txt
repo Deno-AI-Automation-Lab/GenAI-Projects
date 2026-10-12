@@ -1,0 +1,43 @@
+**Tamil Text:**
+
+```
+விவரம் | எண்ணிக்கை
+1. 250 மானை விவசாயிகளுக்கு தாமரை மானை விளைவிக்கும் முறைமைகளுக்கான திட்டம். | 9.95
+ஆ. மானை விளைவிக்கும் முறைமைகள் தொடர்பான பயிற்சிக்கு 250 மானை விவசாயிகளுக்கு தாமரைக் கற்றுக்கொடுக்க திட்டம். | 44.71
+2. 100 செங்கோழிக்குப் பானை ஓலைப் பொட்டுகள் தாமரைக் கற்றுக்கொடுக்க திட்டம். | 11.01
+
+மொத்தம் | 65.67
+
+மென்பொருளும் பயிற்சியும் மற்றும் பானை விவசாயிகளுக்கு வழங்கப்படும் பணங்களின் குறித்த விவரங்களை ஆராயக் கேட்டுள்ளனர். 
+
+7. தோட்டக்கலை மற்றும் மானை விவசாயிகள் துறை இமக்குறி மற்றும் தமிழ்நாடு மானை பொட்ட வணிகத்தின் செயல்பாட்டினால் வழங்கப்படும் மானை விவசாயிகளின் சிம்மராஜகுட்டன் அச்சுறுத்தல்களை எதிர்த்து நின்றும் விவசாயிகள் திடீர்த்தில் மொத்த செலவினை ரூ.2,02,11,625/- (இருப்பினும்) கோடீசு இவன் கோடீசு லேசர்த்தில் அச்சுறுத்தி இருக்கின்றது.
+
+(i) தோட்டக்கலை மற்றும் மானை விவசாயிகள் துறை இமக்குறி மற்றும் செங்கோழிக்குத் திட்டக் கற்றுக்கொடுக்க விவரம்
+
+வ. எண் | திட்டம் | மானியம் | பொறுப்பு | நிதி
+1. பானை விவசாயிகள் விரிவோகம் (எண்ணிக்கை) | 100 | 10,00,000 | 30,000
+2. சிறிது மானையோடு யூனிதிரிகை கண்ணோட்டப்பிரிவுக்கான விவரம் | - | 1,000
+3. 160 சதவீத மானை மிதிப்பு திட்டம் | 50% | 124 | 62,000
+```
+
+**English Translation:**
+
+```
+Description | Quantity
+1. Scheme for 250 farmers to cultivate lotus. | 9.95
+a. Training related to lotus cultivation for 250 farmers. | 44.71
+2. Scheme to provide training for 100 farmers on the use of palm leaves. | 11.01
+
+Total | 65.67
+
+The details regarding the funds provided to farmers for cultivation and training have been requested for review.
+
+7. The horticulture and lotus farmers' department has been requested to address the threats posed by the operational activities of the lotus trade in Tamil Nadu, which has resulted in a total expenditure of Rs. 2,02,11,625/- (however) this has been threatened by the laser treatment.
+
+(i) Details of the horticulture and lotus farmers' department regarding the training and scheme for palm leaves.
+
+Sl. No | Scheme | Amount | Responsibility | Fund
+1. Expansion of farmers (count) | 100 | 10,00,000 | 30,000
+2. Brief overview with some farmers | - | 1,000
+3. 160% lotus cultivation scheme | 50% | 124 | 62,000
+```

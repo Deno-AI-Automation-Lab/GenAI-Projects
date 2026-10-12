@@ -1,0 +1,33 @@
+```
+ENGLISH TEXT:
+
+S.No | District | Physical Target (in Nos.) | Finance Target (in Lakhs) | Physical Target (in Nos.) | Finance Target (in Lakhs) | Physical Target (in Nos.) | Finance Target (in Lakhs) | Total Financial Target (in Lakhs)
+1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+21 | Salem | 25000 | 0.750 | 277 | 0.277 | 2 | 1.027 | 2.054
+22 | Sivagangai | 45000 | 1.350 | 277 | 0.277 | 11 | 1.027 | 2.654
+23 | Thanjavur | 25000 | 0.750 | 277 | 0.277 | 5 | 1.027 | 2.054
+24 | Theni | 25000 | 0.750 | 277 | 0.277 | 5 | 1.027 | 2.054
+25 | Tenkasi | 30000 | 0.900 | 277 | 0.277 | 5 | 1.027 | 2.204
+26 | Tirunelveli | 25000 | 0.750 | 277 | 0.277 | 15 | 1.027 | 2.054
+27 | Tirupathur | 25000 | 0.750 | 277 | 0.277 | 5 | 1.027 | 2.054
+28 | Tiruppur | 25000 | 0.750 | 277 | 0.277 | 5 | 1.027 | 2.054
+29 | Tiruvannamalai | 25000 | 0.750 | 277 | 0.277 | 5 | 1.027 | 2.054
+30 | Tiruvarur | 25000 | 0.750 | 277 | 0.277 | 5 | 1.027 | 2.054
+31 | Tiruvellore | 25000 | 0.750 | 277 | 0.277 | 5 | 1.027 | 2.054
+32 | Tiruvettipuram | 25000 | 0.750 | 277 | 0.277 | 5 | 1.027 | 2.054
+33 | Tiruvottiyur | 25000 | 0.750 | 277 | 0.277 | 5 | 1.027 | 2.054
+34 | Vellore | 25000 | 0.750 | 277 | 0.277 | 5 | 1.027 | 2.054
+35 | Viluppuram | 25000 | 0.750 | 277 | 0.277 | 5 | 1.027 | 2.054
+36 | Virudhunagar | 45000 | 1.350 | 277 | 0.277 | 5 | 1.027 | 2.654
+Total | | 1000000 | 30.000 | 10000 | 2.780 | 100 | 10.270 | 43.050
+
+Palmiyrah Development Mission 2024-25 - Target
+Palmiyrah Seednuts 100% Subsidy Rs.3/ Seednut
+Palmiyrah Seedlings 100% Subsidy Rs.100 Seedling
+Value Addition Units for Palmiyrah 50% Subsidy Rs.50000 unit
+
+Sd/- P. Kumaravel Pandian
+Director of Horticulture and Plantation Crops
+
+/By Order/
+```

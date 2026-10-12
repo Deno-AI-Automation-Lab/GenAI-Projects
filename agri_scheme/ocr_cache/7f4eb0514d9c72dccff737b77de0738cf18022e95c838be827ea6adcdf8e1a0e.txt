@@ -1,0 +1,31 @@
+ENGLISH TEXT
+
+-10-
+
+| L | Human Resource Development | | | | | | |
+|---|--------------------------------|------|--------|-----|-----|-----|-----|
+| 65 | Training to farmers within the state/ demonstration | 2000 | 40.000 | - | - | - | - |
+| 66 | Training to farmers outside the state/ demonstration | 250 | 26.250 | - | - | - | - |
+| 67 | Training to officials within the state | 50 | 0.750 | - | - | - | - |
+| 68 | Training to officials outside the state | 50 | 2.000 | - | - | - | - |
+| | Sub-total | 2350 | 69.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+
+| M | Centre of Excellences | | | | | | |
+|---|------------------------|---|--------|-----|-----|-----|-----|
+| 69 | Centre of excellence for Amla | 1 | 300.000 | - | - | - | - |
+| 70 | Centre of excellence for Mango | 1 | 300.000 | - | - | - | - |
+| 71 | Centre of excellence for Sub Tropical and Temperate Horticulture Crops | 1 | 500.000 | - | - | - | - |
+| 72 | Centre of excellence on Post Harvest and Packaging Techonology of Flowers | 1 | 500.000 | - | - | - | - |
+| | Sub-total | 4 | 1600.000 | 0.000 | 0.000 | 0.000 | 0.000 |
+
+| N | Special Intervention | | | | | | |
+|---|------------------------|------|--------|--------|--------|--------|--------|
+| 73 | Banana Bunch Sleeves | 1000 | 125.000 | 125.000 | 100.000 | 23.750 | 1.250 |
+| 74 | Cashew Cutting Machine | 500 | 30.000 | - | - | - | - |
+| 75 | Cashew separator | 50 | 15.000 | - | - | - | - |
+| 76 | Farm Deficiency Correction | 1000 | 20.000 | - | - | - | - |
+| | Sub-total | 2550 | 190.000 | 125.000 | 100.000 | 23.750 | 1.250 |
+
+| | Scheme Total | 133017 | 16163.787 | 4231.021 | 3377.689 | 810.666 | 42.666 |
+
+[P.T.O]

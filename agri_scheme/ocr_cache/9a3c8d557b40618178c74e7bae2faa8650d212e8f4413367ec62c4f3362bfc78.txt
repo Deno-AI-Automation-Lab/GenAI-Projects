@@ -1,0 +1,46 @@
+```
+ENGLISH TEXT:
+
+State Horticulture Development Scheme 2024-25 - Target
+
+S. No | District | VLT. Cottage Nurseries - Assistance for establishment of infrastructure facilities (Rs.50,000/Unit) | VLT. Establishing Moringa Export Zone - Assistance for establishing infrastructure facilities and institutional training (Rs.5,000/Ha) | VLT. Moringa Export Zone - Adoption of Organic Farming - Subsidy for organic certification (3 years - Rs.1.5 Lakhs/Ha) | VLT. Moringa Export Zone - Adoption of Organic Farming - Subsidy for organic certification (4th year - Rs.0.5 Lakhs/Ha)
+| Phy. (Nos) | Fin (in Lakhs) | Phy. (Nos) | Fin (in Lakhs) | Phy. (Ha) | Fin (in Lakhs) | Phy. (Ha) | Fin (in Lakhs)
+1 | Ariyalur | 3 | 1.500 | 3 | 0.150 | 3 | 4.500 | 3 | 1.500
+2 | Chengalpattu | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+3 | Chennai | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+4 | Coimbatore | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+5 | Cuddalore | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+6 | Dharmapuri | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+7 | Dindigul | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+8 | Erode | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+9 | Kallakurichi | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+10 | Kancheepuram | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+11 | Karur | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+12 | Krishnagiri | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+13 | Madurai | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+14 | Mayiladuthurai | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+15 | Nagapattinam | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+16 | Kanyakumari | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+17 | Namakkal | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+18 | Perambalur | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+19 | Pudukkottai | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+20 | Ramanathapuram | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+21 | Ranipet | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+22 | Salem | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+23 | Sivagangai | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+24 | Tenkasi | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+25 | Thanjavur | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+26 | Theni | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+27 | Thiruvallur | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+28 | Thiruvarur | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+29 | Thoothukudi | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+30 | Tiruchirappalli | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+31 | Tirunelveli | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+32 | Tirupathur | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+33 | Tiruppur | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+34 | Tiruvannamalai | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+35 | Vellore | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+36 | Villupuram | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+37 | Virudhunagar | 2 | 1.000 | 2 | 0.100 | 2 | 3.000 | 2 | 1.000
+Total | 100 | 50.000 | 100 | 5.000 | 150 | 450.000 | 150 | 50.000
+```

@@ -1,0 +1,21 @@
+1 | தொழில்பழகும் விஷயம் | அலகு | பொருள் | திங்கள் (ரு.கொ.)  
+2 | 1 | குருகுலத்தின் நீர் ஆதாரங்களை | எண்ணிக்கைகள் | 750 | 82.50  
+3 | 2 | தண்ணீட்டின் ஆதித்திரவிடம் மற்றும் | புழுதிகுழுவின் விஷயங்களுக்கு | எண்ணிக்கைகள் | 600 | 42.00  
+4 | 3 | பண்ணைநிலக் கட்டமைப்புகள் | எண்ணிக்கைகள் | 750 | 10.50  
+5 | 4 | உழவாளர்ச்சி மற்றும் உழவா.சி | துறைகளின் கட்டுப்படிடி | 2 | 6 | எண்ணிக்கைகள் | 4,200 | 25.00  
+6 | 5 | வொளான்மை பொறியியல், கருவிகளும் மற்றும் உ-பரணங்களையும் | வொளான்மை பொறியியல் துறைக்கு கொண்டுவரும் செயற்பாடுகள் | எண்ணிக்கைகள் | 20 | 0.90  
+7 | i | டிராக்டர் செயல்படுத்தும் லேசர் லெவலர் | 1 | 4.50 | எண்ணிக்கைகள் | 20 | 0.90  
+8 | ii | ரோட்டரா (Rotavator) | 1 | 175 | எண்ணிக்கைகள் | 50 | 0.875  
+9 | iii | டக் ஃபுட் கல்டிவேட்டர் | 1 | 0.60 | எண்ணிக்கைகள் | 20 | 0.12  
+
+**English Translation:**
+
+1 | Subject of vocational training | Unit | Item | Price (Rs.)  
+2 | 1 | Water sources of Gurukulam | Numbers | 750 | 82.50  
+3 | 2 | Water's basic drainage and | For soil cultivation | Numbers | 600 | 42.00  
+4 | 3 | Farm structure | Numbers | 750 | 10.50  
+5 | 4 | Agricultural machinery and tools | Activities related to agricultural engineering | Numbers | 4,200 | 25.00  
+6 | 5 | Agricultural engineering, tools, and equipment | Activities related to agricultural engineering | Numbers | 20 | 0.90  
+7 | i | Tractor Operated Laser Leveller | 1 | 4.50 | Numbers | 20 | 0.90  
+8 | ii | Rotavator | 1 | 175 | Numbers | 50 | 0.875  
+9 | iii | Duck Foot Cultivator | 1 | 0.60 | Numbers | 20 | 0.12

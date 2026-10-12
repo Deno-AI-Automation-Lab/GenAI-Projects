@@ -1,0 +1,27 @@
+TAMIL TEXT:
+
+வ.  
+எண் | திட்ட இனம் | ஒரு அலகு முழு விலை மற்றும் மானியத் தொகை | அலகு | பொருள் | நிதி (ரூ. கோடி)
+--- | --- | --- | --- | --- | ---
+3 | காய்கறி விதைத்த தளையின் விற்பனை வினியோகம் | ரூ.40/- மதிப்பிலான 8 வகையான காய்கறி விதைகள் அடங்கிய தொகுப்பிற்கு 75 சதவீத மானியமாக ரூ.30/ தணல் என்று வழங்கப்படும். | எண்கள் | 3,20,400 | 0.96120
+4 | பண்ணாட்டு தோட்டக்கலை பயிர்களின் பரப்பு விறிவாக்கம் (மா, கொய்யா, பப்பாளி, கொடிக்காப்புரி, நாவல், சீத்தா, ஜாம்போசா, புளி, கொன்றைவை) | ரூ.60,000 மொத்த செலவினத்தில், 50 சதவீத மொத்த தொகையில், முதலாண்டில் 60 சதவீத மானியமாக எக்டர் ஒன்றிற்கு ரூ. 18,000/- வழங்கப்படும். | எக்டர் | 10,000 | 18.0000
+5 | காளான் வளர்ப்புக்கூடம் அமைத்தல் | மொத்த செலவினம் ரூ.2,00,000/-த்தில் 50 சதவீத மானியமாக அலகு ஒன்றிற்கு ரூ.1,00,000/- வழங்கப்படும். | எண்கள் | 100 | 10.000
+6 | திட்ட செயலாக்கம் மற்றும் ஆவணப்படுத்துதல் | | | | 
+மொத்தம் | 28.80256
+| | | | 0.0100
+மொத்தம் | 0.0100
+ஆக மொத்தம் | 28.81256
+
+ENGLISH TRANSLATION:
+
+Serial  
+No. | Scheme Type | Total Unit Price and Subsidy Amount | Unit | Item | Fund (Rs. Crore)
+--- | --- | --- | --- | --- | ---
+3 | Sale and Distribution of Vegetable Seedlings | Rs.40/- worth package containing 8 types of vegetable seeds will be provided with a 75% subsidy at Rs.30/ discount. | Numbers | 3,20,400 | 0.96120
+4 | Expansion of Horticultural Crop Area (Mango, Guava, Papaya, Passion Fruit, Jamun, Custard Apple, Jambosa, Tamarind, Drumstick) | In the total expenditure of Rs.60,000, 50% of the total amount, in the first year, will be provided as a 60% subsidy per hectare at Rs. 18,000/-. | Hectare | 10,000 | 18.0000
+5 | Establishment of Mushroom Cultivation Unit | In the total expenditure of Rs.2,00,000/-, a 50% subsidy will be provided per unit at Rs.1,00,000/-. | Numbers | 100 | 10.000
+6 | Scheme Implementation and Documentation | | | | 
+Total | 28.80256
+| | | | 0.0100
+Total | 0.0100
+Grand Total | 28.81256

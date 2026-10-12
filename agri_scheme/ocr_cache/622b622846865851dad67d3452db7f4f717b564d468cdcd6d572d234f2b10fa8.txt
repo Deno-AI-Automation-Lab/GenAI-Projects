@@ -1,0 +1,33 @@
+TAMIL TEXT:
+
+அட்டவணை-இ  
+வேளாண்மை பொரியியல் துணை  
+
+வ.  
+எண் | இனங்களின் விவரம் | அளவு | பொருள் | நிதி (ரூ.கோடி)
+---|---|---|---|---
+1 | நொற்பயிர் விளைச்சாப் குருக்கங்களுக்கு நீர் ஆதாரங்களை உருவாக்குதல் | எண்கள் | 750 | 82.50
+2 | தனிப்பட்ட ஆதிதிராவிட மற்றும் பழங்குடியினர் விவசாயிகளுக்கு கிணறுகள் ஆழ்துளை அல்லது குழாய் கிணறுகள் அமைத்தல் | எண்கள் | 600 | 42.00
+3 | பண்ணை குட்டை அமைத்தல் | எண்கள் | 750 | 10.50
+4 | ஊரக வளர்ச்சி மற்றும் ஊராட்சி துறைகளின் கூட்டுப்பங்குட்டையில் உள்ள சிறுமண குளங்கள், குளங்கள், ஓடைகள், குளத்துக்கு நீர் சேகரிப்பு கட்டுமானங்களை தூர்வாரி மேம்படுத்துதல் | எண்கள் | 4,200 | 25.00
+5 | வேளாண்மை இயந்திரங்கள், கருவிகள் மற்றும் உபகரணங்களை வேளாண்மை பொரியியல் துறைக்கு கொள்முதல் செய்யுதல் மற்றும் பராமரித்தல் | 
+i. | டிராக்டர் மூலம் இயங்கக்கூடிய நிலம் சமன் செய்யும் கருவி (Tractor Operated Laser Leveller). ஒரு இயந்திரத்திற்கு ரூ.4.50 இலட்சம் | எண்கள் | 20 | 0.90
+ii. | ரோட்டாவேட்டர் (Rotavator). ஒரு இயந்திரத்திற்கு ரூ.1.75 இலட்சம் | எண்கள் | 50 | 0.875
+iii. | ஐந்து கொத்துகள் கலப்பை (5 Tyne Duck Foot Cultivator). ஒரு இயந்திரத்திற்கு ரூ.0.60 இலட்சம் | எண்கள் | 20 | 0.12
+
+ENGLISH TRANSLATION:
+
+Table-I  
+Agricultural Equipment Assistance  
+
+Sl.  
+No. | Description of Items | Quantity | Units | Fund (Rs. Crores)
+---|---|---|---|---
+1 | Creation of water resources for paddy crop yield clusters | Numbers | 750 | 82.50
+2 | Construction of borewells or tube wells for individual Scheduled Caste and Scheduled Tribe farmers | Numbers | 600 | 42.00
+3 | Construction of farm ponds | Numbers | 750 | 10.50
+4 | Renovation of small ponds, tanks, and water bodies in collaboration with Rural Development and Panchayat Departments | Numbers | 4,200 | 25.00
+5 | Procurement and maintenance of agricultural machinery, tools, and equipment for the Agricultural Engineering Department | 
+i. | Tractor Operated Laser Leveller. Rs.4.50 lakhs per machine | Numbers | 20 | 0.90
+ii. | Rotavator. Rs.1.75 lakhs per machine | Numbers | 50 | 0.875
+iii. | 5 Tyne Duck Foot Cultivator. Rs.0.60 lakhs per machine | Numbers | 20 | 0.12

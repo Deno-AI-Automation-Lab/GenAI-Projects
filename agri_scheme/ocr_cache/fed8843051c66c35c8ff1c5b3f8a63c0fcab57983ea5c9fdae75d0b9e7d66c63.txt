@@ -1,0 +1,30 @@
+State Horticulture Development Scheme 2021-22 Target  
+| S. No | District | Fin (in lakhs) |  
+|-------|----------|----------------|  
+| 1     | Ariyalur | 0.00           |  
+| 2     | Coimbatore | 0.00         |  
+| 3     | Cuddalore | 0.00          |  
+| 4     | Dharmapuri | 0.00         |  
+| 5     | Dindigul | 0.00           |  
+| 6     | Erode | 0.00              |  
+| 7     | Kanyakumari | 0.00        |  
+| 8     | Karur | 0.00              |  
+| 9     | Krishnagiri | 0.00        |  
+| 10    | Madurai | 0.00            |  
+| 11    | Nagapattinam | 0.00       |  
+| 12    | Namakkal | 0.00           |  
+| 13    | Perambalur | 0.00         |  
+| 14    | Pudukkottai | 0.00        |  
+| 15    | Ramanathapuram | 0.00     |  
+| 16    | Salem | 0.00              |  
+| 17    | Sivagangai | 0.00         |  
+| 18    | Thanjavur | 0.00          |  
+| 19    | Theni | 0.00              |  
+| 20    | Tiruchirappalli | 0.00    |  
+| 21    | Tirunelveli | 0.00        |  
+| 22    | Tiruppur | 0.00          |  
+| 23    | Vellore | 0.00            |  
+| 24    | Villupuram | 0.00        |  
+| Total |          | 0.00           |  
+
+**Note:** The table contains financial data for various districts under the State Horticulture Development Scheme for the year 2021-22.

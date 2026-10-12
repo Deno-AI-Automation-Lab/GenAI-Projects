@@ -1,0 +1,32 @@
+ENGLISH TEXT:
+
+4. The Government after careful examination of the proposal of the Director of Horticulture and Plantation Crops hereby accord Financial sanction of Rs.1610.664 lakh (Rupees Sixteen Crore Ten lakhs Sixty six thousand and four hundred only) for the implementation of TNIAMP activities under Phase II second year during 2020-21.
+
+5. The expenditure sanctioned in para.4 above shall be debited to the following Heads of account:-
+
+"2401-00 Crop Husbandry - 119 - Horticulture and vegetable Crops - Externally Aided Projects - PE - Improved Horticulture and Vegetable Crop Productivity under Tamil Nadu Irrigated Agriculture Modernization Project-II"
+
+(Rs. In thousands)
+
+2401-00-119-PE
+1. | 333 | Payments for Professional and Special Services
+   | 04 | Contract Payment
+   | Old DPC | 2401 00 119 PE 3344
+   | IFHRMS DPC | 2401 00 119 PE 33304 | 2400
+
+2. | 369 | Procurement of Agricultural Inputs
+   | 01 | Procurement of Agricultural Inputs
+   | Old DPC | 2401 00 119 PE 6903
+   | IFHRMS DPC | 2401 00 119 PE 36901 | 88666.4
+
+"2401-00 Crop Husbandry - 119 - Horticulture and Vegetable Crops - Externally Aided Project - PG - Micro Irrigation in Tank and Non-Tank Command Area under Tamil Nadu Irrigated Agriculture Modernization Project - II"
+
+(Rs. In thousands)
+
+2401-00-119 - PG
+1. | 311 | Subsidies
+   | 01 | Individual Based Subsidy
+   | Old DPC | 2401 00 119 PG 1119
+   | IFHRMS DPC | 2401 00 119 PG 31101 | 70000
+
+6. The Director of Horticulture and Plantation Crops is authorized to draw and disburse the amount sanctioned in para.4 above.
