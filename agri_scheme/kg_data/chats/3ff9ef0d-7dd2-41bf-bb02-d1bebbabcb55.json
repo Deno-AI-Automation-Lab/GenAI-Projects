@@ -1,0 +1,27 @@
+{
+ "id": "3ff9ef0d-7dd2-41bf-bb02-d1bebbabcb55",
+ "title": "What does the Skill Development Training Schemes and Skill U",
+ "created": "2026-10-13T10:37:36",
+ "summary": "",
+ "profile": {},
+ "messages": [
+  {
+   "role": "user",
+   "content": "What does the Skill Development Training Schemes and Skill Upgradation Training Schemes scheme provide?"
+  },
+  {
+   "role": "assistant",
+   "content": "The Skill Development Training Schemes and Skill Upgradation Training Schemes provide the following:\n\n- **Reimbursement of up to 50% of tuition fees** for skill development and upgradation training.\n- Benefits for **educated unemployed youth** and existing employees of **Micro, Small, and Medium Enterprises** in Tamil Nadu.\n- Support for **vulnerable sections of society** and **rural people**.\n- Coverage for **backward areas of the state**.\n- Inclusion of various sectors such as **cottage / handicrafts** and **agro-based enterprises**.\n\nFor more details, you can visit the source: [Skill Development Training Schemes and Skill Upgradation Training Schemes](https://www.tn.gov.in/scheme_details.php?id=MzE=).",
+   "sources": [
+    {
+     "scheme": "Skill Development Training Schemes and Skill Upgradation Training Schemes",
+     "url": "https://www.tn.gov.in/scheme_details.php?id=MzE="
+    }
+   ],
+   "run_id": "323fc364-f12a-4097-b63d-78bca4e9c1d8",
+   "cypher": "operation:       scheme_facts\nwalk:            Scheme -HAS_ENTITY-> Entity -RELATED-> Entity\nscheme contains: Skill Development Training Schemes, Skill Upgradation Training Schemes\nrelation types:  PROVIDES, INCLUDES, COVERS",
+   "graph_rows": 25
+  }
+ ],
+ "updated": "2026-10-13T10:37:36"
+}
