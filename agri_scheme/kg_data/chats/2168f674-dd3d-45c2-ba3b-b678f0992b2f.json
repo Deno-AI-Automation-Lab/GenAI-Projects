@@ -1,0 +1,84 @@
+{
+ "id": "2168f674-dd3d-45c2-ba3b-b678f0992b2f",
+ "title": "what is the scheme for sugar cultivation",
+ "created": "2026-10-13T22:09:11",
+ "summary": "",
+ "profile": {
+  "interests": [
+   "sugar cultivation"
+  ]
+ },
+ "messages": [
+  {
+   "role": "user",
+   "content": "what is the scheme for sugar cultivation"
+  },
+  {
+   "role": "assistant",
+   "content": "None of the indexed schemes covers exactly that. However, here are some related schemes that may be of interest:\n\n1. **Livelihood activities for asset less persons-2012**\n   - Offers loan assistance for income generation activities and a subsidy of ₹600 per hectare to support self-help groups.\n   - [Source](https://www.tn.gov.in/scheme_details.php?id=NDQw)\n\n2. **Farm Production System and micro enterprises - Sponsored By State Govt**\n   - Provides subsidies for the adoption of new agricultural technologies and diversification of production systems, promoting sustainable agricultural practices.\n   - [Source](https://www.tn.gov.in/scheme_details.php?id=MTE3)\n\n3. **Sustainable Sugarcane Initiatives**\n   - While not detailed in the provided context, it is mentioned in relation to other schemes and may focus on sugarcane cultivation practices.\n   - [Source](https://www.tn.gov.in/scheme_details.php?id=MTE3) (related to the Farm Production System scheme)",
+   "sources": [
+    {
+     "scheme": "Livelihood activities for asset less persons-2012",
+     "url": "https://www.tn.gov.in/scheme_details.php?id=NDQw"
+    },
+    {
+     "scheme": "Farm Production System and micro enterprises - Sponsored By State Govt",
+     "url": "https://www.tn.gov.in/scheme_details.php?id=MTE3"
+    },
+    {
+     "scheme": "Livelihood activities for asset less persons - Sponsored By State Govt",
+     "url": "https://www.tn.gov.in/scheme_details.php?id=MTE4"
+    },
+    {
+     "scheme": "Quality Paddy seed Distribution",
+     "url": "https://www.tn.gov.in/scheme_details.php?id=MTQwMQ=="
+    },
+    {
+     "scheme": "Production of Certified  Seeds of Maize",
+     "url": "https://www.tn.gov.in/scheme_details.php?id=OTAw"
+    },
+    {
+     "scheme": "Organizing Block demonstration on Polythene mulch Technology in Groundnut",
+     "url": "https://www.tn.gov.in/scheme_details.php?id=MTUwMg=="
+    }
+   ],
+   "run_id": "036fdcf8-0b23-419c-aa1b-f8f982d68e82",
+   "cypher": "operation:       schemes_with_entity\nwalk:            Entity <-HAS_ENTITY- Scheme   (plus schemes whose name matches)\nentity contains: sugar",
+   "graph_rows": 3
+  },
+  {
+   "role": "user",
+   "content": "Tell me about the Distribution of Minikits  at free of cost scheme"
+  },
+  {
+   "role": "assistant",
+   "content": "The **Distribution of Minikits at free of cost** scheme provides free distribution of minikits to maize growing farmers in specific districts of Tamil Nadu. Here are the details:\n\n- **Benefits**:\n  - Free distribution of minikits.\n  - Focus on small and marginal farmers, SC/ST farmers, and women farmers/groups.\n\n- **Eligibility**:\n  - All maize growing farmers in the specified districts.\n  - Preference is given to small/marginal farmers.\n  - 24% allocation for SC/ST farmers and 20% for women farmers/women groups.\n\n- **How to Apply**:\n  - Applications are to be submitted to the relevant agricultural officers in the districts.\n\n- **Source**: [Distribution of Minikits at free of cost](https://www.tn.gov.in/scheme_details.php?id=ODIy)",
+   "sources": [
+    {
+     "scheme": "Distribution of Minikits  at free of cost",
+     "url": "https://www.tn.gov.in/scheme_details.php?id=ODIy"
+    },
+    {
+     "scheme": "Distribution of Nuclear Poly Hedrosis Virus",
+     "url": "https://www.tn.gov.in/scheme_details.php?id=MTI4MA=="
+    },
+    {
+     "scheme": "Livelihood activities for asset less persons - Sponsored By State Govt",
+     "url": "https://www.tn.gov.in/scheme_details.php?id=MTE4"
+    },
+    {
+     "scheme": "Livelihood activities for asset less persons-2012",
+     "url": "https://www.tn.gov.in/scheme_details.php?id=NDQw"
+    },
+    {
+     "scheme": "Farm Production System and micro enterprises - Sponsored By State Govt",
+     "url": "https://www.tn.gov.in/scheme_details.php?id=MTE3"
+    }
+   ],
+   "run_id": "03e32935-994e-48d5-bc4e-825146d68549",
+   "cypher": "operation:       scheme_facts\nwalk:            Scheme -HAS_ENTITY-> Entity -RELATED-> Entity\nentity contains: minikit, seed, fertilizer, pulses, oilseed, vegetable\nscheme contains: distribution of minikits, free of cost\nrelation types:  PROVIDES, INCLUDES, COVERS",
+   "graph_rows": 5
+  }
+ ],
+ "updated": "2026-10-13T22:09:33"
+}
