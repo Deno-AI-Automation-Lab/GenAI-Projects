@@ -1,0 +1,203 @@
+{
+  "name": "Mail_From_GoogleSheet",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "67666164-9efa-4a09-b1d2-316561658bb7",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1FwdtH_kb2cD2-2jwbO1GXqdawWjsTwAqTl6V6_Dgm0Q",
+          "mode": "list",
+          "cachedResultName": "n8n_google_sheets_email_test",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1FwdtH_kb2cD2-2jwbO1GXqdawWjsTwAqTl6V6_Dgm0Q/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1404947047,
+          "mode": "list",
+          "cachedResultName": "SalesData",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1FwdtH_kb2cD2-2jwbO1GXqdawWjsTwAqTl6V6_Dgm0Q/edit#gid=1404947047"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        224,
+        0
+      ],
+      "id": "616fcc48-5646-454e-b273-1b41084b3f10",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5tShrLoIhuMP61qS",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "0a832b69-8611-4315-908f-f96cd0bbf0b2",
+              "name": "Subject",
+              "value": "=Order Update - {{ $json.Customer || 'EMPTY' }}",
+              "type": "string"
+            },
+            {
+              "id": "c647787d-ae4b-423a-b39c-d663ee77a0ac",
+              "name": "body",
+              "value": "=Hello,\n\nHere are the order details:\n\nDate: {{ $json.Date || 'EMPTY' }}\nCustomer: {{ $json.Customer || 'EMPTY' }}\nProduct: {{ $json.Product || 'EMPTY' }}\nQuantity: {{ $json.Quantity || 'EMPTY' }}\nAmount: ₹{{ $json.Amount || 'EMPTY' }}\nStatus: {{ $json.Status || 'EMPTY' }}\n\nRegards,\nGenAI Automation Lab",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        448,
+        0
+      ],
+      "id": "e327f909-00ab-4088-9289-91f660a79ccf",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "sendTo": "denomelvin24@gmail.com",
+        "subject": "={{ $json.Subject }}",
+        "emailType": "text",
+        "message": "={{ $json.body }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        672,
+        0
+      ],
+      "id": "7c7c3d56-4710-4035-8d93-12b70969c794",
+      "name": "Send a message",
+      "webhookId": "71458c4c-ae1e-4ee6-8579-4b2abe699781",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "hYaOss50NCgDWi9G",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "1FwdtH_kb2cD2-2jwbO1GXqdawWjsTwAqTl6V6_Dgm0Q",
+          "mode": "list",
+          "cachedResultName": "n8n_google_sheets_email_test",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1FwdtH_kb2cD2-2jwbO1GXqdawWjsTwAqTl6V6_Dgm0Q/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1404947047,
+          "mode": "list",
+          "cachedResultName": "SalesData",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1FwdtH_kb2cD2-2jwbO1GXqdawWjsTwAqTl6V6_Dgm0Q/edit#gid=1404947047"
+        },
+        "event": "rowAdded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        80,
+        224
+      ],
+      "id": "2080eb81-0cf5-4391-a131-8d3b05ff32b7",
+      "name": "Google Sheets Trigger",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "7zvuD2iz3DCFysrx",
+          "name": "Google Sheets Trigger account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets Trigger": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "a28f7c88-b735-45d2-be66-9da506fb84bd",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "0ef4aead01475e73365af2c8b5ef0d1ee314ba7f2a127ed7cfa5143b8e57a8cc"
+  },
+  "nodeGroups": [],
+  "id": "VRmt49EUZ7hEM8Rf",
+  "tags": []
+}
