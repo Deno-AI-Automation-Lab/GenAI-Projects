@@ -1,20 +1,20 @@
 # Unread Email Summariser (n8n + OpenAI)
 
-An n8n workflow that checks a Gmail inbox every 6 hours, picks up the latest unread emails, asks an AI agent to summarise each one in a single line, and emails the digest back to you.
+An n8n workflow that you run on demand. It picks up your latest unread Gmail messages, asks an AI agent to summarise each one in a single line, and emails the digest back to you.
 
 ## How it works
 
 ```
-Schedule Trigger ──► Get many messages ──► Aggregate ──► AI Agent ──► Send a message
-  (every 6 hrs)      (Gmail, UNREAD, 5)   (into "emails")    │         (Gmail digest)
-                                                             │
-                                                    OpenAI Chat Model
-                                                      (gpt-4.1-mini)
+Manual Trigger ──► Get many messages ──► Aggregate ──► AI Agent ──► Send a message
+ (Execute workflow)  (Gmail, UNREAD, 5)  (into "emails")   │         (Gmail digest)
+                                                           │
+                                                  OpenAI Chat Model
+                                                    (gpt-4.1-mini)
 ```
 
 | # | Node | Type | What it does |
 |---|------|------|--------------|
-| 1 | **Schedule Trigger** | Schedule Trigger | Starts the workflow every 6 hours. |
+| 1 | **When clicking 'Execute workflow'** | Manual Trigger | Starts the workflow when you click **Execute workflow** in the n8n editor. |
 | 2 | **Get many messages** | Gmail (Message → Get Many) | Fetches up to 5 messages with the `UNREAD` label. |
 | 3 | **Aggregate** | Aggregate | Combines the separate email items into one item with an `emails` array, so the AI sees all emails in a single prompt. |
 | 4 | **AI Agent** | AI Agent (LangChain) | Summarises each email in one line (max 20 words, no greeting, no numbering). |
@@ -71,17 +71,28 @@ See [`requirements.txt`](requirements.txt) for the full list. In short:
 
 Open **Send a message** and change **To** to the address that should receive the digest.
 
-### 5. Test, then activate
+## Running it
 
-1. Click **Execute workflow** and check each node's output.
-2. Confirm the summary email arrives.
-3. Toggle the workflow to **Active** so the schedule runs it.
+1. Open the workflow in the n8n editor.
+2. Click **Execute workflow** at the bottom of the canvas.
+3. Check each node's output, then confirm the summary email arrives in your inbox.
+
+Because it uses a Manual Trigger, the workflow runs only when you click **Execute workflow**. Activating the workflow doesn't make it run on its own.
+
+### Running it automatically (optional)
+
+To run it on a schedule instead:
+
+1. Add a **Schedule Trigger** node (for example, every 6 hours or every weekday at 9 AM).
+2. Connect it to **Get many messages**. A trigger that isn't connected won't start anything.
+3. Toggle the workflow to **Active**.
+
+You can keep the Manual Trigger connected too, so you can still run it on demand while testing.
 
 ## Configuration
 
 | What to change | Where | Default |
 |----------------|-------|---------|
-| Run frequency | Schedule Trigger → Hours Between Triggers | 6 |
 | Number of emails | Get many messages → Limit | 5 |
 | Which emails | Get many messages → Filters (labels, search query, dates) | `UNREAD` label |
 | Summary style | AI Agent → Prompt | 1 line, ≤ 20 words each |
@@ -92,7 +103,7 @@ If you change the **Limit**, update the numbers in the AI Agent prompt ("Summari
 
 ## Known limitations and suggested improvements
 
-- **The same emails can be summarised again.** The workflow doesn't mark emails as read, so unread mail shows up in every run until you open it. To fix this, add a Gmail **Message → Mark as Read** step after sending, or filter with a search query like `is:unread newer_than:6h`.
+- **The same emails can be summarised again.** The workflow doesn't mark emails as read, so unread mail shows up on every run until you open it. To fix this, add a Gmail **Message → Mark as Read** step after sending, or filter with a search query like `is:unread newer_than:1d`.
 - **The prompt assumes exactly 5 emails.** If fewer than 5 are unread, the model may pad or repeat lines. Use a prompt that says "one line per email" without a fixed count.
 - **Nothing to summarise still sends an email.** Add an **IF** node after *Get many messages* to stop when no unread emails are found.
 - **Only the email snippet is summarised.** *Simplify* is left at its default (on), so the AI gets a short snippet rather than the full body. Turn *Simplify* off for better summaries of long emails; this increases token usage.
@@ -102,7 +113,7 @@ If you change the **Limit**, update the numbers in the AI Agent prompt ("Summari
 ## Privacy and cost
 
 - Email content is sent to OpenAI for summarisation. Don't use this on mailboxes whose content must not leave your organisation without approval.
-- Cost depends on email length and frequency. At 5 emails every 6 hours with `gpt-4.1-mini`, usage is small, but check current OpenAI pricing for your plan.
+- Cost depends on email length and how often you run it. At 5 emails per run with `gpt-4.1-mini`, usage is small, but check current OpenAI pricing for your plan.
 - Never commit API keys or OAuth secrets. n8n stores them in its credential store, and the exported JSON only contains credential references.
 
 ## Files

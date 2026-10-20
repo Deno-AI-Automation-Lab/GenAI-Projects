@@ -16,7 +16,7 @@ Docker                  # Alternative to Node.js (recommended for self-hosting)
 Public HTTPS URL        # Needed for Google OAuth redirect (or use localhost for local testing)
 
 # --- n8n nodes used (all built in, no community nodes) ----------
-n8n-nodes-base.scheduleTrigger            # v1.4
+n8n-nodes-base.manualTrigger              # v1    (When clicking 'Execute workflow')
 n8n-nodes-base.gmail                      # v2.2  (Get Many + Send)
 n8n-nodes-base.aggregate                  # v1
 @n8n/n8n-nodes-langchain.agent            # v3.1  (AI Agent)
@@ -34,7 +34,9 @@ OpenAI account with API access and billing enabled
 n8n credential: OpenAI API key
     # Model used: gpt-4.1-mini (any chat model can be swapped in)
 
-# --- Configuration to update before activating ------------------
+# --- Configuration to update before running ---------------------
 Recipient address in "Send a message" node
-Schedule interval (default: every 6 hours)
 Email limit (default: 5) - keep the AI prompt and subject in sync
+
+# --- Optional ---------------------------------------------------
+n8n-nodes-base.scheduleTrigger            # Add and connect it to run automatically
