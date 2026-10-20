@@ -1,0 +1,52 @@
+# Research Agent - Amazon India Product Research Bot - Requirements
+# ---------------------------------------------------------------
+# This is an n8n workflow, not a Python project, so there are no
+# pip packages to install. The items below are what you need to
+# run it.
+
+# --- Platform ---------------------------------------------------
+n8n                     # n8n Cloud or self-hosted (Docker / npm)
+                        # Version must include the AI Agent node v3.x
+                        # and Telegram Trigger v1.5.
+Public HTTPS URL        # REQUIRED - Telegram only delivers to public HTTPS webhooks.
+                        # n8n Cloud has this built in. Self-hosted: use a domain
+                        # with SSL, or a tunnel (ngrok / Cloudflare Tunnel) and set
+                        # WEBHOOK_URL to that address.
+
+# Self-hosted only:
+Node.js                 # Version supported by your n8n release (npm install)
+Docker                  # Alternative to Node.js (recommended for self-hosting)
+
+# --- Community node (install BEFORE importing) ------------------
+n8n-nodes-serpapi       # Settings -> Community Nodes -> Install
+                        # Provides n8n-nodes-serpapi.serpApiTool v1
+
+# --- n8n nodes used ---------------------------------------------
+n8n-nodes-base.telegramTrigger              # v1.5  "Telegram Trigger"
+@n8n/n8n-nodes-langchain.agent              # v3.1  "Research Agent"
+@n8n/n8n-nodes-langchain.lmChatOpenAi       # v1.3  "OpenAI Chat Model"
+@n8n/n8n-nodes-langchain.memoryBufferWindow # v1.4  "Simple Memory" (keyed by chat ID)
+n8n-nodes-serpapi.serpApiTool               # v1    "Amazon search in SerpApi" (community)
+n8n-nodes-base.telegram                     # v1.2  "Send a text message"
+
+# --- Accounts and credentials -----------------------------------
+Telegram bot            # Create with @BotFather (/newbot) to get a bot token
+n8n credential: Telegram API (bot token)
+    # Used by Telegram Trigger and Send a text message
+
+SerpApi account         # serpapi.com - API key from dashboard
+n8n credential: SerpApi (API key)
+    # Engine: Amazon, domain: amazon.in
+    # Each product question uses at least one search from your quota
+
+OpenAI account with API access and billing enabled
+n8n credential: OpenAI API key
+    # Model used: gpt-4.1-mini (any tool-calling chat model can be swapped in)
+
+# --- Before going live ------------------------------------------
+Workflow set to Active  # registers the Telegram webhook
+Chat ID allow-list      # recommended - stops strangers using your API credits
+
+# --- Optional upgrades ------------------------------------------
+@n8n/n8n-nodes-langchain.memoryPostgresChat # persistent chat memory
+@n8n/n8n-nodes-langchain.memoryRedisChat    # persistent chat memory
