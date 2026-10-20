@@ -24,6 +24,8 @@ n8n-nodes-serpapi       # Settings -> Community Nodes -> Install
 # --- n8n nodes used ---------------------------------------------
 n8n-nodes-base.telegramTrigger              # v1.5  "Telegram Trigger"
 @n8n/n8n-nodes-langchain.agent              # v3.1  "Multitool" (AI Agent)
+                                            #       prompt includes current IST date/time
+                                            #       via $now.setZone('Asia/Kolkata')
 @n8n/n8n-nodes-langchain.lmChatOpenAi       # v1.3  "OpenAI Chat Model"
 @n8n/n8n-nodes-langchain.memoryBufferWindow # v1.4  "Simple Memory" (keyed by chat ID)
 n8n-nodes-base.googleDocsTool               # v2    "Create a document in Google Docs"
@@ -61,7 +63,10 @@ Google Sheet + tab      # select it in the Google Sheets node
 # --- Before going live ------------------------------------------
 Chat ID allow-list      # STRONGLY recommended - otherwise anyone who finds the
                         # bot can email, book events and write data as you
-Current date/time zone in system message   # for correct calendar bookings
+Workflow Settings -> Timezone = Asia/Kolkata
+                        # agent already receives current IST date/time;
+                        # this makes calendar times without an offset
+                        # resolve to IST as well
 Workflow set to Active  # registers the Telegram webhook
 
 # --- Optional upgrades ------------------------------------------

@@ -1,0 +1,67 @@
+# Jarvis - Voice AI Agent - Requirements
+# ---------------------------------------------------------------
+# This is an n8n workflow, not a Python project, so there are no
+# pip packages to install. The items below are what you need to
+# run it.
+
+# --- Platform ---------------------------------------------------
+n8n                     # n8n Cloud or self-hosted (Docker / npm)
+                        # Must include LangChain AI nodes (AI Agent, LLM Chain,
+                        # OpenAI audio). Any recent version works.
+Public HTTPS URL        # REQUIRED - Telegram only delivers to public HTTPS webhooks.
+                        # n8n Cloud has this built in. Self-hosted: use a domain
+                        # with SSL, or a tunnel (ngrok / Cloudflare Tunnel) and set
+                        # WEBHOOK_URL to that address.
+
+# Self-hosted only:
+Node.js                 # Version supported by your n8n release (npm install)
+Docker                  # Alternative to Node.js (recommended for self-hosting)
+
+# --- n8n nodes used (all built in, no community nodes) ----------
+n8n-nodes-base.telegramTrigger              # v1.2  "Telegram Trigger"
+n8n-nodes-base.switch                       # v3.2  "Switch" (Voice / Text)
+n8n-nodes-base.telegram                     # v1.2  "Get a file", "Telegram", "Telegram1"
+@n8n/n8n-nodes-langchain.openAi             # v1.8  "STT" (transcribe), "TTS" (generate audio)
+n8n-nodes-base.set                          # v3.4  "Input_var", "audio_var"
+@n8n/n8n-nodes-langchain.agent              # v2    "AI Agent"
+@n8n/n8n-nodes-langchain.lmChatOpenAi       # v1.2  "OpenAI Chat Model", "OpenAI Chat Model1"
+@n8n/n8n-nodes-langchain.memoryBufferWindow # v1.3  "Simple Memory"
+@n8n/n8n-nodes-langchain.toolSerpApi        # v1    "SerpAPI" (built-in tool)
+n8n-nodes-base.gmailTool                    # v2.1  "Gmail"
+@n8n/n8n-nodes-langchain.toolCalculator     # v1    "Calculator"
+@n8n/n8n-nodes-langchain.chainLlm           # v1.7  "Basic LLM Chain"
+
+# --- Accounts and credentials -----------------------------------
+Telegram bot            # Create with @BotFather (/newbot) to get a bot token
+n8n credential: Telegram API
+
+OpenAI account with API access and billing enabled
+n8n credential: OpenAI API
+    # Chat model: gpt-4o-mini (agent + speech summary)
+    # Speech-to-text: OpenAI transcription (node default model)
+    # Text-to-speech: OpenAI audio generation (node default model and voice)
+
+Google account with Gmail
+Google Cloud project    # Gmail API enabled, OAuth consent screen configured,
+                        # OAuth 2.0 Client ID (Web application)
+n8n credential: Gmail OAuth2
+    # Scope needed: send email
+
+SerpApi account         # serpapi.com - API key from dashboard
+n8n credential: SerpApi
+
+# --- Before going live ------------------------------------------
+Fix Simple Memory session key
+    # change to: telegram_{{ $('Telegram Trigger').item.json.message.chat.id }}
+    # (current key resolves empty, so all users share one memory)
+Chat ID allow-list      # STRONGLY recommended - otherwise anyone who finds the
+                        # bot can send email as you and use your API credits
+Workflow set to Active  # registers the Telegram webhook
+
+# --- Telegram limits --------------------------------------------
+Voice note size < 20 MB # Telegram Bot API download limit
+Text reply < 4096 chars # Telegram message limit
+
+# --- Optional upgrades ------------------------------------------
+@n8n/n8n-nodes-langchain.memoryPostgresChat # persistent chat memory
+@n8n/n8n-nodes-langchain.memoryRedisChat    # persistent chat memory
