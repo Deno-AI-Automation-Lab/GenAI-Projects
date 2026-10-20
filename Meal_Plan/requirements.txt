@@ -1,0 +1,5 @@
+# This is a reusable prompt template (Markdown), not a code project, so there is nothing to install.
+# To use meal_plan_prompt.md you need:
+
+any modern AI chat assistant   # e.g. Claude, ChatGPT, Gemini (one that can produce markdown tables)
+a text editor                  # to edit the USER PROFILE block (Notepad, VS Code, etc.)

@@ -1,0 +1,2 @@
+# No third-party packages needed.
+# grade_system.py uses only the Python standard library (math).
