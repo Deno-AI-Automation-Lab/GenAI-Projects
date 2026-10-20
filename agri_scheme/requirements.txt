@@ -1,0 +1,35 @@
+# Tamil Nadu Agriculture Scheme Assistant
+# Install:  pip install -r requirements.txt
+# Then:     python -m playwright install chromium
+
+# --- UI ---
+# 1.42+ needed for st.audio_input, st.feedback, st.segmented_control and st.container(key=...)
+streamlit>=1.42
+
+# --- LangChain / LLM ---
+langchain>=0.3
+langchain-core>=0.3
+langchain-community>=0.3
+langchain-openai>=0.2
+langchain-text-splitters>=0.3
+openai>=1.50
+langsmith>=0.1
+pydantic>=2.7
+
+# --- Retrieval (FAISS semantic + BM25 keyword) ---
+faiss-cpu>=1.8
+rank_bm25>=0.2.2
+
+# --- Fetching / parsing ---
+requests>=2.31
+beautifulsoup4>=4.12
+lxml>=5.0
+playwright>=1.45
+
+# --- PDF read / write / OCR page rendering ---
+pypdf>=4.0
+pymupdf>=1.24
+reportlab>=4.0
+
+# --- Config ---
+python-dotenv>=1.0

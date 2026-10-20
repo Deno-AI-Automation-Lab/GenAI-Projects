@@ -1,0 +1,17 @@
+# This is an n8n workflow, not a Python project, so there is nothing to pip install.
+# Requirements to run "Slack Recipe Shopping List.json":
+
+n8n                      # self-hosted or n8n Cloud, with a PUBLIC https URL (Slack must reach the webhook)
+                         # nodes used: Slack Trigger 1, If 2.3, Edit Fields (Set) 3.5,
+                         #             Basic LLM Chain 1.9, OpenAI Chat Model 1.3, Slack 2.7
+Slack workspace          # where you can create and install a Slack app
+OpenAI API key           # model used: gpt-4.1-mini
+
+# Credentials to create in n8n:
+#   - Slack account    (slackApi)   - Bot User OAuth Token (xoxb-...)
+#   - OpenAI account   (openAiApi)
+
+# Slack app bot token scopes (minimum):
+#   channels:history   - read messages in public channels (groups:history for private)
+#   chat:write         - post the shopping list
+# Event subscription:   message.channels   (message.groups for private channels)

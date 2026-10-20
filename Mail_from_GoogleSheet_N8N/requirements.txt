@@ -1,0 +1,15 @@
+# This is an n8n workflow, not a Python project, so there is nothing to pip install.
+# Requirements to run Mail_From_GoogleSheet.json:
+
+n8n                      # self-hosted (npm / Docker) or n8n Cloud
+                         # node versions used: Google Sheets 4.7, Gmail 2.2, Edit Fields (Set) 3.5
+Google account           # with access to the source Google Sheet
+
+# Credentials to create in n8n (OAuth2):
+#   - Google Sheets account           (googleSheetsOAuth2Api)
+#   - Google Sheets Trigger account   (googleSheetsTriggerOAuth2Api)
+#   - Gmail account                   (gmailOAuth2)
+
+# Google Sheet:
+#   - Tab named "SalesData"
+#   - Header row: Date | Customer | Product | Quantity | Amount | Status

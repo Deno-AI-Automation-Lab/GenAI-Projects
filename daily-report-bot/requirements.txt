@@ -1,0 +1,7 @@
+# Windows only. Desktop Microsoft Excel and Google Chrome must be installed.
+pyautogui>=0.9.54
+pyperclip>=1.8
+pillow>=10.0
+pywin32>=306
+requests>=2.31
+beautifulsoup4>=4.12
