@@ -1,0 +1,70 @@
+# MultiTool AI Agent - Requirements
+# ---------------------------------------------------------------
+# This is an n8n workflow, not a Python project, so there are no
+# pip packages to install. The items below are what you need to
+# run it.
+
+# --- Platform ---------------------------------------------------
+n8n                     # n8n Cloud or self-hosted (Docker / npm)
+                        # Version must include the AI Agent node v3.x,
+                        # Google Sheets Tool v4.7 and Telegram Trigger v1.5.
+Public HTTPS URL        # REQUIRED - Telegram only delivers to public HTTPS webhooks.
+                        # n8n Cloud has this built in. Self-hosted: use a domain
+                        # with SSL, or a tunnel (ngrok / Cloudflare Tunnel) and set
+                        # WEBHOOK_URL to that address.
+
+# Self-hosted only:
+Node.js                 # Version supported by your n8n release (npm install)
+Docker                  # Alternative to Node.js (recommended for self-hosting)
+
+# --- Community node (install BEFORE importing) ------------------
+n8n-nodes-serpapi       # Settings -> Community Nodes -> Install
+                        # Provides n8n-nodes-serpapi.serpApiTool v1
+
+# --- n8n nodes used ---------------------------------------------
+n8n-nodes-base.telegramTrigger              # v1.5  "Telegram Trigger"
+@n8n/n8n-nodes-langchain.agent              # v3.1  "Multitool" (AI Agent)
+@n8n/n8n-nodes-langchain.lmChatOpenAi       # v1.3  "OpenAI Chat Model"
+@n8n/n8n-nodes-langchain.memoryBufferWindow # v1.4  "Simple Memory" (keyed by chat ID)
+n8n-nodes-base.googleDocsTool               # v2    "Create a document in Google Docs"
+n8n-nodes-base.googleCalendarTool           # v1.3  "Create an event in Google Calendar"
+n8n-nodes-base.googleSheetsTool             # v4.7  "Append row in sheet in Google Sheets"
+n8n-nodes-base.gmailTool                    # v2.2  "Send a message in Gmail"
+n8n-nodes-serpapi.serpApiTool               # v1    "Google search in SerpApi" (community)
+n8n-nodes-base.telegram                     # v1.2  "Send a text message"
+
+# --- Google Cloud project ---------------------------------------
+Gmail API               # enabled
+Google Calendar API     # enabled
+Google Sheets API       # enabled
+Google Docs API         # enabled
+Google Drive API        # enabled (used to place new docs in a folder)
+OAuth consent screen    # configured, your Google account added as a test user
+OAuth 2.0 Client ID     # type: Web application, n8n redirect URL authorised
+
+# --- n8n credentials --------------------------------------------
+Telegram API            # bot token from @BotFather (/newbot)
+OpenAI API              # API key with billing enabled; model gpt-4.1-mini
+Google Docs OAuth2
+Google Calendar OAuth2
+Google Sheets OAuth2
+Gmail OAuth2            # scope: send email
+SerpApi                 # API key from serpapi.com dashboard
+
+# --- Your own Google resources ----------------------------------
+Google Drive folder     # set its ID in the Google Docs node
+Google Calendar         # select it in the Google Calendar node
+Google Sheet + tab      # select it in the Google Sheets node
+    # Header row must be exactly:
+    # Date | Customer | Product | Quantity | Amount | Status
+
+# --- Before going live ------------------------------------------
+Chat ID allow-list      # STRONGLY recommended - otherwise anyone who finds the
+                        # bot can email, book events and write data as you
+Current date/time zone in system message   # for correct calendar bookings
+Workflow set to Active  # registers the Telegram webhook
+
+# --- Optional upgrades ------------------------------------------
+n8n-nodes-base.googleDocsTool (Update op)   # write content into created docs
+@n8n/n8n-nodes-langchain.memoryPostgresChat # persistent chat memory
+@n8n/n8n-nodes-langchain.memoryRedisChat    # persistent chat memory
