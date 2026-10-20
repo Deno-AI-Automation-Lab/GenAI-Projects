@@ -1,0 +1,40 @@
+# Unread Email Summariser - Requirements
+# ---------------------------------------------------------------
+# This is an n8n workflow, not a Python project, so there are no
+# pip packages to install. The items below are what you need to
+# run it.
+
+# --- Platform ---------------------------------------------------
+n8n                     # n8n Cloud or self-hosted (Docker / npm)
+                        # Version must include the AI Agent node v3.x
+                        # and the Gmail node v2.2 used in this workflow.
+                        # Update n8n if the import shows unknown nodes.
+
+# Self-hosted only:
+Node.js                 # Version supported by your n8n release (npm install)
+Docker                  # Alternative to Node.js (recommended for self-hosting)
+Public HTTPS URL        # Needed for Google OAuth redirect (or use localhost for local testing)
+
+# --- n8n nodes used (all built in, no community nodes) ----------
+n8n-nodes-base.scheduleTrigger            # v1.4
+n8n-nodes-base.gmail                      # v2.2  (Get Many + Send)
+n8n-nodes-base.aggregate                  # v1
+@n8n/n8n-nodes-langchain.agent            # v3.1  (AI Agent)
+@n8n/n8n-nodes-langchain.lmChatOpenAi     # v1.3  (OpenAI Chat Model)
+
+# --- Accounts and credentials -----------------------------------
+Google account with Gmail
+Google Cloud project    # Gmail API enabled, OAuth consent screen configured,
+                        # OAuth 2.0 Client ID (Web application)
+n8n credential: Gmail OAuth2
+    # Scopes needed: read messages and send email
+    # (n8n requests these when you click "Sign in with Google")
+
+OpenAI account with API access and billing enabled
+n8n credential: OpenAI API key
+    # Model used: gpt-4.1-mini (any chat model can be swapped in)
+
+# --- Configuration to update before activating ------------------
+Recipient address in "Send a message" node
+Schedule interval (default: every 6 hours)
+Email limit (default: 5) - keep the AI prompt and subject in sync
