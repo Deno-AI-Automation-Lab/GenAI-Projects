@@ -1,0 +1,44 @@
+# Sending Mail - Conversational Email Agent - Requirements
+# ---------------------------------------------------------------
+# This is an n8n workflow, not a Python project, so there are no
+# pip packages to install. The items below are what you need to
+# run it.
+
+# --- Platform ---------------------------------------------------
+n8n                     # n8n Cloud or self-hosted (Docker / npm)
+                        # Version must include the AI Agent node v3.x,
+                        # Chat Trigger v1.5 and Gmail Tool v2.2.
+                        # Update n8n if the import shows unknown nodes.
+
+# Self-hosted only:
+Node.js                 # Version supported by your n8n release (npm install)
+Docker                  # Alternative to Node.js (recommended for self-hosting)
+Public HTTPS URL        # Needed for Google OAuth redirect and a public chat URL
+                        # (localhost is fine for testing in the editor)
+
+# --- n8n nodes used (all built in, no community nodes) ----------
+@n8n/n8n-nodes-langchain.chatTrigger        # v1.5  "When chat message received"
+@n8n/n8n-nodes-langchain.agent              # v3.1  "Perception" (AI Agent)
+@n8n/n8n-nodes-langchain.lmChatOpenAi       # v1.3  "Brain" (OpenAI Chat Model)
+@n8n/n8n-nodes-langchain.memoryBufferWindow # v1.4  "Memory" (Simple Memory)
+n8n-nodes-base.gmailTool                    # v2.2  "Action" (Gmail - Send)
+
+# --- Accounts and credentials -----------------------------------
+Google account with Gmail
+Google Cloud project    # Gmail API enabled, OAuth consent screen configured,
+                        # OAuth 2.0 Client ID (Web application)
+n8n credential: Gmail OAuth2
+    # Scope needed: send email
+    # (n8n requests this when you click "Sign in with Google")
+
+OpenAI account with API access and billing enabled
+n8n credential: OpenAI API key
+    # Model used: gpt-4.1-mini (any tool-calling chat model can be swapped in)
+
+# --- Before sharing the chat publicly ---------------------------
+Chat Trigger authentication enabled   # otherwise anyone with the URL can send mail as you
+Workflow set to Active
+
+# --- Optional upgrades ------------------------------------------
+@n8n/n8n-nodes-langchain.memoryPostgresChat # persistent chat memory
+@n8n/n8n-nodes-langchain.memoryRedisChat    # persistent chat memory
