@@ -110,24 +110,15 @@
       }
     },
     {
-      "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "field": "hours",
-              "hoursInterval": 6
-            }
-          ]
-        }
-      },
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.4,
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
       "position": [
         0,
         0
       ],
-      "id": "6a5c9fac-956c-4167-8b78-cf8e23b87d0e",
-      "name": "Schedule Trigger"
+      "id": "2844ece9-22a4-46d3-a56f-a499872be0aa",
+      "name": "When clicking ‘Execute workflow’"
     }
   ],
   "pinData": {},
@@ -175,6 +166,17 @@
           }
         ]
       ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get many messages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": true,
@@ -182,7 +184,7 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "f72b0c47-6514-4982-be8d-01d7b4e79a5f",
+  "versionId": "a7d20f5c-6796-4699-a3a3-218c00c37fa3",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "0ef4aead01475e73365af2c8b5ef0d1ee314ba7f2a127ed7cfa5143b8e57a8cc"
