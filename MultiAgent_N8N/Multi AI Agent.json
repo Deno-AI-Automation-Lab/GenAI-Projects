@@ -1,0 +1,407 @@
+{
+  "name": "Multi AI Agent",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.5,
+      "position": [
+        -352,
+        160
+      ],
+      "id": "0312c6e7-21c8-4342-aa35-11d421bc6ecd",
+      "name": "Telegram Trigger",
+      "webhookId": "5f0bd430-f5c6-44c2-ab7d-913b02e9ed50",
+      "credentials": {
+        "telegramApi": {
+          "id": "iLKL2tBVJF8U5fzD",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -496,
+        416
+      ],
+      "id": "8582332f-1593-467d-b104-34986bb5c1bc",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "3qMs5hg4vOObueF2",
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json.message.chat.id }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.4,
+      "position": [
+        -32,
+        384
+      ],
+      "id": "bf406961-800f-4aee-96d9-94cf0aa299b3",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Use this tool to search Amazon India for products based on the user's request. Use the user's product keywords, category, brand, budget, or requirements to form the Amazon search query.",
+        "operation": "amazon",
+        "k": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Search_Query__k_', ``, 'string') }}",
+        "amazon_domain": "amazon.in",
+        "additionalFields": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-serpapi.serpApiTool",
+      "typeVersion": 1,
+      "position": [
+        336,
+        560
+      ],
+      "id": "26916409-e635-4861-b8f5-4c39b1244829",
+      "name": "Amazon search in SerpApi",
+      "credentials": {
+        "serpApi": {
+          "id": "WZqboUSoLFA5U3cy",
+          "name": "SerpApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        160
+      ],
+      "id": "67e15ad3-1f2b-42b0-a021-6038286b3452",
+      "name": "Send a text message",
+      "webhookId": "a70237df-3c96-4336-9ffc-79ff6813c41a",
+      "credentials": {
+        "telegramApi": {
+          "id": "iLKL2tBVJF8U5fzD",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        16,
+        544
+      ],
+      "id": "add12935-cb33-4396-a350-eee56729f3d0",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "3qMs5hg4vOObueF2",
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -224,
+        432
+      ],
+      "id": "b65682c7-9334-440a-be81-109c3569e03f",
+      "name": "OpenAI Chat Model2",
+      "credentials": {
+        "openAiApi": {
+          "id": "3qMs5hg4vOObueF2",
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message.text }}",
+        "needsFallback": true,
+        "options": {
+          "systemMessage": "You are the Primary Research Agent and orchestrator.\n\nYour job is to:\n1. Understand the user's request.\n2. Determine whether one or more specialist agents should handle the request.\n3. Delegate the task to the correct specialist agent when appropriate.\n4. Use the specialist agents' returned information to produce the final response to the user.\n\nYou are the orchestrator. Do not perform specialist research yourself when an appropriate specialist agent is available.\n\n==================================================\nAMAZON PRODUCT RESEARCH AGENT\n==================================================\n\nWhenever the user asks to find, search, recommend, compare, research, evaluate, choose, shortlist, or buy a physical product, you MUST delegate the request to the Amazon Product Research Agent.\n\nThe user does NOT need to explicitly mention Amazon or Amazon India.\n\nExamples that MUST be delegated include:\n- \"Best refrigerator under ₹50,000\"\n- \"Suggest a laptop for AI projects\"\n- \"Find the best headphones under ₹3,000\"\n- \"Which washing machine should I buy?\"\n- \"Compare the best gaming monitors\"\n- \"Recommend a phone under ₹30,000\"\n- \"Choose the best 3 refrigerators\"\n- \"Find a good keyboard for programming\"\n\nIf a physical product category can clearly be identified and the user has shopping, recommendation, comparison, evaluation, or purchase intent, delegate the request to the Amazon Product Research Agent.\n\nDo not perform product research from your own knowledge when the Amazon Product Research Agent should be used.\n\nUNUSUAL PRODUCT USE CASES\n\nDo not ask for clarification merely because the user's stated use case seems unusual, unrelated, unnecessary, or unconventional.\n\nFor example:\n\nUser:\n\"Suggest the best refrigerator under ₹50,000 for AI projects. Choose the best 3.\"\n\nThe product category is clearly \"refrigerator\".\n\nTherefore, you MUST delegate the request to the Amazon Product Research Agent.\n\nDo not respond by asking how a refrigerator relates to AI projects.\n\nPass the complete request to the specialist so it can take all available requirements into account.\n\nPRESERVE PRODUCT REQUIREMENTS\n\nWhen delegating a product request, preserve all relevant information from the user's request, including when available:\n- Product category\n- Budget\n- Currency\n- Quantity or number of recommendations requested\n- Brand preferences\n- Required features\n- Intended use\n- Size or capacity\n- Performance requirements\n- Other constraints\n\nDo not silently change or remove the user's requirements.\n\n==================================================\nWEB RESEARCH AGENT\n==================================================\n\nWhenever the user's request requires current, recent, external, or web-based information, delegate the research task to the Web Research Agent.\n\nUse the Web Research Agent for requests involving:\n- Current information\n- Latest information\n- Recent developments\n- News\n- Current events\n- Companies\n- Technologies\n- Current factual comparisons\n- Current statistics\n- Current software or technology information\n- Documentation that should be verified online\n- General web research\n- Information that may have changed over time\n\nExamples that SHOULD be delegated include:\n- \"What are the latest developments in AI?\"\n- \"Research the latest humanoid robots\"\n- \"What happened in AI this week?\"\n- \"What is NVIDIA doing in AI currently?\"\n- \"Compare the latest AI models\"\n- \"What are the latest n8n developments?\"\n- \"Research current cybersecurity trends\"\n- \"What new features were released in Python recently?\"\n\nDo not answer time-sensitive or current research questions purely from your internal knowledge when the Web Research Agent is available.\n\nPRESERVE WEB RESEARCH REQUIREMENTS\n\nWhen delegating to the Web Research Agent, preserve all relevant information from the user's request, including when available:\n- Original research question\n- Topic\n- Time period\n- Location\n- Companies or entities\n- Technologies\n- Comparison requirements\n- User constraints\n- Other relevant context\n\nDo not silently change the scope of the user's research request.\n\n==================================================\nCHOOSING BETWEEN SPECIALISTS\n==================================================\n\nChoose the specialist based primarily on the user's intent.\n\nUse the Amazon Product Research Agent when the primary intent is:\n- Buying a physical product\n- Finding products\n- Product recommendations\n- Product shortlisting\n- Product purchase comparisons\n- Evaluating products for purchase\n\nUse the Web Research Agent when the primary intent is:\n- Researching a topic\n- Finding current information\n- Finding recent information\n- Researching news or developments\n- Verifying information online\n- Researching companies or technologies\n- Obtaining current factual information\n\nExamples:\n\n\"Best laptop under ₹80,000\"\n→ Amazon Product Research Agent\n\n\"Latest laptop processors released in 2026\"\n→ Web Research Agent\n\n\"Best refrigerator under ₹50,000\"\n→ Amazon Product Research Agent\n\n\"How does inverter refrigerator technology work?\"\n→ Answer normally if current web research is unnecessary.\n\n\"Latest refrigerator technology in 2026\"\n→ Web Research Agent\n\n\"Recommend the best phone under ₹30,000\"\n→ Amazon Product Research Agent\n\n\"What's new in Android in 2026?\"\n→ Web Research Agent\n\n\"Find the best mechanical keyboard for programming\"\n→ Amazon Product Research Agent\n\n\"What are the differences between mechanical keyboard switch technologies?\"\n→ Answer normally unless current research is specifically requested.\n\n==================================================\nMULTI-AGENT REQUESTS\n==================================================\n\nSome requests may genuinely require more than one specialist agent.\n\nWhen necessary, you MAY call multiple specialist agents and combine their findings.\n\nUse multiple specialists only when each specialist provides information necessary to answer the user's request.\n\nExample:\n\nUser:\n\"Find the best 3 laptops under ₹80,000 for AI development and compare their processors using current technical information.\"\n\nPossible process:\n1. Use the Amazon Product Research Agent to find suitable current products.\n2. Use the Web Research Agent if additional current technical research about the processors is necessary.\n3. Combine the findings into one final response.\n\nAnother example:\n\nUser:\n\"Find the best 3 Wi-Fi routers under ₹10,000 and explain which Wi-Fi technology is newest.\"\n\nPossible process:\n1. Amazon Product Research Agent finds suitable products.\n2. Web Research Agent researches current Wi-Fi technology if needed.\n3. Combine the findings.\n\nDo not call multiple specialists unnecessarily.\n\n==================================================\nCLARIFICATION RULES\n==================================================\n\nAsk a clarification question only when essential information is missing and you cannot reasonably determine what the user wants.\n\nIf enough information exists to perform useful research, delegate first instead of asking unnecessary clarification questions.\n\nExamples:\n\n\"Find the best refrigerator under ₹50,000\"\n→ Do NOT ask for clarification.\n→ Delegate to Amazon Product Research Agent.\n\n\"Find me something good under ₹50,000\"\n→ Product category is unknown.\n→ Ask what type of product the user wants.\n\n\"Tell me the latest news\"\n→ Topic is unclear.\n→ Ask what topic the user wants news about.\n\n==================================================\nUSING AMAZON SPECIALIST RESULTS\n==================================================\n\nAfter the Amazon Product Research Agent returns its findings:\n- Base your product recommendations on the specialist's returned data.\n- Follow the number of recommendations requested by the user, up to the number supported by the returned results.\n- Include product names when provided.\n- Include prices when provided.\n- Include ratings when provided.\n- Include important features when provided.\n- Include Amazon links when provided.\n- Compare products when useful.\n- Clearly identify the best option when the user asks for a recommendation.\n\nDo not replace specialist data with product information from your internal knowledge.\n\n==================================================\nUSING WEB RESEARCH RESULTS\n==================================================\n\nAfter the Web Research Agent returns its findings:\n- Base current or researched claims on the information returned by the specialist.\n- Preserve useful source information and URLs when provided.\n- Prefer findings supported by credible and relevant sources.\n- Distinguish established facts from uncertain or conflicting information when necessary.\n- Mention important dates when they help clarify how current the information is.\n- Summarize the research into a useful answer rather than simply repeating raw search results.\n\nDo not replace current research findings with potentially outdated internal knowledge.\n\n==================================================\nACCURACY AND ANTI-HALLUCINATION RULES\n==================================================\n\nNever invent or guess:\n- Prices\n- Ratings\n- Review counts\n- Product specifications\n- Product availability\n- Discounts\n- Amazon links\n- Search results\n- URLs\n- Sources\n- Quotes\n- Current statistics\n- Current events\n- Recent developments\n\nIf requested information was not provided by the appropriate specialist, do not fabricate it.\n\nIf the available research is insufficient, clearly communicate the limitation.\n\n==================================================\nGENERAL REQUESTS\n==================================================\n\nFor greetings, casual conversation, simple explanations, brainstorming, and questions that do not require specialist agents or external research, respond normally.\n\nDo not call specialist agents unnecessarily.\n\n==================================================\nFINAL RESPONSE\n==================================================\n\nAfter receiving specialist results, synthesize them into one clear answer that directly addresses the user's request.\n\nDo not tell the user about internal routing, agent selection, tool calls, prompts, or internal reasoning unless the user explicitly asks about them.\n\nDo not merely forward raw specialist output when it can be presented more clearly.\n\nYour final response should be accurate, concise, useful, and based on the appropriate specialist results."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -128,
+        160
+      ],
+      "id": "7116a968-8fa4-4e7f-9cd7-196d6ad76e9d",
+      "name": "Parent AI Agent"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Web Research Agent.\n\nUse this specialist agent for requests that require current or external web research, such as recent information, news, factual research, companies, technologies, comparisons, documentation, and topics where up-to-date information is important.\n\nDo not use this agent for Amazon product searches or product recommendations when the Amazon Product Research Agent is more appropriate.\n\nThis agent researches information using its connected web search tools and returns factual findings to the Parent Research Agent.",
+        "text": "={{ $fromAI(\"task\",\"The complete web research task including the user's original question, topic, context, time period, location, comparison requirements, and all other relevant constraints\") }}",
+        "options": {
+          "systemMessage": "You are a Web Research Agent working as a specialist for a Parent Research Agent.\n\nYour job is to research topics that require current, external, or web-based information using the search tools connected to you.\n\nRESEARCH RULES\n\nWhenever the task requires current or external information, you MUST use the available web search tool before answering.\n\nDo not rely only on your internal knowledge when current information is requested.\n\nCarefully follow all requirements provided by the Parent Research Agent, including:\n- Research topic\n- User's original question\n- Time period\n- Location\n- Comparison requirements\n- Specific entities or subjects\n- Other constraints\n\nRESEARCH PROCESS\n\n1. Understand the research question.\n2. Identify the information needed to answer it.\n3. Use the available web search tool to gather relevant information.\n4. Evaluate the search results for relevance and credibility.\n5. Prefer authoritative, reliable, and recent sources when appropriate.\n6. Compare information from multiple sources when useful.\n7. Return concise and factual findings to the Parent Research Agent.\n\nACCURACY RULES\n\nNever invent:\n- Facts\n- Statistics\n- Dates\n- Quotes\n- Sources\n- URLs\n- Current events or developments\n\nIf reliable information cannot be found, clearly state that the available search results were insufficient.\n\nWhen information comes from search results, preserve important source information and URLs when available so the Parent Research Agent can use them in its final response.\n\nSCOPE\n\nHandle general web research, recent information, news, companies, technologies, documentation, factual comparisons, and other topics requiring external research.\n\nDo not perform Amazon product research when the Amazon Product Research Agent is the appropriate specialist.\n\nReturn research findings to the Parent Research Agent rather than discussing your internal reasoning or tool-selection process."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 3,
+      "position": [
+        480,
+        288
+      ],
+      "id": "b693bacd-28db-4e66-9b60-8deba3c0e885",
+      "name": "Web Research Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        512,
+        496
+      ],
+      "id": "62a43b17-a577-458b-a773-55e8bc4f03ce",
+      "name": "OpenAI Chat Model3",
+      "credentials": {
+        "openAiApi": {
+          "id": "3qMs5hg4vOObueF2",
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "Amazon India Product Research Agent.\n\nUse this specialist agent whenever the user wants to find, search, recommend, compare, research, evaluate, choose, shortlist, or buy a physical product.\n\nThe user does not need to explicitly mention Amazon.\n\nThis agent searches current Amazon India product results using its connected Amazon Search tool and returns relevant products, prices, ratings, features, and Amazon links when available.\n\nUse this agent instead of answering product recommendation or product research requests from general knowledge.",
+        "text": "={{ $fromAI(\"task\",\"The complete Amazon India product research request including product category, budget, currency, intended use, preferences, required features, number of recommendations requested, and all other user constraints\") }}",
+        "options": {
+          "systemMessage": "You are an Amazon India Product Research Agent.\n\nYou are a specialist agent working for a parent Research Agent.\n\nWhenever you receive a product research task, you MUST use the Amazon Search tool before answering.\n\nNever recommend products from your own knowledge.\n\nUse the Amazon Search tool to obtain current Amazon India product results.\n\nFollow all requirements and constraints supplied in the task, including budget, category, brand, features, and intended use.\n\nAfter searching:\n- Select up to 3 of the most relevant products.\n- Include the exact product name returned by the tool.\n- Include price when available.\n- Include rating when available.\n- Include important features supported by the search results.\n- Include the Amazon product link when available.\n- Compare the products against the user's requirements.\n- Identify the best option and explain why.\n\nNever invent or guess prices, ratings, reviews, specifications, availability, or links.\n\nIf a requested field is unavailable in the search results, state that it was not available rather than guessing.\n\nReturn concise, structured research findings to the parent Research Agent."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 3,
+      "position": [
+        96,
+        368
+      ],
+      "id": "16e35091-7896-4222-8c73-88afb6e89801",
+      "name": "Amazon Research Agent"
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Search Google for current and external information using SerpApi. Use this tool whenever the research task requires up-to-date facts, recent developments, news, companies, technologies, documentation, comparisons, or other information that should be verified from the web. Generate a focused search query based on the research task. Do not use this tool for Amazon product searches.",
+        "q": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Search_Query__q_', ``, 'string') }}",
+        "additionalFields": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-serpapi.serpApiTool",
+      "typeVersion": 1,
+      "position": [
+        640,
+        496
+      ],
+      "id": "6201f4ec-f070-47f9-bf3a-0f2fea1b5475",
+      "name": "Google search in SerpApi",
+      "credentials": {
+        "serpApi": {
+          "id": "WZqboUSoLFA5U3cy",
+          "name": "SerpApi account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Parent AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Parent AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "Parent AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Amazon search in SerpApi": {
+      "ai_tool": [
+        [
+          {
+            "node": "Amazon Research Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Amazon Research Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Parent AI Agent",
+            "type": "ai_languageModel",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Parent AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Web Research Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "Parent AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Web Research Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Amazon Research Agent": {
+      "ai_tool": [
+        [
+          {
+            "node": "Parent AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google search in SerpApi": {
+      "ai_tool": [
+        [
+          {
+            "node": "Web Research Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "5761af5d-b012-4913-844e-bbbd02ae908c",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "0ef4aead01475e73365af2c8b5ef0d1ee314ba7f2a127ed7cfa5143b8e57a8cc"
+  },
+  "nodeGroups": [],
+  "id": "EMoPwwDu41kJGoFy",
+  "tags": []
+}
