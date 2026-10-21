@@ -1,0 +1,342 @@
+{
+  "name": "MCP Server Trigger",
+  "nodes": [
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Use this tool to create a Google Docs document when the user asks to create, write, save, or prepare a document. Determine an appropriate document title from the user's request.",
+        "folderId": "1JWpvOWMWLft4xZe8jOuUXTJUIktdu9Be",
+        "title": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Title', ``, 'string') }}"
+      },
+      "type": "n8n-nodes-base.googleDocsTool",
+      "typeVersion": 2,
+      "position": [
+        -784,
+        208
+      ],
+      "id": "9989f104-1866-41d7-bf5e-116ca99566d5",
+      "name": "Create a document in Google Docs",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "hMMQVKzSZLvX6sQX",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Use this tool to create a Google Calendar event when the user asks to schedule, book, add, or create an event or meeting. Determine the event title, start time, end time, and optional description from the user's request.",
+        "calendar": {
+          "__rl": true,
+          "value": "denomelvin24@gmail.com",
+          "mode": "list",
+          "cachedResultName": "denomelvin24@gmail.com"
+        },
+        "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', ``, 'string') }}",
+        "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', ``, 'string') }}",
+        "additionalFields": {
+          "description": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Description', ``, 'string') }}",
+          "summary": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Summary', ``, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        -656,
+        144
+      ],
+      "id": "e47e10ea-78d0-42f8-a856-e4d1083845ab",
+      "name": "Create an event in Google Calendar",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "Rr0SE7xPZuJ8QTLY",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Use this tool to append a new row to the SalesData Google Sheet when the user asks to record, save, add, or log sales information. Extract the date, customer, product, quantity, amount, and status from the user's request.",
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1FwdtH_kb2cD2-2jwbO1GXqdawWjsTwAqTl6V6_Dgm0Q",
+          "mode": "list",
+          "cachedResultName": "n8n_google_sheets_email_test",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1FwdtH_kb2cD2-2jwbO1GXqdawWjsTwAqTl6V6_Dgm0Q/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1404947047,
+          "mode": "list",
+          "cachedResultName": "SalesData",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1FwdtH_kb2cD2-2jwbO1GXqdawWjsTwAqTl6V6_Dgm0Q/edit#gid=1404947047"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Status": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Status', ``, 'string') }}",
+            "Amount": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Amount', ``, 'string') }}",
+            "Quantity": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Quantity', ``, 'string') }}",
+            "Product": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Product', ``, 'string') }}",
+            "Customer": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Customer', ``, 'string') }}",
+            "Date": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Date', ``, 'string') }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Date",
+              "displayName": "Date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Customer",
+              "displayName": "Customer",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Product",
+              "displayName": "Product",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Quantity",
+              "displayName": "Quantity",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Amount",
+              "displayName": "Amount",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Test purpose",
+              "displayName": "Test purpose",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Use this sheet as input for the n8n Google Sheets → Gmail workflow",
+              "displayName": "Use this sheet as input for the n8n Google Sheets → Gmail workflow",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        -512,
+        208
+      ],
+      "id": "89fcced4-3147-4c79-9491-83bce258e1dd",
+      "name": "Append row in sheet in Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5tShrLoIhuMP61qS",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Use this tool to send an email through Gmail when the user asks to send, compose, or email a message. Determine the recipient email address, subject, and message from the user's request. Do not invent recipient email addresses.",
+        "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To', ``, 'string') }}",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.2,
+      "position": [
+        -384,
+        128
+      ],
+      "id": "e734d409-edb3-4613-ab86-9f8dd54f9f7a",
+      "name": "Send a message in Gmail",
+      "webhookId": "143c960f-ab36-4e24-b92a-24e1208faeeb",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "hYaOss50NCgDWi9G",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Use this tool to search Google when the user asks for current information, research, facts, websites, products, news, or anything that requires web search. Form the search query from the user's request.",
+        "q": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Search_Query__q_', ``, 'string') }}",
+        "location": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Location__location_', ``, 'string') }}",
+        "additionalFields": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-serpapi.serpApiTool",
+      "typeVersion": 1,
+      "position": [
+        -224,
+        208
+      ],
+      "id": "d47b1c82-4ff4-498e-90fe-54e83a9356e4",
+      "name": "Google search in SerpApi",
+      "credentials": {
+        "serpApi": {
+          "id": "WZqboUSoLFA5U3cy",
+          "name": "SerpApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "n8nOAuth2",
+        "path": "2f319f2c-a5c1-464b-906f-d247783e038e",
+        "instructions": "This MCP server exposes my n8n automation tools and workflows.\nUse the available tools only when the user's request matches their purpose."
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpTrigger",
+      "typeVersion": 2.1,
+      "position": [
+        -576,
+        -176
+      ],
+      "id": "4893fd0d-e384-4eef-af65-6288a5aab7c9",
+      "name": "MCP Server Trigger",
+      "webhookId": "2f319f2c-a5c1-464b-906f-d247783e038e"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolCalculator",
+      "typeVersion": 1,
+      "position": [
+        -32,
+        144
+      ],
+      "id": "16c560fe-1c81-4e39-87bf-4fbffecec55e",
+      "name": "Calculator"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Create a document in Google Docs": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create an event in Google Calendar": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet in Google Sheets": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message in Gmail": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google search in SerpApi": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculator": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "c7f12f96-4141-4b7c-bfb4-508e49c9fd86",
+  "meta": {
+    "instanceId": "0ef4aead01475e73365af2c8b5ef0d1ee314ba7f2a127ed7cfa5143b8e57a8cc"
+  },
+  "nodeGroups": [],
+  "id": "Gr6OUiYUZFtOXAok",
+  "tags": []
+}
