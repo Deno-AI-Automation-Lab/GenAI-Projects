@@ -1,0 +1,72 @@
+[
+  {
+    "question": "Which frontend framework is used for the web app?",
+    "expected": ["Next.js (React + TypeScript)"],
+    "reference": "Next.js with React and TypeScript, used for SSR/SSG and SPA behaviour."
+  },
+  {
+    "question": "Which backend framework and language does the app use?",
+    "expected": ["NestJS for modular architecture", "Node.js + TypeScript"],
+    "reference": "Node.js with TypeScript, using NestJS for modular architecture, DI and microservices support."
+  },
+  {
+    "question": "Which database stores relational data like users and playlists?",
+    "expected": ["PostgreSQL for relational data"],
+    "reference": "PostgreSQL stores relational data such as users, playlists and subscriptions."
+  },
+  {
+    "question": "What is Redis used for in this architecture?",
+    "expected": ["Redis for caching and sessions", "Authentication/session cache"],
+    "reference": "Redis is used for caching and sessions, including the auth/session cache, playback state cache, rate limits and hot metadata caches."
+  },
+  {
+    "question": "What powers full-text search and autocomplete?",
+    "expected": ["Elasticsearch/OpenSearch for full-text search", "Powered by Elasticsearch/OpenSearch"],
+    "reference": "Elasticsearch/OpenSearch."
+  },
+  {
+    "question": "Where are analytics events stored?",
+    "expected": ["ClickHouse or similar data warehouse", "Stores events in ClickHouse"],
+    "reference": "In ClickHouse or a similar data warehouse."
+  },
+  {
+    "question": "Which tool does the Media Processor Service use to transcode uploads?",
+    "expected": ["transcoding uploads (FFmpeg)"],
+    "reference": "FFmpeg, run by a background worker that creates multiple bitrates and HLS manifests."
+  },
+  {
+    "question": "What subscription plans does the Subscription & Billing Service manage?",
+    "expected": ["Free, Premium, Family, Student"],
+    "reference": "Free, Premium, Family and Student plans."
+  },
+  {
+    "question": "Which payment gateways are integrated?",
+    "expected": ["Stripe/Razorpay"],
+    "reference": "Payment gateways such as Stripe and Razorpay."
+  },
+  {
+    "question": "What container orchestration platform is used?",
+    "expected": ["Kubernetes (GKE/EKS/AKS)"],
+    "reference": "Kubernetes (GKE, EKS or AKS), with Docker for containerisation."
+  },
+  {
+    "question": "How does the player get real-time updates?",
+    "expected": ["WebSocket channel for real-time player updates"],
+    "reference": "The Playback & Session Service provides a WebSocket channel for real-time player updates."
+  },
+  {
+    "question": "What is the difference between the free and premium tiers?",
+    "expected": ["Free tier (ad-supported with lower bitrate)", "Premium tier (ad-free"],
+    "reference": "Free tier is ad-supported with lower bitrate; Premium is ad-free, high bitrate, with offline for native apps."
+  },
+  {
+    "question": "Which message queues are used for internal events?",
+    "expected": ["Kafka/NATS/RabbitMQ"],
+    "reference": "Kafka, NATS or RabbitMQ."
+  },
+  {
+    "question": "How many daily users is the application designed to serve?",
+    "expected": ["100,000+ daily users"],
+    "reference": "100,000+ daily users."
+  }
+]
