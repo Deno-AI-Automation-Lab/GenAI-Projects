@@ -12,7 +12,7 @@ from pathlib import Path
 import pymupdf
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "backend"))
 from hybrid_rag.config import TAMIL_FONT  # noqa: E402
 
 OUT = ROOT / "samples" / "sample_schemes.pdf"

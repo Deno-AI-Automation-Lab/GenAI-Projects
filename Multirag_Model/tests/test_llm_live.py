@@ -25,10 +25,11 @@ def live(sample_pdf):
 
 
 def test_hybrid_retrieval_quality(live):
+    from hybrid_rag.config import PROJECT_DIR
     from hybrid_rag.evaluation import evaluate_retrieval, load_eval_set
 
     s, _, store = live
-    res = evaluate_retrieval(store, load_eval_set(), s, modes=("hybrid",), k=5)
+    res = evaluate_retrieval(store, load_eval_set(PROJECT_DIR / "eval" / "eval_set_sample.json"), s, modes=("hybrid",), k=5)
     assert res["hybrid"]["hit_rate@5"] >= 0.8
     assert res["hybrid"]["mrr"] >= 0.5
 

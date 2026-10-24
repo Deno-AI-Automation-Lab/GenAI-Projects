@@ -1,0 +1,4 @@
+# Frontend: Streamlit UI. It runs the RAG pipeline in-process, so it also
+# needs the backend's core libraries.
+-r ../backend/requirements.txt
+streamlit==1.66.1
