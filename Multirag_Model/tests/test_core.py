@@ -221,7 +221,8 @@ def test_metrics():
 
 
 def test_evaluate_retrieval_on_sample(store, settings):
-    res = evaluate_retrieval(store, load_eval_set(), settings, modes=("bm25", "hybrid"), k=5)
+    res = evaluate_retrieval(store, load_eval_set(config.PROJECT_DIR / "eval" / "eval_set_sample.json"),
+                             settings, modes=("bm25", "hybrid"), k=5)
     assert res["bm25"]["hit_rate@5"] >= 0.8   # keyword retrieval works without a real embedding model
     assert 0 <= res["hybrid"]["mrr"] <= 1
 
@@ -231,7 +232,7 @@ def test_evaluate_retrieval_on_sample(store, settings):
 def test_api_health_and_guarded_chat(store):
     from fastapi.testclient import TestClient
 
-    from hybrid_rag import api
+    import api
 
     api.state.store = store
     api.state._llm = object()            # never called: input guard blocks first
@@ -273,7 +274,7 @@ def test_api_streaming_chat_keeps_memory(store):
 
     from fastapi.testclient import TestClient
 
-    from hybrid_rag import api
+    import api
 
     api.state.store = store
     api.state._llm = _fake_llm("Solar Pump Support gives a 70 percent subsidy on solar water pumps [S1].")

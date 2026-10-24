@@ -1,0 +1,26 @@
+# Secrets - never copy into the image (passed at run time via --env-file / env_file)
+.env
+.env.*
+!.env.example
+
+# Local virtual environments and caches
+myenv/
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Runtime data lives in a Docker volume, not in the image
+data/
+
+# Misc
+.git/
+.gitignore
+*.zip
+*.log
+Dockerfile
+docker-compose.yml
+.dockerignore
+spotify_web_app_architecture.pdf

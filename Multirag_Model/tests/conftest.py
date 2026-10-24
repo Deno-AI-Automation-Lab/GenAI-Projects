@@ -9,6 +9,8 @@ from langchain_core.embeddings import DeterministicFakeEmbedding
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "backend"))
+sys.path.insert(0, str(ROOT / "frontend"))
 
 from hybrid_rag.config import get_settings  # noqa: E402
 from hybrid_rag.ingest import ingest_pdf  # noqa: E402

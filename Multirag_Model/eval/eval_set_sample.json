@@ -1,0 +1,32 @@
+[
+  {
+    "question": "What subsidy does Green Farm Mission give for drip irrigation?",
+    "expected": ["25,000 per acre"],
+    "reference": "Green Farm Mission gives a subsidy of Rs. 25,000 per acre for drip irrigation."
+  },
+  {
+    "question": "Which department issues the Solar Pump Support scheme?",
+    "expected": ["Solar Pump Support is issued by the Department of Energy", "Department: Energy"],
+    "reference": "The Department of Energy."
+  },
+  {
+    "question": "Who is eligible for the Coastal Livelihood Grant?",
+    "expected": ["Registered fisherfolk"],
+    "reference": "Registered fisherfolk families."
+  },
+  {
+    "question": "What is the last date to apply for Green Farm Mission?",
+    "expected": ["31 March 2027"],
+    "reference": "31 March 2027."
+  },
+  {
+    "question": "How much subsidy is given on solar water pumps?",
+    "expected": ["70 percent", "70%"],
+    "reference": "A 70 percent subsidy on solar water pumps up to 10 HP."
+  },
+  {
+    "question": "சொட்டு நீர் பாசனத்திற்கு மானியம் எந்த துறை வழங்குகிறது?",
+    "expected": ["வேளாண்மைத்", "சொட்டு"],
+    "reference": "வேளாண்மைத் துறை (Department of Agriculture)."
+  }
+]
