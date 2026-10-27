@@ -1,0 +1,5 @@
+# AutoGen Weather News Agent
+autogen-agentchat>=0.7.5      # agents, teams, terminations, Console
+autogen-ext[openai]>=0.7.5    # OpenAIChatCompletionClient
+ddgs>=9.16.1                  # free, keyless DuckDuckGo search (formerly duckduckgo_search)
+python-dotenv>=1.2.3          # loads OPENAI_API_KEY from .env
