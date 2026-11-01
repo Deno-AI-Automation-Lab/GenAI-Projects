@@ -35,6 +35,41 @@
       "resolved": "Suggest me a healthy breakfast for weight loss.",
       "agent": "food_agent",
       "answer": "- Healthy breakfasts for weight loss often include veggie frittatas and protein smoothies to support fullness.\n- High-protein smoothies and egg recipes are examples of weight loss-friendly breakfast options.\n- Fiber-rich foods like oatmeal with fruits help keep you full and support weight loss.\n- Avoid high-sugar and high-fat breakfast foods to maintain calorie control.\n- Recipes with high protein and fiber content are recommended for weight loss breakfasts."
+    },
+    {
+      "time": "2026-10-31T22:08:40",
+      "question": "suggest a healthy food for 55 year old man who has blood sugar",
+      "resolved": "Suggest a healthy food for a 55 year old man who has blood sugar.",
+      "agent": "food_agent",
+      "answer": "- Seniors with diabetes benefit from a balanced diet rich in whole foods to stabilize blood sugar.\n- A diabetes diet helps manage blood sugar by focusing on meal planning and carbohydrate counting.\n- The best diabetic foods include non-starchy vegetables and whole grains to help control blood sugar.\n- Eating foods that prevent blood sugar spikes is key, including fiber-rich and low glycemic index foods.\n- A 7-day diabetes meal plan includes at least 80 grams of protein and 30 grams of fiber daily."
+    },
+    {
+      "time": "2026-10-31T22:09:03",
+      "question": "what is the latest tamil trending movie running in theatres now",
+      "resolved": "What is the latest Tamil trending movie running in theatres now?",
+      "agent": "movies_agent",
+      "answer": "- The latest Tamil trending movie running in theatres is \"Jailer 2\" starring Rajinikanth.\n- \"Jailer 2\" is breaking box office records and is predicted to cross Rs 1,000 crore worldwide.\n- It has become the highest-grossing Tamil film globally, crossing Rs 700 crore by day 12.\n- The film is also the second highest grossing Tamil-dubbed film in Hindi box office.\n- \"Jailer 2\" is currently the biggest hit in Tamil cinema this year."
+    },
+    {
+      "time": "2026-10-31T22:09:30",
+      "question": "what is the temperature now in kashmir",
+      "resolved": "What is the temperature now in Kashmir?",
+      "agent": "weather_agent",
+      "answer": "- Current temperature in Srinagar, Kashmir, India is 10.6°C, feels like 9.0°C with clear sky.\n- Humidity is 65% and wind speed is 0.9 km/h.\n- No precipitation currently, rain chance today is 0%.\n- Today's temperature range forecast is 5.2°C to 19.3°C with mainly clear conditions.\n- No rain expected today in Srinagar, Kashmir."
+    },
+    {
+      "time": "2026-10-31T22:09:52",
+      "question": "suggest me an exercise to reduce overall bofy weight",
+      "resolved": "Suggest me an exercise to reduce overall body weight.",
+      "agent": "exercise_agent",
+      "answer": "- High-intensity interval training (HIIT) is highly effective for overall body weight reduction.\n- Combining cardio exercises like running or cycling with strength training boosts calorie burn.\n- Bodyweight exercises such as squats, push-ups, and lunges support fat loss and muscle building.\n- Consistent full-body workouts elevate metabolism and promote sustained weight loss.\n- A balanced routine including cardio, strength, and HIIT is recommended for best results."
+    },
+    {
+      "time": "2026-10-31T22:10:16",
+      "question": "suggest me a  two day trip plan to nelliampathy",
+      "resolved": "Suggest me a two day trip plan to Nelliampathy.",
+      "agent": "travel_agent",
+      "answer": "- Day 1: Visit Nelliyampathy Tea Estates, Seetharkundu Viewpoint, and Palagapandi Estate for scenic views and nature walks.\n- Day 2: Explore Pothundy Dam, Parambikulam Wildlife Sanctuary, and local waterfalls like Mayiladumpara for wildlife and water beauty.\n- The itinerary covers hill station highlights including orange estates and cliff viewpoints above Palakkad plains.\n- The trip plan is self-guided with day-by-day routes and local recommendations for independent travel.\n- This 2-day itinerary is designed for a weekend trip to enjoy nature and wildlife in Nelliyampathy."
     }
   ]
 }
