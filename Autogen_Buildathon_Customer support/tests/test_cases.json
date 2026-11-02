@@ -1,0 +1,22 @@
+[
+  {
+    "id": "tamil_airfryer_e3_resolved",
+    "description": "Tamil-speaking customer, routine technical issue with a documented fix. Expected: product = SmartCrisp air fryer, category technical_issue, urgency Low/Medium, reply in Tamil citing product_faq.docx, status Resolved (green).",
+    "customer_name": "Ravi Kumar",
+    "order_id": "ORD-104522",
+    "customer_email": "",
+    "complaint": "என் SmartCrisp Pro ஏர் ஃப்ரையர் ஆன் செய்தவுடன் E3 பிழை காட்டுகிறது. இதை எப்படி சரி செய்வது?",
+    "expected_status": "Resolved",
+    "expected_language": "ta"
+  },
+  {
+    "id": "headphones_double_charge_legal_escalated",
+    "description": "Angry customer, charged twice and threatening legal action. Expected: product = AeroBeat X9, category payment, urgency High, sentiment Very Negative, risk flags (charged twice, consumer forum), status Escalated (red) with an escalation email to the support team and the reply held for human approval.",
+    "customer_name": "Anitha Raj",
+    "order_id": "ORD-200311",
+    "customer_email": "",
+    "complaint": "This is ridiculous! I was charged twice for my AeroBeat X9 headphones and nobody has refunded the extra payment for two weeks. If this isn't fixed today I'm going to the consumer forum and my lawyer.",
+    "expected_status": "Escalated",
+    "expected_language": "en"
+  }
+]

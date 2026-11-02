@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 420" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#13294B"/>
+      <stop offset="1" stop-color="#1F4A6B"/>
+    </linearGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#ffffff" opacity="0.07"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="420" fill="url(#sky)"/>
+  <rect width="1600" height="420" fill="url(#dots)"/>
+  <!-- soft floor curve -->
+  <path d="M0 360 C 400 320, 1200 400, 1600 340 L1600 420 L0 420 Z" fill="#2F8F8A" opacity="0.22"/>
+  <g fill="none" stroke="#9FD3CF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.55">
+    <!-- robot vacuum -->
+    <g transform="translate(1010 250)">
+      <ellipse cx="0" cy="40" rx="110" ry="30"/>
+      <path d="M-110 40 v-22 a110 30 0 0 1 220 0 v22"/>
+      <ellipse cx="0" cy="18" rx="34" ry="9"/>
+      <circle cx="70" cy="30" r="4" fill="#F2A33A" stroke="none"/>
+      <path d="M-170 62 q 20 -8 40 0 t 40 0" opacity="0.6"/>
+    </g>
+    <!-- headphones -->
+    <g transform="translate(1270 120)">
+      <path d="M-60 90 v-30 a60 60 0 0 1 120 0 v30"/>
+      <rect x="-78" y="80" width="30" height="62" rx="12"/>
+      <rect x="48" y="80" width="30" height="62" rx="12"/>
+      <path d="M100 70 q 18 30 0 60 M118 56 q 30 44 0 88" opacity="0.6"/>
+    </g>
+    <!-- air fryer -->
+    <g transform="translate(1440 170)">
+      <path d="M-55 0 h110 a14 14 0 0 1 14 14 v150 a14 14 0 0 1 -14 14 h-110 a14 14 0 0 1 -14 -14 v-150 a14 14 0 0 1 14 -14 z"/>
+      <rect x="-45" y="70" width="90" height="70" rx="10"/>
+      <path d="M-20 105 h40"/>
+      <circle cx="0" cy="34" r="14"/>
+      <path d="M-20 -24 q 6 -14 0 -26 M0 -20 q 6 -14 0 -26 M20 -24 q 6 -14 0 -26" opacity="0.6"/>
+    </g>
+  </g>
+</svg>

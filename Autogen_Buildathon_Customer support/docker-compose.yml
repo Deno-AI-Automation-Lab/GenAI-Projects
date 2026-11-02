@@ -1,0 +1,12 @@
+# Local Neo4j for the knowledge graph:  docker compose up -d
+# Password must match NEO4J_PASSWORD in .env
+services:
+  neo4j:
+    image: neo4j:5
+    ports: ["7474:7474", "7687:7687"]
+    environment:
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:-change-me}
+    volumes:
+      - neo4j_data:/data
+volumes:
+  neo4j_data:
