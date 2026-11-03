@@ -328,7 +328,24 @@ def dashboard(_: str = Depends(require_admin), svc: SupportServices = Depends(se
         "avg_urgency": round(sum(scored) / len(scored), 2) if scored else 0.0,
         "urgency_counts": dict(Counter(t.urgency for t in tickets if t.urgency)),
         "avg_confidence": round(sum(t.confidence or 0 for t in tickets) / len(tickets), 3) if tickets else 0.0,
+        **_cost_summary(svc.memory.all_metrics()),
     }
+
+
+def _cost_summary(metrics: list[dict]) -> dict:
+    """Average processing time and approximate model cost per ticket (automated part only)."""
+    if not metrics:
+        return {"measured_tickets": 0, "avg_latency_s": None, "p90_latency_s": None,
+                "avg_cost_usd": None, "total_cost_usd": None, "avg_tokens": None}
+    lat = sorted(m.get("latency_s", 0) for m in metrics)
+    cost = [m.get("cost_usd", 0) for m in metrics]
+    tokens = [m.get("tokens_in", 0) + m.get("tokens_out", 0) for m in metrics]
+    return {"measured_tickets": len(metrics),
+            "avg_latency_s": round(sum(lat) / len(lat), 1),
+            "p90_latency_s": round(lat[min(len(lat) - 1, int(0.9 * len(lat)))], 1),
+            "avg_cost_usd": round(sum(cost) / len(cost), 5),
+            "total_cost_usd": round(sum(cost), 4),
+            "avg_tokens": round(sum(tokens) / len(tokens))}
 
 
 @app.get("/admin/approvals", response_model=list[TicketResponse])
@@ -375,7 +392,7 @@ def resolve(ticket_id: str, body: ResolveRequest, user: str = Depends(require_ad
 def ticket_retrieval(ticket_id: str, _: str = Depends(require_admin), svc: SupportServices = Depends(services)) -> dict:
     extra = svc.memory.get_extra(ticket_id)
     return {k: extra.get(k) for k in ("analysis", "passages", "graph_facts", "retrieval_mode", "retrieval_errors",
-                                      "decision", "draft")}
+                                      "decision", "draft", "metrics")}
 
 
 @app.get("/admin/chunks")

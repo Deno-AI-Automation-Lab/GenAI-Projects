@@ -46,7 +46,36 @@ def load_router(settings: Settings, embeddings=None) -> RouterIndex:
             store = FAISS.load_local(str(d), embeddings or get_embeddings(), allow_dangerous_deserialization=True)
         except Exception as exc:  # routing then relies on exact product-name matching + planner
             log.error("Router FAISS unavailable: %s", exc)
+    _add_store_aliases(settings, products)
     return RouterIndex(store=store, products=products)
+
+
+_STORE_RE = (re.compile(r"Store:\s*([A-Z][A-Za-z]+)"), re.compile(r"\b([A-Z][a-z]+[A-Z][A-Za-z]+) Online\b"))
+
+
+def _add_store_aliases(settings: Settings, products: list[dict]) -> None:
+    """Store/brand names from each product's own documents ("Store: SoundSphere Online",
+    "HomePilot Online | ...") become aliases, so "my SoundSphere account" routes to AeroBeat.
+    A brand used by more than one product is ignored (it would not identify the product)."""
+    found: dict[str, set[str]] = {}
+    for p in products:
+        try:
+            recs = json.loads((settings.index_dir / p["slug"] / "records.json").read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        text = " ".join(f"{r.get('title', '')} {r.get('text', '')}" for r in recs[:60])
+        found[p["slug"]] = {m.lower() for rx in _STORE_RE for m in rx.findall(text)}
+    for p in products:
+        mine = found.get(p["slug"], set())
+        others = set().union(*(v for k, v in found.items() if k != p["slug"])) if len(found) > 1 else set()
+        p["aliases"] = sorted(mine - others)
+
+
+# Words that describe a product TYPE, not a specific product: they must never decide routing on
+# their own ("Philips air purifier" is not the SmartCrisp air fryer). Type words are handled by
+# product_evidence together with the planner instead.
+_GENERIC_NAME_WORDS = {"pro", "and", "the", "wi", "fi", "wireless", "air", "fryer", "robot", "vacuum", "mop",
+                       "noise", "cancelling", "canceling", "headphones", "headphone", "smart", "max", "mini"}
 
 
 def exact_product_mention(text: str, products: list[dict]) -> str | None:
@@ -55,7 +84,8 @@ def exact_product_mention(text: str, products: list[dict]) -> str | None:
     best, best_hits = None, 0
     for p in products:
         name_toks = [t for t in tokenize(p["name"]) if len(t) > 2 or any(ch.isdigit() for ch in t)]
-        distinctive = [t for t in name_toks if t not in {"pro", "and", "the", "wi", "fi", "wireless"}]
+        distinctive = [t for t in name_toks if t not in _GENERIC_NAME_WORDS]   # brand / model only
+        distinctive += [a for a in p.get("aliases", []) if a not in _GENERIC_NAME_WORDS]
         hits = sum(1 for t in distinctive if t in toks)
         if hits > best_hits:
             best, best_hits = p["slug"], hits
@@ -194,7 +224,9 @@ def analyze_complaint(text: str, router: RouterIndex, settings: Settings,
         plan = plan_query(text, history or [], router.products, evidence, settings, llm=llm)
     except Exception as exc:
         log.error("Planner LLM failed, using heuristic plan: %s", exc)
-        plan = heuristic_plan(text, exact or "unknown")
+        # Without the LLM: exact brand/model, else the ONE product whose type is described
+        typed = [p["slug"] for p in router.products if product_evidence(text, p["name"])]
+        plan = heuristic_plan(text, exact or (typed[0] if len(typed) == 1 else "unknown"))
 
     # Product decision (safety-critical: a wrong product means a wrong policy in the reply).
     # 1) explicit product name/model -> that product

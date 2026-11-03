@@ -1,0 +1,87 @@
+{
+  "k": 5,
+  "n": 30,
+  "graph_improved": 4,
+  "graph_worse": 4,
+  "same": 22,
+  "examples": [
+    {
+      "product": "aerobeat-x9-wireless-noise-cancelling-headphones",
+      "question": "What should I do if I forgot my password and can't log in to my account?",
+      "rank_hybrid": 3,
+      "rank_hybrid_graph": 1,
+      "correct_section": "account_and_login.docx › 2. Forgot Password - Exact Reset Steps",
+      "found_by": [
+        "bm25",
+        "entity_summary",
+        "graph",
+        "vector"
+      ],
+      "graph_facts": [
+        "account -can be created using-> verified email",
+        "account -is not locked-> caps lock",
+        "account -causes-> failed password attempts",
+        "account -are rejected-> valid credentials",
+        "account -can open-> customers"
+      ]
+    },
+    {
+      "product": "puresweep-v12-robot-vacuum-mop",
+      "question": "What should I do if I received a login code that I didn't request?",
+      "rank_hybrid": 2,
+      "rank_hybrid_graph": 1,
+      "correct_section": "account_and_login.docx › 10. Login Scenarios and Support Escalation",
+      "found_by": [
+        "entity_summary",
+        "graph",
+        "vector"
+      ],
+      "graph_facts": [
+        "login code -triggers-> password reset",
+        "login code -should not be-> shared",
+        "login code -triggers-> account security review",
+        "code -should be added before-> dispatch",
+        "code -requires-> secure package room"
+      ]
+    },
+    {
+      "product": "smartcrisp-pro-8l-wi-fi-air-fryer",
+      "question": "Under what circumstances can I get a replacement for my lost package?",
+      "rank_hybrid": 2,
+      "rank_hybrid_graph": 1,
+      "correct_section": "shipping_policy.docx › When a replacement may be approved",
+      "found_by": [
+        "entity_summary",
+        "graph",
+        "vector"
+      ],
+      "graph_facts": [
+        "replacement -issued by-> kitchennova",
+        "replacement -or offers-> refund",
+        "replacement -requested after-> verification",
+        "replacement -ships after-> carrier scan",
+        "replacement -depends on-> stock"
+      ]
+    },
+    {
+      "product": "smartcrisp-pro-8l-wi-fi-air-fryer",
+      "question": "What should I do if my package hasn't been updated in tracking for several days?",
+      "rank_hybrid": 4,
+      "rank_hybrid_graph": 1,
+      "correct_section": "shipping_policy.docx › Lost in transit",
+      "found_by": [
+        "bm25",
+        "entity_summary",
+        "graph",
+        "vector"
+      ],
+      "graph_facts": [
+        "stolen packages -different rules apply to-> packages in transit",
+        "stolen packages -different rules apply to-> packages marked delivered",
+        "missing packages -different rules apply to-> packages in transit",
+        "missing packages -different rules apply to-> packages marked delivered",
+        "packages in transit -different rules apply to-> stolen packages"
+      ]
+    }
+  ]
+}

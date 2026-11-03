@@ -1,3 +1,12 @@
+.env
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+backend/secrets/*.json
+!backend/secrets/.gitkeep
+database/neo4j/*
+!database/neo4j/.gitkeep
+
 # Python cache and compiled files
 __pycache__/
 *.py[cod]
@@ -56,15 +65,14 @@ coverage.xml
 Thumbs.db
 Desktop.ini
 
-# Password files
+# Password files (never commit: real keys live only in .env and secrets/)
 Neo4j-*.txt
 
 .env
 secrets/
 storage/
-data/
 __pycache__/
 *.pyc
 .pytest_cache/
-eval/report_*.json
 *.tmp
+

@@ -166,6 +166,20 @@ class MemoryStore:
             row = self._conn.execute("SELECT extra FROM tickets WHERE ticket_id=?", (ticket_id,)).fetchone()
         return json.loads(row["extra"] or "{}") if row else {}
 
+    def all_metrics(self) -> list[dict]:
+        """Processing metrics (latency, tokens, cost) of every ticket that recorded them."""
+        with self._lock:
+            rows = self._conn.execute("SELECT extra FROM tickets").fetchall()
+        out = []
+        for r in rows:
+            try:
+                m = json.loads(r["extra"] or "{}").get("metrics")
+            except (TypeError, ValueError):
+                m = None
+            if m:
+                out.append(m)
+        return out
+
     def list_tickets(self, limit: int = 500) -> list[TicketResponse]:
         with self._lock:
             rows = self._conn.execute("SELECT * FROM tickets ORDER BY created_at DESC LIMIT ?", (limit,)).fetchall()

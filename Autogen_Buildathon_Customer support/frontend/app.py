@@ -15,14 +15,15 @@ import pandas as pd
 import streamlit as st
 
 # Allow `streamlit run support_agent/ui.py` without installing the package
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from support_agent.client import ApiError, SupportApiClient  # noqa: E402
-from support_agent.config import ASSETS_DIR, FONTS_DIR, get_settings  # noqa: E402
+from client import ApiError, SupportApiClient  # noqa: E402
 
-BRAND = get_settings().company_name  # set COMPANY_NAME in .env
+ASSETS_DIR = ROOT / "assets"
+FONTS_DIR = ASSETS_DIR / "fonts"
+BRAND = os.getenv("COMPANY_NAME", "NovaHome Support")
 st.set_page_config(page_title=BRAND, page_icon="🛟", layout="wide")
 
 AGENT_LABELS = {
@@ -54,7 +55,7 @@ def store() -> dict:
 
 
 def api() -> SupportApiClient:
-    base = os.getenv("API_BASE_URL") or get_settings().api_base_url
+    base = os.getenv("API_BASE_URL", "http://backend:8000")
     return SupportApiClient(base, token=store()["token"])
 
 
@@ -516,19 +517,36 @@ def admin_page() -> None:
             m2.metric("Resolved (confirmed)", res)
             m3.metric("Escalated", esc)
             m4.metric("Awaiting customer", pend)
-            m5.metric("Average urgency (1 = Low, 3 = High)", d["avg_urgency"])
+            m5.metric("Avg urgency", d["avg_urgency"], help="Average urgency: 1 = Low, 2 = Medium, 3 = High")
+            if d.get("measured_tickets"):
+                k1, k2, k3, k4 = st.columns(4)
+                k1.metric("Avg processing time", f"{d['avg_latency_s']} s",
+                          help="Automated part (agents + RAG), excluding time waiting for a human")
+                k2.metric("90th percentile", f"{d['p90_latency_s']} s")
+                k3.metric("Avg model cost / ticket", f"${d['avg_cost_usd']:.4f}",
+                          help="Approximate: tokens x list price (support_agent/metrics.py)")
+                k4.metric("Avg tokens / ticket", f"{d['avg_tokens']:,}",
+                          help=f"Measured on {d['measured_tickets']} tickets; total ≈ ${d['total_cost_usd']}")
             c1, c2 = st.columns(2)
-            cat = pd.DataFrame(d["per_category"].items(), columns=["category", "tickets"])
+            # Readable labels: "technical_issue" -> "Technical issue"; never truncated (labelLimit=0)
+            cat = pd.DataFrame([(str(k).replace("_", " ").capitalize(), v) for k, v in d["per_category"].items()],
+                               columns=["category", "tickets"])
             c1.markdown("**Tickets per category**")
             c1.altair_chart(alt.Chart(cat).mark_bar(color="#2F8F8A").encode(
-                x=alt.X("tickets:Q", axis=alt.Axis(tickMinStep=1)), y=alt.Y("category:N", sort="-x", title=None)
-            ).properties(height=240), width="stretch")
-            order_ = ["Resolved", "Escalated", "Awaiting customer", "Closed (no reply / not supported)"]
-            rv = pd.DataFrame({"status": order_, "tickets": [res, esc, pend, closed]})
+                x=alt.X("tickets:Q", axis=alt.Axis(tickMinStep=1)),
+                y=alt.Y("category:N", sort="-x", title=None, axis=alt.Axis(labelLimit=0, labelPadding=6)),
+                tooltip=["category", "tickets"],
+            ).properties(height=240, padding={"left": 12, "right": 8, "top": 5, "bottom": 5}), width="stretch")
+            # Short labels so the four bars never overlap; full meaning in the tooltip
+            order_ = ["Resolved", "Escalated", "Awaiting reply", "Closed"]
+            meaning = ["Customer confirmed", "With support (approval or manual handling)",
+                       "Solution sent, waiting for the customer", "No reply in time / product not supported"]
+            rv = pd.DataFrame({"status": order_, "tickets": [res, esc, pend, closed], "meaning": meaning})
             c2.markdown("**Resolved vs escalated**")
             c2.altair_chart(alt.Chart(rv).mark_bar().encode(
-                x=alt.X("status:N", title=None, sort=order_, axis=alt.Axis(labelAngle=0)),
+                x=alt.X("status:N", title=None, sort=order_, axis=alt.Axis(labelAngle=0, labelLimit=0)),
                 y=alt.Y("tickets:Q", axis=alt.Axis(tickMinStep=1)),
+                tooltip=["status", "tickets", "meaning"],
                 color=alt.Color("status:N", scale=alt.Scale(domain=order_,
                                                             range=["#1E8A4C", "#C2372C", "#F2A33A", "#6B7F90"]),
                                 legend=None)

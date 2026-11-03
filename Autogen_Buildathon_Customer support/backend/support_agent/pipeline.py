@@ -17,6 +17,7 @@ from langsmith import traceable
 from .agents import (APPROVER, LOGGER, TicketContext, _record_ticket_sync, apply_decision, make_tools,
                      run_agent_team)
 from .guardrails import check_input
+from .metrics import format_metrics, track_usage
 from .models import ChatResponse, ComplaintRequest, DraftReply, QueryAnalysis
 from .planner import plan_query
 from .retrieval import generate_answer, hybrid_retrieve, sources_of
@@ -76,22 +77,32 @@ async def process_ticket(svc: SupportServices, ctx: TicketContext) -> str:
     """Run the full workflow for an existing ticket context. Never raises."""
     if svc.memory.get_ticket(ctx.ticket_id).status == "Failed":
         return "Failed"
+    with track_usage() as usage:   # latency, tokens and approximate cost of the automated part
+        try:
+            if svc.settings.openai_api_key.get_secret_value():
+                await run_agent_team(ctx)
+            else:
+                ctx.emit("System", "error", "OPENAI_API_KEY missing – agent team skipped")
+        except Exception as exc:
+            log.exception("Agent team failed for %s", ctx.ticket_id)
+            ctx.emit("System", "error", f"Agent team error: {exc.__class__.__name__}: {exc}. Using fallback.")
+        try:
+            if not ctx.recorded:
+                await _run_fallback(ctx)
+        except Exception as exc:
+            log.exception("Fallback failed for %s", ctx.ticket_id)
+            ctx.emit("System", "error", f"Fallback error: {exc}")
+            if not ctx.recorded:
+                svc.memory.update_ticket(ctx.ticket_id, status="Escalated - Awaiting Approval",
+                                         escalation_reasons=[f"System error: {exc}"])
+                svc.memory.request_approval(ctx.ticket_id)
+    _save_metrics(ctx, usage.summary())   # measured before any wait for a human decision
     try:
-        if svc.settings.openai_api_key.get_secret_value():
-            await run_agent_team(ctx)
-        else:
-            ctx.emit("System", "error", "OPENAI_API_KEY missing – agent team skipped")
-    except Exception as exc:
-        log.exception("Agent team failed for %s", ctx.ticket_id)
-        ctx.emit("System", "error", f"Agent team error: {exc.__class__.__name__}: {exc}. Using fallback.")
-    try:
-        if not ctx.recorded:
-            await _run_fallback(ctx)
         if ctx.awaiting_approval and not ctx.finalized:
             await _wait_for_approval(ctx)
     except Exception as exc:
-        log.exception("Fallback failed for %s", ctx.ticket_id)
-        ctx.emit("System", "error", f"Fallback error: {exc}")
+        log.exception("Waiting for approval failed for %s", ctx.ticket_id)
+        ctx.emit("System", "error", f"Approval step error: {exc}")
         # Last resort: make sure humans see it
         if not ctx.recorded:
             svc.memory.update_ticket(ctx.ticket_id, status="Escalated - Awaiting Approval",
@@ -100,6 +111,20 @@ async def process_ticket(svc: SupportServices, ctx: TicketContext) -> str:
     status = svc.memory.get_ticket(ctx.ticket_id).status
     ctx.emit("System", "system", f"Ticket finished with status: {status}")
     return status
+
+
+def _save_metrics(ctx: TicketContext, metrics: dict) -> None:
+    """Store processing time / tokens / cost with the ticket (admin dashboard) and show the
+    time in the live timeline. Never breaks the ticket if storing fails."""
+    try:
+        extra = ctx.services.memory.get_extra(ctx.ticket_id) or {}
+        extra["metrics"] = metrics
+        ctx.services.memory.update_ticket(ctx.ticket_id, extra=extra)
+        ctx.emit("System", "system", f"Processing time {metrics['latency_s']:.1f} s · "
+                                     f"{metrics['llm_calls']} model calls")
+        log.info("Ticket %s metrics: %s", ctx.ticket_id, format_metrics(metrics))
+    except Exception as exc:  # metrics are best-effort
+        log.warning("Could not store metrics for %s: %s", ctx.ticket_id, exc)
 
 
 def context_from_memory(svc: SupportServices, ticket_id: str) -> TicketContext:

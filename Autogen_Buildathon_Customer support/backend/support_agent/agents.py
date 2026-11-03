@@ -448,9 +448,13 @@ def _event_text(msg: Any) -> tuple[str, str]:
 async def run_agent_team(ctx: TicketContext) -> None:
     """Run the SelectorGroupChat, streaming every step into memory; always closes the client."""
     model_client = build_model_client(ctx.services.settings)
+    model_calls = 0
     try:
         team = build_team(ctx, model_client)
         async for msg in team.run_stream(task=task_message(ctx)):
+            if type(msg).__name__ in ("TextMessage", "ToolCallRequestEvent") and \
+                    str(getattr(msg, "source", "")).endswith("Agent"):
+                model_calls += 1   # each of these is one AutoGen model response
             if type(msg).__name__ == "TaskResult":
                 ctx.emit("System", "system", f"Conversation stopped: {getattr(msg, 'stop_reason', '')}")
                 continue
@@ -462,7 +466,21 @@ async def run_agent_team(ctx: TicketContext) -> None:
             kind, text = _event_text(msg)
             ctx.emit(source, kind, text[:6000])
     finally:
+        _record_agent_usage(ctx, model_client, model_calls)
         await model_client.close()  # always release HTTP connections
+
+
+def _record_agent_usage(ctx: TicketContext, model_client, calls: int) -> None:
+    """Add the AutoGen client's token usage to the ticket's cost tracker (best-effort)."""
+    from .metrics import current_tracker
+
+    tracker = current_tracker()
+    try:
+        usage = model_client.total_usage()
+        if tracker is not None and usage is not None:
+            tracker.add(ctx.services.settings.agent_model, usage.prompt_tokens, usage.completion_tokens, calls)
+    except Exception as exc:  # replay/test clients may not report usage
+        log.debug("Agent usage not available: %s", exc)
 
 
 def urgency_score(urgency: str | None) -> int:

@@ -72,3 +72,38 @@ def test_approved_unsupported_reply_closes_without_confirmation(settings):
     t = svc.memory.get_ticket(tid)
     assert t.status == "Closed - Not Supported" and "Did this solve" not in (t.reply_body or "")
     assert "Closed" in out
+
+
+def test_generic_words_never_decide_the_product():
+    """'air' / 'robot' / 'noise' alone must not route to a product (exact match overrides the planner)."""
+    from support_agent.planner import exact_product_mention
+
+    products = [{"name": "AeroBeat X9 Wireless Noise-Cancelling Headphones", "slug": "aerobeat"},
+                {"name": "PureSweep V12 Robot Vacuum & Mop", "slug": "puresweep"},
+                {"name": "SmartCrisp Pro 8L Wi-Fi Air Fryer", "slug": "smartcrisp"}]
+    assert exact_product_mention("I want a refund for my Philips air purifier", products) is None
+    assert exact_product_mention("my Dyson robot lawn mower is noisy", products) is None
+    assert exact_product_mention("noise in my Bose headphones", products) is None
+    assert exact_product_mention("my SmartCrisp shows E3", products) == "smartcrisp"
+    assert exact_product_mention("the V12 will not dock", products) == "puresweep"
+
+
+def test_store_brand_routes_to_its_product(tmp_path):
+    """'my SoundSphere account' -> AeroBeat: store names come from each product's own documents."""
+    import json
+
+    from support_agent.config import Settings
+    from support_agent.planner import _add_store_aliases, exact_product_mention
+
+    s = Settings(_env_file=None, INDEX_DIR=str(tmp_path))
+    texts = {"aerobeat": "Store: SoundSphere Online", "puresweep": "HomePilot Online | Knowledge Base",
+             "smartcrisp": "KitchenNova Online account guide"}
+    products = [{"name": n, "slug": k} for k, n in (("aerobeat", "AeroBeat X9 Headphones"),
+                                                   ("puresweep", "PureSweep V12 Robot Vacuum"),
+                                                   ("smartcrisp", "SmartCrisp Pro 8L Air Fryer"))]
+    for slug, text in texts.items():
+        (tmp_path / slug).mkdir()
+        (tmp_path / slug / "records.json").write_text(json.dumps([{"title": "x", "text": text}]))
+    _add_store_aliases(s, products)
+    assert exact_product_mention("my SoundSphere account is locked", products) == "aerobeat"
+    assert exact_product_mention("KitchenNova app login fails", products) == "smartcrisp"

@@ -1,4 +1,4 @@
-# Python 3.11 – 3.13. Every package imported by the project, pinned (tested 2026-11-02).
+# Python 3.11 – 3.14 (developed and tested on 3.14). Every package imported by the project, pinned (tested 2026-11-02).
 # --- Agents ---
 autogen-agentchat==0.7.5
 autogen-core==0.7.5

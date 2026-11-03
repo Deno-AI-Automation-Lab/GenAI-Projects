@@ -1,12 +1,73 @@
-# Local Neo4j for the knowledge graph:  docker compose up -d
-# Password must match NEO4J_PASSWORD in .env
 services:
+  frontend:
+    build:
+      context: ./frontend
+    container_name: support-frontend
+    restart: unless-stopped
+    ports:
+      - "8502:8501"
+    environment:
+      API_BASE_URL: http://backend:8000
+      COMPANY_NAME: ${COMPANY_NAME:-NovaHome Support}
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - support-net
+
+  backend:
+    build:
+      context: ./backend
+    container_name: support-backend
+    restart: unless-stopped
+    ports:
+      - "8001:8000"
+    env_file:
+      - .env
+    environment:
+      # Container-internal paths/services override local-development defaults.
+      DATA_DIR: /app/data
+      INDEX_DIR: /app/storage/indexes
+      CACHE_DIR: /app/storage/cache
+      MEMORY_DB_PATH: /app/storage/support_memory.db
+      TICKET_LOG_CSV: /app/storage/ticket_log.csv
+      NEO4J_URI: bolt://neo4j:7687
+      API_BASE_URL: http://backend:8000
+      SUPPORT_SITE_URL: ${SUPPORT_SITE_URL:-http://localhost:8501}
+      GOOGLE_SERVICE_ACCOUNT_JSON: /app/secrets/google-service-account.json
+    volumes:
+      - ./database/storage:/app/storage
+      - ./backend/secrets:/app/secrets:ro
+    depends_on:
+      neo4j:
+        condition: service_healthy
+    networks:
+      - support-net
+
   neo4j:
     image: neo4j:5
-    ports: ["7474:7474", "7687:7687"]
+    container_name: support-neo4j
+    restart: unless-stopped
+    ports:
+      - "7474:7474"
+      - "7687:7687"
     environment:
       NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:-change-me}
     volumes:
-      - neo4j_data:/data
-volumes:
-  neo4j_data:
+      - ./database/neo4j:/data
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "cypher-shell -u neo4j -p '${NEO4J_PASSWORD:-change-me}' 'RETURN 1' >/dev/null 2>&1 || exit 1"
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+    networks:
+      - support-net
+
+networks:
+  support-net:
+    driver: bridge
