@@ -26,16 +26,17 @@ API = os.getenv("API_BASE_URL") or _ENV.get("API_BASE_URL") or "http://127.0.0.1
 
 
 def _api_up() -> bool:
+    """True only if OUR support API answers at API (another app on the same port does not count)."""
     try:
-        SupportApiClient(API, timeout=3).health()
-        return True
+        h = SupportApiClient(API, timeout=3).health()
     except ApiError:
         return False
+    return isinstance(h, dict) and "products" in h and "retrieval_mode" in h
 
 
 pytestmark = [pytest.mark.live,
               pytest.mark.skipif(not (os.getenv("OPENAI_API_KEY") or _ENV.get("OPENAI_API_KEY")) or not _api_up(),
-                                 reason="needs OPENAI_API_KEY and a running API")]
+                                 reason=f"needs OPENAI_API_KEY and the support API running at {API} (set API_BASE_URL)")]
 
 
 @pytest.mark.parametrize("case", CASES, ids=[c["id"] for c in CASES])
