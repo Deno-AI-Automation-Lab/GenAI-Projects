@@ -8,7 +8,7 @@ own runs, with personal data removed:
 * e-mail addresses and phone numbers anywhere in the text are masked
 * by default the newest rows per status are kept, so every status is shown
 
-    python scripts/export_sample_log.py --exclude-names "Deno Melvin,Melvin" --per-status 3
+    python scripts/export_sample_log.py --exclude-names "Test User,Demo" --per-status 3
 
 Open the file and check it before you submit.
 """

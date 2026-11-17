@@ -7,8 +7,11 @@ from pathlib import Path
 import pytest
 from docx import Document
 
-ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT))
+ROOT = Path(__file__).resolve().parent.parent          # project folder (backend/, frontend/, tests/)
+# pytest.ini adds backend/ and frontend/ to the path; this keeps `python -m pytest tests/...` working too
+for _p in (ROOT / "backend", ROOT / "frontend"):
+    if str(_p) not in sys.path:
+        sys.path.insert(0, str(_p))
 
 from support_agent import config as _config  # noqa: E402
 from support_agent import llm as _llm  # noqa: E402
@@ -81,7 +84,7 @@ def settings(tmp_path, sample_data) -> Settings:
                  CACHE_DIR=str(tmp_path / "cache"), MEMORY_DB_PATH=str(tmp_path / "mem.db"),
                  TICKET_LOG_CSV=str(tmp_path / "log.csv"), GRAPH_ENABLED=False, RERANK_ENABLED=False,
                  OCR_ENABLED=False, EMAIL_ENABLED=False, APPROVAL_TIMEOUT_SECONDS=1, RETRIEVAL_MODE="hybrid",
-                 SUPPORT_MAILBOX="denomelvin24@gmail.com")   # test inbox address (no default in code)
+                 SUPPORT_MAILBOX="support@example.com")   # placeholder test inbox (no default in code)
     s.ensure_dirs()
     return s
 

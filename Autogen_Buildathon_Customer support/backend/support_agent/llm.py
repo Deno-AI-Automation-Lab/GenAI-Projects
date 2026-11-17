@@ -11,7 +11,7 @@ from functools import lru_cache
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 
-from .config import PROJECT_ROOT, Settings, get_settings
+from .config import ENV_FILES, Settings, get_settings
 
 log = logging.getLogger(__name__)
 _BOOTSTRAPPED = False
@@ -36,7 +36,8 @@ def bootstrap_runtime(settings: Settings | None = None) -> None:
     global _BOOTSTRAPPED
     if _BOOTSTRAPPED:
         return
-    load_dotenv(PROJECT_ROOT / ".env", override=False)
+    for env_file in reversed(ENV_FILES):          # backend/.env first, so it wins (override=False)
+        load_dotenv(env_file, override=False)
     logging.basicConfig(
         level=os.getenv("LOG_LEVEL", "INFO"),
         format="%(asctime)s %(levelname)s %(name)s: %(message)s",

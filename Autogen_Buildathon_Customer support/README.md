@@ -232,10 +232,25 @@ run_ui.bat      # or ./run_ui.sh    → Streamlit on http://localhost:8501
 ## 5. Tests
 
 ```bash
-python -m pytest -q                                   # 95 offline tests (no OpenAI / Neo4j / Gmail needed);
-                                                      # with the API running it also runs the 2 live cases -> 97 passed
+python -m pytest -q                                   # 102 offline tests (no OpenAI / Neo4j / Gmail needed);
+                                                      # with the API running it also runs the 2 live cases -> 104 passed
+python -m pytest tests/test_brief_cases.py -v         # the brief's scenarios end to end with recorded LLM replies
 python -m pytest tests/test_live_cases.py -v -s       # only the two custom test cases against the running API
 ```
+Run the commands from the project folder: `pytest.ini` adds `backend/` (the `support_agent` package) and `frontend/` (the API client) to the import path.
+
+### Brief scenarios, offline (`tests/brief_cases.json`)
+Each case runs the real workflow (Query → Knowledge → Resolution → Log, escalation rules, approval step) on sample product documents. Only the model calls are replaced by recorded replies (query plan, grounded answer, judge scores), so the result is deterministic.
+
+| Case | Brief rule | Expected status | Category |
+|---|---|---|---|
+| Air fryer error E3 | Documented fix, calm customer | Pending Confirmation (solved) | technical_issue |
+| Tamil: reset AeroBeat X9 | Reply in the customer's language | Pending Confirmation, reply in Tamil | product_usage |
+| Order 12 days late, needed tomorrow | Urgency is High | Escalated | shipping |
+| "Worst air fryer", Wi-Fi never connects | Customer is very angry | Escalated | technical_issue |
+| Charged twice, threatens court | Legal threat / payment dispute | Escalated | payment |
+| Alexa voice control (not in the documents) | Resolution confidence is low | Escalated | product_usage |
+| Samsung washing machine | No matching product document | Escalated, then *Closed – Not Supported* after support approves | technical_issue |
 Offline coverage: ticket lifecycle (confirmation, high-priority re-escalation, auto-close, support closing), product routing (unlisted products are never answered from another product's documents), legal-threat words matched as whole words ('sue' does not fire on 'issue'), Tamil/Hindi tokenisation and language detection, RRF, hit-rate/MRR, guardrails, Cypher write-blocking, escalation rules, confidence capping, email templates (incl. acknowledgement) and inbound parsing, admin-only ticket log and dashboard, ticket access by order ID, approval claiming, .docx parsing (headings, FAQ questions, table rows), neighbour links, every retrieval mode with product isolation, the full pipeline fallback, and the **real AutoGen team** driven by a scripted model client (order, tool calls, UserProxy approval, LOGGED termination, client closed).
 
 ### Custom test cases (`tests/test_cases.json`)

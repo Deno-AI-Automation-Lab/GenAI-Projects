@@ -187,48 +187,48 @@ def _mail(headers: str, body: str = "hello"):
 
 
 def test_bank_promo_is_skipped(settings):
-    m = _mail("From: HDFC Bank <alerts@hdfcbank.example>\r\nTo: denomelvin24@gmail.com\r\n"
+    m = _mail("From: HDFC Bank <alerts@hdfcbank.example>\r\nTo: support@example.com\r\n"
               "Subject: Get 30% off with SmartPay\r\nList-Unsubscribe: <mailto:u@x>\r\n", "Offer on refund of fees")
     ok, reason = is_support_mail(m, settings, _PRODUCTS)
     assert not ok and "newsletter" in reason
 
 
 def test_personal_mail_without_keywords_is_skipped(settings):
-    m = _mail("From: David <david@example.com>\r\nTo: denomelvin24@gmail.com\r\nSubject: Melvin Bio-data and Photo\r\n",
+    m = _mail("From: David <david@example.com>\r\nTo: support@example.com\r\nSubject: Bio-data and Photo\r\n",
               "Please find the bio-data attached.")
     assert is_support_mail(m, settings, _PRODUCTS) == (False, "no product or support keyword")
 
 
 def test_noreply_sender_is_skipped(settings):
-    m = _mail("From: Goibibo <no-reply@goibibo.example>\r\nTo: denomelvin24@gmail.com\r\nSubject: Refund offer\r\n")
+    m = _mail("From: Goibibo <no-reply@goibibo.example>\r\nTo: support@example.com\r\nSubject: Refund offer\r\n")
     assert not is_support_mail(m, settings, _PRODUCTS)[0]
 
 
 def test_customer_complaint_is_accepted(settings):
-    m = _mail("From: Ravi <ravi@example.com>\r\nTo: denomelvin24@gmail.com\r\nSubject: Help\r\n",
+    m = _mail("From: Ravi <ravi@example.com>\r\nTo: support@example.com\r\nSubject: Help\r\n",
               "My AeroBeat headphones will not pair with my laptop. Order ORD-104522")
     ok, reason = is_support_mail(m, settings, _PRODUCTS)
     assert ok and "aerobeat" in reason
 
 
 def test_support_alias_and_strict_mode(settings):
-    m = _mail("From: Ravi <ravi@example.com>\r\nTo: denomelvin24+support@gmail.com\r\nSubject: Question\r\n", "hi there")
+    m = _mail("From: Ravi <ravi@example.com>\r\nTo: support+support@example.com\r\nSubject: Question\r\n", "hi there")
     assert is_support_mail(m, settings, _PRODUCTS) == (True, "sent to support alias")
     strict = settings.model_copy(update={"mail_require_alias": True})
-    m2 = _mail("From: Ravi <ravi@example.com>\r\nTo: denomelvin24@gmail.com\r\nSubject: Air fryer broken\r\n", "x")
+    m2 = _mail("From: Ravi <ravi@example.com>\r\nTo: support@example.com\r\nSubject: Air fryer broken\r\n", "x")
     assert not is_support_mail(m2, strict, _PRODUCTS)[0]
 
 
 def test_ticket_reply_accepted_and_own_mail_skipped(settings):
-    reply = _mail("From: Ravi <ravi@example.com>\r\nTo: denomelvin24@gmail.com\r\n"
+    reply = _mail("From: Ravi <ravi@example.com>\r\nTo: support@example.com\r\n"
                   "Subject: Re: [Resolved] Ticket TKT-20261102-ABC123 | x\r\n", "Still broken")
     assert is_support_mail(reply, settings, _PRODUCTS)[0]
-    own = _mail("From: Support <denomelvin24@gmail.com>\r\nTo: x@example.com\r\nSubject: complaint\r\n")
+    own = _mail("From: Support <support@example.com>\r\nTo: x@example.com\r\nSubject: complaint\r\n")
     assert is_support_mail(own, settings, _PRODUCTS) == (False, "own mailbox")
 
 
 def test_bounce_quoting_ticket_is_skipped(settings):
-    m = _mail("From: postmaster@airtelworld.onmicrosoft.com\r\nTo: denomelvin24@gmail.com\r\n"
+    m = _mail("From: postmaster@airtelworld.onmicrosoft.com\r\nTo: support@example.com\r\n"
               "Subject: Undeliverable: [Received] Ticket TKT-20261102-32C48B | x\r\n", "delivery failed")
     ok, reason = is_support_mail(m, settings, _PRODUCTS)
     assert not ok and reason == "automated sender"
@@ -262,13 +262,13 @@ def test_timestamps_use_ist(settings):
 
 
 def test_everyday_complaint_wording_is_accepted(settings):
-    m = _mail("From: Melvin <melvindrive24@gmail.com>\r\nTo: denomelvin24@gmail.com\r\nSubject: Need help\r\n",
+    m = _mail("From: Asha <asha@example.com>\r\nTo: support@example.com\r\nSubject: Need help\r\n",
               "My headset won't connect to my laptop since yesterday")
     assert is_support_mail(m, settings, _PRODUCTS)[0]
 
 
 def test_accept_all_mode_for_dedicated_inbox(settings):
-    m = _mail("From: Melvin <melvindrive24@gmail.com>\r\nTo: support@x.com\r\nSubject: Hi\r\n", "Can you call me?")
+    m = _mail("From: Asha <asha@example.com>\r\nTo: support@x.com\r\nSubject: Hi\r\n", "Can you call me?")
     assert not is_support_mail(m, settings, _PRODUCTS)[0]
     assert is_support_mail(m, settings.model_copy(update={"mail_accept_all": True}), _PRODUCTS)[0]
     promo = _mail("From: Shop <offers@shop.example>\r\nTo: x@y.z\r\nSubject: Sale\r\nList-Unsubscribe: <u>\r\n", "x")

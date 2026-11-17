@@ -1,0 +1,266 @@
+[
+  {
+    "id": "resolved_fryer_error_code",
+    "rule": "Resolved: documented fix, calm customer",
+    "customer_name": "Ravi Kumar",
+    "order_id": "ORD-104522",
+    "complaint": "My SmartCrisp air fryer shows error E3 when I start it. How do I fix this?",
+    "recorded": {
+      "plan": {
+        "standalone_question": "How do I fix error E3 on the SmartCrisp air fryer?",
+        "product": "SmartCrisp Pro 8L Wi-Fi Air Fryer",
+        "category": "technical_issue",
+        "urgency": "Low",
+        "sentiment": "Neutral",
+        "summary": "Air fryer shows error E3 on start",
+        "issue_title": "Air fryer error E3",
+        "entities": [
+          "E3"
+        ],
+        "doc_type_filter": "product_faq",
+        "fusion_queries": [
+          "SmartCrisp error E3 meaning"
+        ]
+      },
+      "answer": "Error E3 means the basket is not fully inserted. Please push the basket in until it clicks, then start the fryer again [S1].",
+      "judge": {
+        "faithfulness": 0.95,
+        "relevance": 0.9,
+        "completeness": 0.9
+      }
+    },
+    "expected": {
+      "status": "Pending Confirmation",
+      "category": "technical_issue",
+      "product": "SmartCrisp Pro 8L Wi-Fi Air Fryer",
+      "language": "en",
+      "reason": null
+    }
+  },
+  {
+    "id": "resolved_headphones_reset_tamil",
+    "rule": "Resolved: Tamil complaint answered in Tamil",
+    "customer_name": "Kavitha S",
+    "order_id": "ORD-300118",
+    "complaint": "என் AeroBeat X9 ஹெட்ஃபோனை எப்படி ரீசெட் செய்வது? இணைப்பு வேலை செய்யவில்லை.",
+    "recorded": {
+      "plan": {
+        "standalone_question": "How do I reset the AeroBeat X9 headphones?",
+        "product": "AeroBeat X9 Wireless Noise-Cancelling Headphones",
+        "category": "product_usage",
+        "urgency": "Low",
+        "sentiment": "Neutral",
+        "summary": "Customer wants to reset the headphones",
+        "issue_title": "Headphones reset",
+        "entities": [
+          "reset"
+        ],
+        "doc_type_filter": "product_faq",
+        "fusion_queries": [
+          "AeroBeat X9 reset steps"
+        ]
+      },
+      "answer": "பவர் மற்றும் ANC பொத்தான்களை ஒன்றாக 10 வினாடிகள் அழுத்திப் பிடிக்கவும்; LED வெள்ளையாக ஒளிரும் வரை காத்திருக்கவும் [S1].",
+      "judge": {
+        "faithfulness": 0.95,
+        "relevance": 0.9,
+        "completeness": 0.85
+      }
+    },
+    "expected": {
+      "status": "Pending Confirmation",
+      "category": "product_usage",
+      "product": "AeroBeat X9 Wireless Noise-Cancelling Headphones",
+      "language": "ta",
+      "reason": null
+    }
+  },
+  {
+    "id": "escalated_high_urgency_delivery",
+    "rule": "Escalate: urgency is High",
+    "customer_name": "Priya N",
+    "order_id": "ORD-551200",
+    "complaint": "My SmartCrisp air fryer order is 12 days late and I need it for a family function tomorrow. Please help urgently!",
+    "recorded": {
+      "plan": {
+        "standalone_question": "My air fryer order is 12 days late, what can be done?",
+        "product": "SmartCrisp Pro 8L Wi-Fi Air Fryer",
+        "category": "shipping",
+        "urgency": "High",
+        "sentiment": "Negative",
+        "summary": "Order delayed 12 days, needed tomorrow",
+        "issue_title": "Delayed air fryer delivery",
+        "entities": [
+          "delay"
+        ],
+        "doc_type_filter": "shipping_policy",
+        "fusion_queries": [
+          "delayed shipment beyond 10 days"
+        ]
+      },
+      "answer": "We're sorry for the delay. For orders delayed beyond 10 days we open a courier investigation within 24 hours [S1].",
+      "judge": {
+        "faithfulness": 0.95,
+        "relevance": 0.9,
+        "completeness": 0.8
+      }
+    },
+    "expected": {
+      "status": "Escalated",
+      "category": "shipping",
+      "product": "SmartCrisp Pro 8L Wi-Fi Air Fryer",
+      "language": "en",
+      "reason": "Urgency is High"
+    }
+  },
+  {
+    "id": "escalated_very_angry_customer",
+    "rule": "Escalate: customer is very angry",
+    "customer_name": "Arun P",
+    "order_id": "ORD-410077",
+    "complaint": "This is the worst air fryer I have ever bought! The SmartCrisp Wi-Fi never connects and I am completely fed up.",
+    "recorded": {
+      "plan": {
+        "standalone_question": "How do I connect the SmartCrisp air fryer to Wi-Fi?",
+        "product": "SmartCrisp Pro 8L Wi-Fi Air Fryer",
+        "category": "technical_issue",
+        "urgency": "Medium",
+        "sentiment": "Very Negative",
+        "summary": "Air fryer will not connect to Wi-Fi",
+        "issue_title": "Air fryer Wi-Fi pairing",
+        "entities": [
+          "Wi-Fi"
+        ],
+        "doc_type_filter": "product_faq",
+        "fusion_queries": [
+          "SmartCrisp Wi-Fi pairing steps"
+        ]
+      },
+      "answer": "I'm sorry for the frustration. Open the SmartCrisp app, hold the Wi-Fi button for 5 seconds and follow the pairing steps [S1].",
+      "judge": {
+        "faithfulness": 0.95,
+        "relevance": 0.9,
+        "completeness": 0.85
+      }
+    },
+    "expected": {
+      "status": "Escalated",
+      "category": "technical_issue",
+      "product": "SmartCrisp Pro 8L Wi-Fi Air Fryer",
+      "language": "en",
+      "reason": "Customer is very angry"
+    }
+  },
+  {
+    "id": "escalated_payment_dispute_legal",
+    "rule": "Escalate: legal threat / payment dispute",
+    "customer_name": "Anitha Raj",
+    "order_id": "ORD-200311",
+    "complaint": "I was charged twice for my AeroBeat X9 headphones and nobody has refunded me. If this is not fixed today I will take you to court.",
+    "recorded": {
+      "plan": {
+        "standalone_question": "I was charged twice for the AeroBeat X9 headphones, how do I get the extra charge refunded?",
+        "product": "AeroBeat X9 Wireless Noise-Cancelling Headphones",
+        "category": "refund",
+        "urgency": "Medium",
+        "sentiment": "Negative",
+        "summary": "Duplicate charge not refunded, legal threat",
+        "issue_title": "Duplicate charge",
+        "entities": [
+          "charged twice"
+        ],
+        "doc_type_filter": "refund_policy",
+        "fusion_queries": [
+          "duplicate charge refund"
+        ]
+      },
+      "answer": "We're sorry about the duplicate charge. Our team will review your payment [S1].",
+      "judge": {
+        "faithfulness": 0.8,
+        "relevance": 0.8,
+        "completeness": 0.6
+      }
+    },
+    "expected": {
+      "status": "Escalated",
+      "category": "payment",
+      "product": "AeroBeat X9 Wireless Noise-Cancelling Headphones",
+      "language": "en",
+      "reason": "Legal threat / fraud / payment dispute"
+    }
+  },
+  {
+    "id": "escalated_low_confidence_unanswered",
+    "rule": "Escalate: Resolution Agent confidence is low",
+    "customer_name": "Meena K",
+    "order_id": "",
+    "complaint": "Can I control my SmartCrisp air fryer with Alexa voice commands? How do I link it?",
+    "recorded": {
+      "plan": {
+        "standalone_question": "Can the SmartCrisp air fryer be controlled with Alexa?",
+        "product": "SmartCrisp Pro 8L Wi-Fi Air Fryer",
+        "category": "product_usage",
+        "urgency": "Low",
+        "sentiment": "Neutral",
+        "summary": "Asks about Alexa voice control",
+        "issue_title": "Voice assistant support",
+        "entities": [
+          "Alexa"
+        ],
+        "doc_type_filter": "product_faq",
+        "fusion_queries": [
+          "SmartCrisp Alexa voice control"
+        ]
+      },
+      "answer": "Our documentation covers pairing the fryer with the SmartCrisp app over Wi-Fi [S1], but it does not mention Alexa or voice control.",
+      "judge": {
+        "faithfulness": 0.9,
+        "relevance": 0.4,
+        "completeness": 0.1
+      }
+    },
+    "expected": {
+      "status": "Escalated",
+      "category": "product_usage",
+      "product": "SmartCrisp Pro 8L Wi-Fi Air Fryer",
+      "language": "en",
+      "reason": "Resolution confidence"
+    }
+  },
+  {
+    "id": "closed_unsupported_product",
+    "rule": "No matching product: escalated, then closed as not supported once support approves the reply",
+    "customer_name": "Suresh V",
+    "order_id": "",
+    "complaint": "My Samsung washing machine is leaking water from the bottom. What should I do?",
+    "recorded": {
+      "plan": {
+        "standalone_question": "Samsung washing machine leaking water",
+        "product": "unknown",
+        "category": "technical_issue",
+        "urgency": "Medium",
+        "sentiment": "Negative",
+        "summary": "Washing machine leaking",
+        "mentioned_product": "Samsung washing machine",
+        "issue_title": "Washing machine leak",
+        "entities": [],
+        "doc_type_filter": null,
+        "fusion_queries": []
+      },
+      "answer": "Sorry, we only support our air fryer and headphones, so we cannot help with a Samsung washing machine.",
+      "judge": {
+        "faithfulness": 1.0,
+        "relevance": 1.0,
+        "completeness": 1.0
+      }
+    },
+    "expected": {
+      "status": "Closed - Not Supported",
+      "category": "technical_issue",
+      "product": "unknown",
+      "language": "en",
+      "reason": "Product not supported"
+    },
+    "approve": true
+  }
+]

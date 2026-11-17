@@ -15,7 +15,7 @@ import pytest
 
 from dotenv import dotenv_values
 
-from support_agent.client import ApiError, SupportApiClient
+from client import ApiError, SupportApiClient  # frontend/client.py (frontend/ is on the test path)
 
 # Read .env WITHOUT exporting it: exporting would leak real settings (API key, MAIL_ACCEPT_ALL,
 # LangSmith) into the offline tests that run in the same pytest session.

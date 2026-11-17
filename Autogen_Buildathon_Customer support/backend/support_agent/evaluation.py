@@ -29,7 +29,10 @@ from .config import JUDGE_SYSTEM, PROJECT_ROOT, RetrievalMode, Settings, get_set
 from .models import JudgeVerdict, QueryPlan
 
 log = logging.getLogger(__name__)
-GOLDEN_PATH = PROJECT_ROOT / "eval" / "golden_set.jsonl"
+# eval/ sits next to backend/ in the repo (backend/support_agent -> PROJECT_ROOT = backend/)
+EVAL_DIR = next((d for d in (PROJECT_ROOT / "eval", PROJECT_ROOT.parent / "eval") if d.is_dir()),
+                PROJECT_ROOT.parent / "eval")
+GOLDEN_PATH = EVAL_DIR / "golden_set.jsonl"
 
 
 # ------------------------------- metrics --------------------------------- #
@@ -147,7 +150,7 @@ def evaluate_answers(golden: list[dict], registry, settings: Settings, limit: in
 
 
 # ------------------------- hand-written test set ------------------------- #
-MANUAL_PATH = PROJECT_ROOT / "eval" / "manual_set.jsonl"
+MANUAL_PATH = EVAL_DIR / "manual_set.jsonl"
 _NO_INFO_MARKERS = ("could not find", "couldn't find", "not mention", "no information", "not specified",
                     "does not specify", "doesn't specify", "unable to find", "don't have information",
                     "do not have information", "not covered", "not available in our", "not listed")
@@ -427,25 +430,25 @@ def main() -> None:
         cases = load_cases()
         cases = cases[: args.limit] if args.limit else cases
         result = evaluate_manual(cases, reg, load_router(s), s)
-        (PROJECT_ROOT / "eval" / "report_manual.json").write_text(
+        (EVAL_DIR / "report_manual.json").write_text(
             json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
         md = manual_report_markdown(result)
-        (PROJECT_ROOT / "eval" / "report_manual.md").write_text(md, encoding="utf-8")
+        (EVAL_DIR / "report_manual.md").write_text(md, encoding="utf-8")
         print(json.dumps(result["summary"], indent=2, ensure_ascii=False))
         print("Details: eval/report_manual.md")
         return
     if args.cmd == "graph-examples":
         result = find_graph_examples(load_golden(), reg, s, args.k)
-        (PROJECT_ROOT / "eval" / "report_graph_examples.json").write_text(
+        (EVAL_DIR / "report_graph_examples.json").write_text(
             json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
-        (PROJECT_ROOT / "eval" / "report_graph_examples.md").write_text(graph_report_markdown(result), encoding="utf-8")
+        (EVAL_DIR / "report_graph_examples.md").write_text(graph_report_markdown(result), encoding="utf-8")
         print(json.dumps({k: v for k, v in result.items() if k != "examples"}, indent=2))
         print("Examples: eval/report_graph_examples.md")
         return
     golden = load_golden()
     result = evaluate_retrieval(golden, reg, s, args.k) if args.cmd == "retrieval" else evaluate_answers(golden, reg, s, args.limit)
     print(json.dumps(result, indent=2))
-    out = PROJECT_ROOT / "eval" / f"report_{args.cmd}.json"
+    out = EVAL_DIR / f"report_{args.cmd}.json"
     out.write_text(json.dumps(result, indent=2), encoding="utf-8")
 
 

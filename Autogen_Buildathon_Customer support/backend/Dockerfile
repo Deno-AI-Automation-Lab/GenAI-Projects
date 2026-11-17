@@ -15,7 +15,7 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 
 COPY support_agent ./support_agent
 COPY data ./data
-COPY secrets ./secrets
+# secrets/ is NOT copied into the image: docker-compose.yml mounts ./backend/secrets read-only at run time
 
 EXPOSE 8000
 

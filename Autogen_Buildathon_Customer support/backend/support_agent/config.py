@@ -20,6 +20,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 PROJECT_ROOT: Path = Path(__file__).resolve().parent.parent
 ASSETS_DIR: Path = PROJECT_ROOT / "assets"
 FONTS_DIR: Path = ASSETS_DIR / "fonts"
+ENV_FILES: tuple[Path, ...] = (PROJECT_ROOT.parent / ".env", PROJECT_ROOT / ".env")
 TAMIL_FONT_PATH: Path = FONTS_DIR / "NotoSansTamil-Regular.ttf"
 
 # --------------------------------------------------------------------------- #
@@ -93,8 +94,10 @@ LEGAL_FRAUD_PAYMENT_TERMS: tuple[str, ...] = (
 class Settings(BaseSettings):
     """All runtime settings. Values come from environment variables / .env."""
 
+    # .env normally sits in the project folder (next to backend/); backend/.env, if present, wins.
+    # In Docker the values arrive as environment variables (compose env_file), which win over both.
     model_config = SettingsConfigDict(
-        env_file=PROJECT_ROOT / ".env", env_file_encoding="utf-8", extra="ignore"
+        env_file=ENV_FILES, env_file_encoding="utf-8", extra="ignore"
     )
 
     # OpenAI (LangChain ChatOpenAI + OpenAIEmbeddings, AutoGen model client)
